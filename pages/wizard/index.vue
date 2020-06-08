@@ -1,11 +1,11 @@
 <template>
   <div>
-    <v-btn color="primary">Test test</v-btn>
+    <v-btn color="primary">Test</v-btn>
   </div>
 </template>
 <script>
 export default {
-  layout: 'wizard',
+  layout: 'wizard'
 }
 </script>
 
