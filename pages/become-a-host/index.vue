@@ -19,8 +19,15 @@
         </v-stepper-header>
 
         <v-stepper-items>
-          <WizardRoom />
+          <v-stepper-content step="1">
+            <WizardRoom />
 
+            <v-btn color="primary" @click="e1 = 2">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
           <v-stepper-content step="2">
             <v-card
               class="mb-12"

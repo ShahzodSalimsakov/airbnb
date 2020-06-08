@@ -1,13 +1,5 @@
 <template>
-  <div>
-    <v-stepper-content step="1">
-      <v-btn color="primary" @click="e1 = 2">
-        Continue
-      </v-btn>
-
-      <v-btn text>Cancel</v-btn>
-    </v-stepper-content>
-  </div>
+  <div></div>
 </template>
 
 <script>
