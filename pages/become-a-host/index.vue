@@ -4,7 +4,7 @@
       <v-stepper v-model="e1">
         <v-stepper-header>
           <v-stepper-step :complete="e1 > 1" step="1"
-            >Name of step 1</v-stepper-step
+            >Какое жилье вы сдаете?</v-stepper-step
           >
 
           <v-divider></v-divider>
@@ -62,12 +62,17 @@
 </template>
 
 <script>
-import WizardRoom from '~/components/create_wizard/WizardRoom'
+import WizardRoom from '~/components/become-a-host/WizardRoom'
 export default {
-  layout: 'wizard',
   components: {
     WizardRoom
-  }
+  },
+  data() {
+    return {
+      e1: 1
+    }
+  },
+  layouts: 'wizard'
 }
 </script>
 

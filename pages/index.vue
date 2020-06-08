@@ -5,7 +5,7 @@
         <logo />
         <vuetify-logo />
       </div>
-      <nuxt-link to="/become-a-host"></nuxt-link>
+      <nuxt-link to="/become-a-host">Become a host</nuxt-link>
     </v-flex>
   </v-layout>
 </template>
