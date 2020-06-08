@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn color="primary">Test</v-btn>
+    <v-btn color="primary">Test test</v-btn>
   </div>
 </template>
 <script>
