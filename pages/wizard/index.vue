@@ -3,6 +3,7 @@
     <v-btn color="primary">Test</v-btn>
   </div>
 </template>
+
 <script>
 export default {
   layout: 'wizard'
