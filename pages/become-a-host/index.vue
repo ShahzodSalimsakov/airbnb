@@ -35,11 +35,7 @@
             <v-btn text>Cancel</v-btn>
           </v-stepper-content>
           <v-stepper-content step="2">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <WizardBedrooms />
 
             <v-btn color="primary" @click="e1 = 3">
               Continue
@@ -113,26 +109,29 @@
 
 <script>
 import WizardRoom from '~/components/become-a-host/WizardRoom'
+import WizardBedrooms from '~/components/become-a-host/WizardBedrooms'
 import WizardBathrooms from '~/components/become-a-host/WizardBathrooms'
 import WizardLocation from '~/components/become-a-host/WizardLocation'
 import WizardAmenities from '~/components/become-a-host/WizardAmenities'
 import WizardSpaces from '~/components/become-a-host/WizardSpaces'
 import WizardPhotos from '~/components/become-a-host/WizardPhotos'
 export default {
-  data() {
-    return {
-      e1: 1
-    }
-  },
-  layouts: 'wizard',
   components: {
+    WizardRoom,
+    WizardBedrooms,
     WizardRoom,
     WizardBathrooms,
     WizardLocation,
     WizardAmenities,
     WizardSpaces,
     WizardPhotos
-  }
+  },
+  data() {
+    return {
+      e1: 1
+    }
+  },
+  layouts: 'wizard'
 }
 </script>
 
