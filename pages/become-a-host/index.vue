@@ -4,7 +4,7 @@
       <v-stepper v-model="e1">
         <v-stepper-header>
           <v-stepper-step :complete="e1 > 1" step="1"
-            >Name of step 1</v-stepper-step
+            >Какое жилье вы сдаете?</v-stepper-step
           >
 
           <v-divider></v-divider>
