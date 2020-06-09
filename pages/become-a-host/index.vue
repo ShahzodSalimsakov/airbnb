@@ -29,11 +29,7 @@
             <v-btn text>Cancel</v-btn>
           </v-stepper-content>
           <v-stepper-content step="2">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <WizardBedrooms />
 
             <v-btn color="primary" @click="e1 = 3">
               Continue
@@ -62,12 +58,19 @@
 </template>
 
 <script>
-import WizardRoom from '~/components/create_wizard/WizardRoom'
+import WizardRoom from '~/components/become-a-host/WizardRoom'
+import WizardBedrooms from '~/components/become-a-host/WizardBedrooms'
 export default {
-  layout: 'wizard',
   components: {
-    WizardRoom
-  }
+    WizardRoom,
+    WizardBedrooms
+  },
+  data() {
+    return {
+      e1: 1
+    }
+  },
+  layouts: 'wizard'
 }
 </script>
 
