@@ -119,7 +119,6 @@ export default {
   components: {
     WizardRoom,
     WizardBedrooms,
-    WizardRoom,
     WizardBathrooms,
     WizardLocation,
     WizardAmenities,
