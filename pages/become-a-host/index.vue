@@ -15,7 +15,13 @@
 
           <v-divider></v-divider>
 
-          <v-stepper-step step="3">Name of step 3</v-stepper-step>
+          <v-stepper-step :complete="e1 > 3" step="3"
+            >Name of step 3</v-stepper-step
+          >
+
+          <v-divider></v-divider>
+
+          <v-stepper-step step="4">Name of step 4</v-stepper-step>
         </v-stepper-header>
 
         <v-stepper-items>
@@ -43,13 +49,57 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-card
-              class="mb-12"
-              color="grey lighten-1"
-              height="200px"
-            ></v-card>
+            <WizardBathrooms />
 
-            <v-btn color="primary" @click="e1 = 1">
+            <v-btn color="primary" @click="e1 = 4">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="4">
+            <WizardLocation />
+
+            <v-btn color="primary" @click="e1 = 5">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="5">
+            <WizardAmenities />
+
+            <v-btn color="primary" @click="e1 = 6">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="6">
+            <WizardSpaces />
+
+            <v-btn color="primary" @click="e1 = 7">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="7">
+            <WizardPhotos />
+
+            <v-btn color="primary" @click="e1 = 8">
+              Continue
+            </v-btn>
+
+            <v-btn text>Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="8">
+            <v-btn color="primary" @click="e1 = 9">
               Continue
             </v-btn>
 
@@ -62,11 +112,26 @@
 </template>
 
 <script>
-import WizardRoom from '~/components/create_wizard/WizardRoom'
+import WizardRoom from '~/components/become-a-host/WizardRoom'
+import WizardBathrooms from '~/components/become-a-host/WizardBathrooms'
+import WizardLocation from '~/components/become-a-host/WizardLocation'
+import WizardAmenities from '~/components/become-a-host/WizardAmenities'
+import WizardSpaces from '~/components/become-a-host/WizardSpaces'
+import WizardPhotos from '~/components/become-a-host/WizardPhotos'
 export default {
-  layout: 'wizard',
+  data() {
+    return {
+      e1: 1
+    }
+  },
+  layouts: 'wizard',
   components: {
-    WizardRoom
+    WizardRoom,
+    WizardBathrooms,
+    WizardLocation,
+    WizardAmenities,
+    WizardSpaces,
+    WizardPhotos
   }
 }
 </script>
