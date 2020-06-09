@@ -9,15 +9,51 @@
 
           <v-divider></v-divider>
 
-          <v-stepper-step :complete="e1 > 2" step="2"
-            >Name of step 2</v-stepper-step
-          >
+          <v-stepper-step :complete="e1 > 2" step="2">
+            Name of step 2
+          </v-stepper-step>
 
           <v-divider></v-divider>
 
-          <v-stepper-step :complete="e1 > 3" step="3"
-            >Name of step 3</v-stepper-step
-          >
+          <v-stepper-step :complete="e1 > 3" step="3">
+            Name of step 3
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 4" step="4">
+            Name of step 4
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 5" step="5">
+            Name of step 5
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 6" step="6">
+            Name of step 6
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 7" step="7">
+            Name of step 7
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 8" step="8">
+            Name of step 8
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 9" step="9">
+            Name of step 9
+          </v-stepper-step>
 
           <v-divider></v-divider>
 
@@ -41,7 +77,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 1">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="3">
@@ -51,7 +87,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 2">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="4">
@@ -61,7 +97,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 3">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="5">
@@ -71,7 +107,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 4">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="6">
@@ -81,7 +117,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 5">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="7">
@@ -91,7 +127,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 6">Cancel</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="8">
@@ -99,7 +135,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text @click="e1 = 7">Cancel</v-btn>
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
