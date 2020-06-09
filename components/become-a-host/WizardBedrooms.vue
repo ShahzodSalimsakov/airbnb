@@ -9,7 +9,7 @@
             </div>
             <div class="subtitle-1 font-italic" align="center">
               Check that you have enough beds to accommodate all your guests
-              comfortably.
+              comfortably.dd
             </div>
             <v-form
               ><div>
