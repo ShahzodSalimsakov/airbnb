@@ -1,11 +1,16 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <div class="headline">Какими помещениями гости могут пользоваться?</div>
-      <div class="body-2">
-        Укажите общие зоны, но не добавляйте места, которые вам не принадлежат.
-      </div>
       <v-card ref="form">
+        <v-card-text>
+          <div class="headline">
+            Какими помещениями гости могут пользоваться?
+          </div>
+          <div class="body-2">
+            Укажите общие зоны, но не добавляйте места, которые вам не
+            принадлежат.
+          </div>
+        </v-card-text>
         <v-card-text>
           <v-col cols="12">
             <v-combobox

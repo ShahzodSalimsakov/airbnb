@@ -1,12 +1,14 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <div class="headline">Какие удобства вы предлагаете?</div>
-      <div class="body-2">
-        Гости обычно рассчитывают на эти удобства, но после публикации можно
-        добавить другие.
-      </div>
       <v-card ref="form">
+        <v-card-text>
+          <div class="headline">Какие удобства вы предлагаете?</div>
+          <div class="body-2">
+            Гости обычно рассчитывают на эти удобства, но после публикации можно
+            добавить другие.
+          </div>
+        </v-card-text>
         <v-card-text>
           <v-col cols="12">
             <v-combobox

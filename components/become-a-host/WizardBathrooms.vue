@@ -1,11 +1,13 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <div class="headline">Где находится ваше жилье?</div>
-      <div class="body-2">
-        Гости увидят точный адрес жилья только после оформления бронирования.
-      </div>
       <v-card ref="form">
+        <v-card-text>
+          <div class="headline">Сколько ванных?</div>
+          <div class="body-2">
+            Ванная комната без душа или ванной считается туалетом.
+          </div>
+        </v-card-text>
         <v-card-text>
           <v-row>
             <v-col md="6">
