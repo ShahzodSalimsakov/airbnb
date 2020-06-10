@@ -10,8 +10,16 @@
             звонки на этот номер.
           </div>
           <v-select v-model="selectedCode" :items="arrCountryCode" />
-          <span>{{ arrCountryCode[0].code }}</span
-          ><v-text-field v-model="phoneNumber"></v-text-field>
+          <div>
+            <span v-if="selectedCode" class="d-inline">{{
+              getPhoneCode.code
+            }}</span>
+            <v-text-field
+              v-model="phoneNumber"
+              class="d-inline-block"
+            ></v-text-field>
+            <v-btn>Отправить</v-btn>
+          </div>
         </v-card-text>
       </v-card>
     </v-col>
@@ -26,24 +34,29 @@ export default {
     phoneNumber: '',
     arrCountryCode: [
       {
+        value: 'UZ',
         text: 'Узбекистан (+998)',
         code: '+998'
       },
-      'Конго (+242)',
-      'Демократическая Республика Конго (+243)',
-      'Гонконг (+852)',
-      'Косово (+383)',
-      'Макао (+853)',
-      'Северная Македония (+389)',
-      'Тайвань (+886)',
-      'Австралия (+61)',
-      'Австрия (+43)',
-      'Азербайджан (+994)'
+      {
+        value: 'KN',
+        text: 'Конго (+242)',
+        code: '+242'
+      },
+      {
+        value: 'AZ',
+        text: 'Азербайджан (+994)',
+        code: '+994'
+      }
     ]
-  })
-  // computed: {
-  //   getPhoneCode() => ()
-  // }
+  }),
+  computed: {
+    getPhoneCode() {
+      return [...this.arrCountryCode].filter(
+        (item) => item.value === this.selectedCode
+      )[0]
+    }
+  }
 }
 </script>
 
