@@ -8,13 +8,13 @@
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 2" step="2">
-        2
+        Успешный прием гостей начинается с надежного календаря
       </v-stepper-step>
 
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 3" step="3">
-        3
+        Ответьте на два вопроса, прежде чем перейти к настройкам
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -36,8 +36,6 @@
       </v-stepper-step>
 
       <v-divider></v-divider>
-
-      <v-divider></v-divider>
     </v-stepper-header>
 
     <v-stepper-items>
@@ -45,22 +43,22 @@
         <v-btn color="primary" @click="e1 = 2">
           Continue
         </v-btn>
-
         <v-btn text>Cancel</v-btn>
       </v-stepper-content>
+
       <v-stepper-content step="2">
+        <WizardCalendar />
         <v-btn color="primary" @click="e1 = 3">
           Continue
         </v-btn>
-
         <v-btn text @click="e1 = 1">Cancel</v-btn>
       </v-stepper-content>
 
       <v-stepper-content step="3">
+        <WizardAnswerTwoQuestions />
         <v-btn color="primary" @click="e1 = 4">
           Continue
         </v-btn>
-
         <v-btn text @click="e1 = 2">Cancel</v-btn>
       </v-stepper-content>
 
@@ -68,7 +66,6 @@
         <v-btn color="primary" @click="e1 = 5">
           Continue
         </v-btn>
-
         <v-btn text @click="e1 = 3">Cancel</v-btn>
       </v-stepper-content>
 
@@ -76,15 +73,19 @@
         <v-btn color="primary" @click="e1 = 6">
           Continue
         </v-btn>
-
         <v-btn text @click="e1 = 4">Cancel</v-btn>
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
 </template>
 <script>
+import WizardCalendar from '~/components/step-3/WizardCalendar'
+import WizardAnswerTwoQuestions from '~/components/step-3/WizardAnswerTwoQuestions'
 export default {
-  name: 'index'
+  components: { WizardAnswerTwoQuestions, WizardCalendar },
+  data() {
+    return { e1: 1 }
+  }
 }
 </script>
 
