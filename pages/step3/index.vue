@@ -2,7 +2,7 @@
   <v-stepper v-model="e1">
     <v-stepper-header>
       <v-stepper-step :complete="e1 > 1" step="1">
-        1
+        review-how-guests-book
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -42,6 +42,7 @@
 
     <v-stepper-items>
       <v-stepper-content step="1">
+        <WizardReviewHowGuestsBook />
         <v-btn color="primary" @click="e1 = 2">
           Continue
         </v-btn>
@@ -82,9 +83,20 @@
     </v-stepper-items>
   </v-stepper>
 </template>
+
 <script>
+import WizardReviewHowGuestsBook from '~/components/step-3/WizardReviewHowGuestsBook'
+
 export default {
-  name: 'index'
+  components: {
+    WizardReviewHowGuestsBook
+  },
+  data() {
+    return {
+      e1: 1
+    }
+  },
+  layouts: 'wizard'
 }
 </script>
 
