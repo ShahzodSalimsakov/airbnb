@@ -9,7 +9,7 @@
           </div>
         </v-card-text>
         <v-card-text>
-          <v-text-field :rules="rules" counter="50"></v-text-field>
+          <v-text-field :rules="rulesTitle" counter="50"></v-text-field>
         </v-card-text>
       </v-card>
     </v-col>
@@ -19,7 +19,7 @@
 <script>
 export default {
   data: () => ({
-    rules: [
+    rulesTitle: [
       (value) => !!value || 'Required.',
       (value) => (value || '').length <= 50 || 'Max 50 characters'
     ]
