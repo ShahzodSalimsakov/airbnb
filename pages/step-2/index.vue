@@ -22,7 +22,7 @@
           <v-divider></v-divider>
 
           <v-stepper-step :complete="e1 > 4" step="4">
-            Где находится ваше жилье?
+            Добавьте фото профиля
           </v-stepper-step>
 
           <v-divider></v-divider>
@@ -34,7 +34,13 @@
           <v-divider></v-divider>
 
           <v-stepper-step :complete="e1 > 6" step="6">
-            Какими помещениями гости могут пользоваться?
+            Ознакомиться с требованиями Airbnb к гостям
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 7" step="7">
+            Определите для гостей правила дома
           </v-stepper-step>
 
           <v-divider></v-divider>
@@ -71,7 +77,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="4">
-            <WizardLocation />
+            <WizardProfilePhoto />
 
             <v-btn color="primary" @click="e1 = 5">
               Continue
@@ -91,9 +97,19 @@
           </v-stepper-content>
 
           <v-stepper-content step="6">
-            <WizardSpaces />
+            <WizardQuestRequirements />
+
+            <v-btn color="primary" @click="e1 = 7">
+              Continue
+            </v-btn>
 
             <v-btn text @click="e1 = 5">Cancel</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="7">
+            <WizardQuestHouseRules />
+
+            <v-btn text @click="e1 = 6">Cancel</v-btn>
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
@@ -105,11 +121,17 @@
 import WizardPhotos from '~/components/step-2/WizardPhotos'
 import WizardDescription from '~/components/step-2/WizardDescription'
 import WizardTitle from '~/components/step-2/WizardTitle'
+import WizardProfilePhoto from '~/components/step-2/WizardProfilePhoto'
+import WizardQuestRequirements from '~/components/step-2/WizardQuestRequirements'
+import WizardQuestHouseRules from '~/components/step-2/WizardQuestHouseRules'
 export default {
   components: {
     WizardPhotos,
     WizardDescription,
-    WizardTitle
+    WizardTitle,
+    WizardProfilePhoto,
+    WizardQuestRequirements,
+    WizardQuestHouseRules
   },
   data() {
     return {
