@@ -28,7 +28,7 @@
           <v-divider></v-divider>
 
           <v-stepper-step :complete="e1 > 5" step="5">
-            Какие удобства вы предлагаете?
+            Добавьте номер мобильного телефона
           </v-stepper-step>
 
           <v-divider></v-divider>
@@ -36,6 +36,8 @@
           <v-stepper-step :complete="e1 > 6" step="6">
             Какими помещениями гости могут пользоваться?
           </v-stepper-step>
+
+          <v-divider></v-divider>
 
           <v-divider></v-divider>
         </v-stepper-header>
@@ -81,19 +83,13 @@
           </v-stepper-content>
 
           <v-stepper-content step="5">
-            <WizardAmenities />
+            <WizardVerifyPhone />
 
             <v-btn color="primary" @click="e1 = 6">
               Continue
             </v-btn>
 
             <v-btn text @click="e1 = 4">Cancel</v-btn>
-          </v-stepper-content>
-
-          <v-stepper-content step="6">
-            <WizardSpaces />
-
-            <v-btn text @click="e1 = 5">Cancel</v-btn>
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
@@ -105,8 +101,11 @@
 import WizardPhotos from '~/components/step-2/WizardPhotos'
 import WizardDescription from '~/components/step-2/WizardDescription'
 import WizardTitle from '~/components/step-2/WizardTitle'
+import WizardVerifyPhone from '~/components/step-2/WizardVerifyPhone'
+
 export default {
   components: {
+    WizardVerifyPhone,
     WizardPhotos,
     WizardDescription,
     WizardTitle
