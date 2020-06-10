@@ -2,19 +2,19 @@
   <v-stepper v-model="e1">
     <v-stepper-header>
       <v-stepper-step :complete="e1 > 1" step="1">
-        Какое жилье вы сдаете?
+        Добавьте фото в объявление
       </v-stepper-step>
 
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 2" step="2">
-        Сколько гостей вмещает ваше жилье?
+        Расскажите гостям о жилье
       </v-stepper-step>
 
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 3" step="3">
-        Сколько ванных?
+        Создать название объявления
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -26,7 +26,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 5" step="5">
-        Какие удобства вы предлагаете?
+        Добавьте номер мобильного телефона
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -36,11 +36,14 @@
       </v-stepper-step>
 
       <v-divider></v-divider>
+
+      <v-divider></v-divider>
     </v-stepper-header>
 
     <v-stepper-items>
       <v-stepper-content step="1">
-        <WizardRoom />
+        <WizardPhotos />
+
         <v-btn color="primary" @click="e1 = 2">
           Continue
         </v-btn>
@@ -48,7 +51,7 @@
         <v-btn text>Cancel</v-btn>
       </v-stepper-content>
       <v-stepper-content step="2">
-        <WizardBedrooms />
+        <WizardDescription />
 
         <v-btn color="primary" @click="e1 = 3">
           Continue
@@ -58,7 +61,7 @@
       </v-stepper-content>
 
       <v-stepper-content step="3">
-        <WizardBathrooms />
+        <WizardTitle />
 
         <v-btn color="primary" @click="e1 = 4">
           Continue
@@ -78,7 +81,7 @@
       </v-stepper-content>
 
       <v-stepper-content step="5">
-        <WizardAmenities />
+        <WizardVerifyPhone />
 
         <v-btn color="primary" @click="e1 = 6">
           Continue
@@ -86,30 +89,22 @@
 
         <v-btn text @click="e1 = 4">Cancel</v-btn>
       </v-stepper-content>
-
-      <v-stepper-content step="6">
-        <WizardSpaces />
-
-        <v-btn text @click="e1 = 5">Cancel</v-btn>
-      </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
 </template>
+
 <script>
-import WizardRoom from '~/components/become-a-host/WizardRoom'
-import WizardBedrooms from '~/components/become-a-host/WizardBedrooms'
-import WizardBathrooms from '~/components/become-a-host/WizardBathrooms'
-import WizardLocation from '~/components/become-a-host/WizardLocation'
-import WizardAmenities from '~/components/become-a-host/WizardAmenities'
-import WizardSpaces from '~/components/become-a-host/WizardSpaces'
+import WizardPhotos from '~/components/step-2/WizardPhotos'
+import WizardDescription from '~/components/step-2/WizardDescription'
+import WizardTitle from '~/components/step-2/WizardTitle'
+import WizardVerifyPhone from '~/components/step-2/WizardVerifyPhone'
+
 export default {
   components: {
-    WizardRoom,
-    WizardBedrooms,
-    WizardBathrooms,
-    WizardLocation,
-    WizardAmenities,
-    WizardSpaces
+    WizardVerifyPhone,
+    WizardPhotos,
+    WizardDescription,
+    WizardTitle
   },
   data() {
     return {
