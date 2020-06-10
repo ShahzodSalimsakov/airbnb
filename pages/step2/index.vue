@@ -87,7 +87,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="5">
-            <WizardAmenities />
+            <WizardVerifyPhone />
 
             <v-btn color="primary" @click="e1 = 6">
               Continue
@@ -122,6 +122,7 @@ import WizardPhotos from '~/components/step-2/WizardPhotos'
 import WizardDescription from '~/components/step-2/WizardDescription'
 import WizardTitle from '~/components/step-2/WizardTitle'
 import WizardProfilePhoto from '~/components/step-2/WizardProfilePhoto'
+import WizardVerifyPhone from '~/components/step-2/WizardVerifyPhone'
 import WizardQuestRequirements from '~/components/step-2/WizardQuestRequirements'
 import WizardQuestHouseRules from '~/components/step-2/WizardQuestHouseRules'
 export default {
@@ -130,6 +131,7 @@ export default {
     WizardDescription,
     WizardTitle,
     WizardProfilePhoto,
+    WizardVerifyPhone,
     WizardQuestRequirements,
     WizardQuestHouseRules
   },

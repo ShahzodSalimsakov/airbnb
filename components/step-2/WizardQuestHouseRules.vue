@@ -206,7 +206,6 @@
             <v-col md="8">
               <v-text-field
                 placeholder="Тихий час? Уличной обуви не место дома?"
-                class="d-inline-block"
               ></v-text-field>
             </v-col>
             <v-col md="4">
