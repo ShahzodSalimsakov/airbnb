@@ -9,20 +9,16 @@
             например быстрый Wi-Fi или парковку.
           </div>
         </v-card-text>
+
         <v-card-text>
-          <v-textarea
-            filled
-            auto-grow
-            rows="4"
-            row-height="30"
-            shaped
-          ></v-textarea>
+          <v-textarea outlined auto-grow rows="4" row-height="30"></v-textarea>
           <div class="my-2" v-if="moreButton === false">
             <v-btn text large color="primary" @click="moreButton = true">
               Добавить подробности (по желанию)
             </v-btn>
           </div>
         </v-card-text>
+
         <div v-if="moreButton === true">
           <v-card-text>
             <div class="headline">Ваше жилье (по желанию)</div>
@@ -38,6 +34,7 @@
               shaped
             ></v-textarea>
           </v-card-text>
+
           <v-card-text>
             <div class="headline">Ваше жилье (по желанию)</div>
             <div class="body-2">
@@ -52,6 +49,7 @@
               shaped
             ></v-textarea>
           </v-card-text>
+
           <v-card-text>
             <div class="headline">Ваше жилье (по желанию)</div>
             <div class="body-2">
@@ -66,6 +64,7 @@
               shaped
             ></v-textarea>
           </v-card-text>
+
           <v-card-text>
             <div class="headline">Ваше жилье (по желанию)</div>
             <div class="body-2">
@@ -80,6 +79,7 @@
               shaped
             ></v-textarea>
           </v-card-text>
+
           <v-card-text>
             <div class="my-2" v-if="moreButton === true">
               <v-btn text large color="primary" @click="moreButton = false">
