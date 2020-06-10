@@ -20,7 +20,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 4" step="4">
-        4
+        Насколько заранее гости должны бронировать ваше жилье?
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -64,6 +64,7 @@
       </v-stepper-content>
 
       <v-stepper-content step="4">
+        <WizardAvailabilitySettings />
         <v-btn color="primary" @click="e1 = 5">
           Continue
         </v-btn>
@@ -85,8 +86,10 @@
 import WizardReviewHowGuestsBook from '~/components/step-3/WizardReviewHowGuestsBook'
 import WizardCalendar from '~/components/step-3/WizardCalendar'
 import WizardAnswerTwoQuestions from '~/components/step-3/WizardAnswerTwoQuestions'
+import WizardAvailabilitySettings from '~/components/step-3/WizardAvailabilitySettings'
 export default {
-  components: { WizardAnswerTwoQuestions, WizardCalendar, WizardReviewHowGuestsBook },
+  components: { WizardAnswerTwoQuestions, WizardCalendar, WizardReviewHowGuestsBook,
+    WizardAvailabilitySettings },
   data() {
     return { e1: 1 }
   },
