@@ -8254,6 +8254,11 @@ vuex@^3.1.3:
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.4.0.tgz#20cc086062d750769fce1febb34e7fceeaebde45"
   integrity sha512-ajtqwEW/QhnrBZQsZxCLHThZZaa+Db45c92Asf46ZDXu6uHXgbfVuBaJ4gzD2r4UX0oMJHstFwd2r2HM4l8umg==
 
+vuexplosive-modal@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vuexplosive-modal/-/vuexplosive-modal-1.2.0.tgz#f6c600ab0ea79319bd5b5912f8b113092f1a3a72"
+  integrity sha512-yNIEX36Hx+Q2NH/n+J0Ddm7nY0DJhFwTndUqrtB2eZf4Rtdz4FObmsglxmUdFkQpw++nTTfTLzXOp+2/VA5iVQ==
+
 watch-size@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/watch-size/-/watch-size-2.0.0.tgz#096ee28d0365bd7ea03d9c8bf1f2f50a73be1474"
