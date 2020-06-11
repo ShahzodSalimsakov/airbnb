@@ -141,6 +141,8 @@
           Continue
         </v-btn>
         <v-btn text @click="e1 = 9">Cancel</v-btn>
+      </v-stepper-content>
+
       <v-stepper-content step="11">
         <WizardLocalLaws />
         <v-btn color="primary" @click="e1 = 11">
