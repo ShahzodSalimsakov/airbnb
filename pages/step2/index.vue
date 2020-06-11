@@ -54,7 +54,7 @@
               Continue
             </v-btn>
 
-            <v-btn text>Cancel</v-btn>
+            <v-btn text>Назад</v-btn>
           </v-stepper-content>
           <v-stepper-content step="2">
             <WizardDescription />
@@ -63,7 +63,7 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 1">Cancel</v-btn>
+            <v-btn text @click="e1 = 1">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="3">
@@ -73,7 +73,7 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 2">Cancel</v-btn>
+            <v-btn text @click="e1 = 2">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="4">
@@ -83,7 +83,7 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 3">Cancel</v-btn>
+            <v-btn text @click="e1 = 3">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="5">
@@ -93,7 +93,7 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 4">Cancel</v-btn>
+            <v-btn text @click="e1 = 4">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="6">
@@ -103,13 +103,13 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 5">Cancel</v-btn>
+            <v-btn text @click="e1 = 5">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="7">
             <WizardQuestHouseRules />
 
-            <v-btn text @click="e1 = 6">Cancel</v-btn>
+            <v-btn text @click="e1 = 6">Назад</v-btn>
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
@@ -140,7 +140,7 @@ export default {
       e1: 1
     }
   },
-  layouts: 'wizard'
+  layout: 'wizard'
 }
 </script>
 

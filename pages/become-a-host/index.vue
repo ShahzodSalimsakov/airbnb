@@ -116,7 +116,7 @@ export default {
       e1: 1
     }
   },
-  layouts: 'wizard'
+  layout: 'wizard'
 }
 </script>
 
