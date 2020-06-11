@@ -115,7 +115,7 @@
         <v-btn color="primary" @click="e1 = 9">
           Continue
         </v-btn>
-        <v-btn text @click="e1 = 7">Cancel</v-btn>
+        <v-btn text @click="e1 = 7">Назад</v-btn>
       </v-stepper-content>
 
       <v-stepper-content step="9">
