@@ -36,6 +36,17 @@
       </v-stepper-step>
 
       <v-divider></v-divider>
+
+      <v-stepper-step :complete="e1 > 7" step="7">
+        Calendar2
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+      <v-stepper-step :complete="e1 > 11" step="11">
+        Local laws
+      </v-stepper-step>
+
+      <v-divider></v-divider>
     </v-stepper-header>
 
     <v-stepper-items>
@@ -77,21 +88,44 @@
         </v-btn>
         <v-btn text @click="e1 = 4">Cancel</v-btn>
       </v-stepper-content>
+
+      <v-stepper-content step="7">
+        <WizardCalendar2 />
+        <v-btn color="primary" @click="e1 = 7">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 6">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="11">
+        <WizardLocalLaws />
+        <v-btn color="primary" @click="e1 = 11">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 10">Cancel</v-btn>
+      </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
 </template>
 
 <script>
-
 import WizardReviewHowGuestsBook from '~/components/step-3/WizardReviewHowGuestsBook'
 import WizardCalendar from '~/components/step-3/WizardCalendar'
 import WizardAnswerTwoQuestions from '~/components/step-3/WizardAnswerTwoQuestions'
 import WizardAvailabilitySettings from '~/components/step-3/WizardAvailabilitySettings'
+import WizardCalendar2 from '~/components/step-3/WizardCalendar2'
+import WizardLocalLaws from '~/components/step-3/WizardLocalLaws'
 export default {
-  components: { WizardAnswerTwoQuestions, WizardCalendar, WizardReviewHowGuestsBook,
-    WizardAvailabilitySettings },
+  components: {
+    WizardAnswerTwoQuestions,
+    WizardCalendar,
+    WizardReviewHowGuestsBook,
+    WizardAvailabilitySettings,
+    WizardCalendar2,
+    WizardLocalLaws
+  },
   data() {
-    return { e1: 1 }
+    return { e1: 11 }
   },
   layouts: 'wizard'
 }
