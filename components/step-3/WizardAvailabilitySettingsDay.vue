@@ -1,0 +1,75 @@
+<template>
+  <v-row justify="center">
+    <v-col cols="12" sm="10" md="8" lg="6">
+      <v-card>
+        <v-card-text>
+          <div class="headline">
+            Насколько заранее гости должны бронировать ваше жилье?
+          </div>
+        </v-card-text>
+        <v-card-text>
+          <v-select
+            :items="arrReserveHouse"
+            placeholder="Выберите 1 вариант"
+          ></v-select>
+          <div class="subtitle-2">
+            <div style="color: dodgerblue;">Совет.</div>
+            Если бронирование планируется не менее чем за 2 дня до прибытия, то
+            вы сможете лучше подготовиться к прибытию гостя, но можете упустить
+            бронирования, сделанные в последний момент.
+          </div>
+        </v-card-text>
+
+        <v-card-text>
+          <hr />
+        </v-card-text>
+        <v-card-text>
+          <h2>Когда гости могут прибыть в жилье?</h2>
+        </v-card-text>
+        <v-card-text>
+          <v-row>
+            <v-col md="6">
+              Прибытие с
+              <v-select
+                :items="arrHour"
+                placeholder="Выберите время"
+              ></v-select>
+            </v-col>
+            <v-col md="6">
+              Прибытие до
+              <v-select
+                :items="arrHour"
+                placeholder="Выберите время"
+              ></v-select>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      arrReserveHouse: ['В тот же день', '1 день', '2 дня', '3 дня', '7 дней'],
+      arrHour: [
+        'Гибкое',
+        '8:00',
+        '9:00',
+        '10:00',
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+        '18:00'
+      ]
+    }
+  }
+}
+</script>
+
+<style scoped></style>
