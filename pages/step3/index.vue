@@ -54,7 +54,7 @@
       </v-stepper-step>
 
       <v-divider></v-divider>
-      
+
       <v-stepper-step :complete="e1 > 11" step="11">
         Local laws
       </v-stepper-step>
@@ -64,6 +64,7 @@
 
     <v-stepper-items>
       <v-stepper-content step="1">
+        <WizardReviewHowGuestsBook />
         <v-btn color="primary" @click="e1 = 2">
           Далее
         </v-btn>
@@ -109,7 +110,7 @@
         </v-btn>
         <v-btn text @click="e1 = 5">Cancel</v-btn>
       </v-stepper-content>
-      
+
       <v-stepper-content step="7">
         <WizardCalendar2 />
         <v-btn color="primary" @click="e1 = 7">
@@ -117,7 +118,7 @@
         </v-btn>
         <v-btn text @click="e1 = 6">Cancel</v-btn>
       </v-stepper-content>
-      
+
       <v-stepper-content step="8">
         <WizardPrice />
         <v-btn color="primary" @click="e1 = 9">
@@ -171,7 +172,7 @@ export default {
     WizardPrice,
     WizardPromotion,
     WizardCalendar2,
-    WizardAdditionalPricing
+    WizardAdditionalPricing,
     WizardReviewHowGuestsBook,
     WizardLocalLaws,
     WizardHowLongCanGuestsStay
