@@ -8151,6 +8151,11 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
 
+vue-currency-input@^1.18.4:
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/vue-currency-input/-/vue-currency-input-1.18.4.tgz#abbd070e2b44150e0efec861130d02b9bf5d04fb"
+  integrity sha512-TWJNZfhJ8kvN9ck0Aw/smL2xQDm/WDQgzx5Z5+XrhSNZtOUbG6XQS8Kth8vw1b+UvegnK4CSC0YugQX0Xh2DrA==
+
 vue-eslint-parser@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.1.0.tgz#9cdbcc823e656b087507a1911732b867ac101e83"
@@ -8231,6 +8236,11 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue-the-mask@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/vue-the-mask/-/vue-the-mask-0.11.1.tgz#91ee01008354ae57bccc79bb61b65f32d971d9d5"
+  integrity sha512-UquSfnSWejD0zAfcD+3jJ1chUAkOAyoxya9Lxh9acCRtrlmGcAIvd0cQYraWqKenbuZJUdum+S174atv2AuEHQ==
+
 vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
@@ -8253,6 +8263,11 @@ vuex@^3.1.3:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.4.0.tgz#20cc086062d750769fce1febb34e7fceeaebde45"
   integrity sha512-ajtqwEW/QhnrBZQsZxCLHThZZaa+Db45c92Asf46ZDXu6uHXgbfVuBaJ4gzD2r4UX0oMJHstFwd2r2HM4l8umg==
+
+vuexplosive-modal@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vuexplosive-modal/-/vuexplosive-modal-1.2.0.tgz#f6c600ab0ea79319bd5b5912f8b113092f1a3a72"
+  integrity sha512-yNIEX36Hx+Q2NH/n+J0Ddm7nY0DJhFwTndUqrtB2eZf4Rtdz4FObmsglxmUdFkQpw++nTTfTLzXOp+2/VA5iVQ==
 
 watch-size@^2.0.0:
   version "2.0.0"

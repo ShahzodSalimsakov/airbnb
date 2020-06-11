@@ -26,13 +26,31 @@
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 5" step="5">
-        5
+        Насколько заранее гости могут бронировать?
       </v-stepper-step>
 
       <v-divider></v-divider>
 
       <v-stepper-step :complete="e1 > 6" step="6">
         6
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
+      <v-stepper-step :complete="e1 > 7" step="7">
+        7
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
+      <v-stepper-step :complete="e1 > 8" step="8">
+        Назначьте цену за жилье
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
+      <v-stepper-step :complete="e1 > 9" step="9">
+        Кое-что особенное для первых гостей
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -63,7 +81,7 @@
       </v-stepper-content>
 
       <v-stepper-content step="4">
-        <WizardAvailabilitySettings />
+        <WizardAvailabilitySettingsDay />
         <v-btn color="primary" @click="e1 = 5">
           Continue
         </v-btn>
@@ -71,10 +89,49 @@
       </v-stepper-content>
 
       <v-stepper-content step="5">
+        <WizardAvailabilitySettingsMonth />
         <v-btn color="primary" @click="e1 = 6">
           Continue
         </v-btn>
         <v-btn text @click="e1 = 4">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="6">
+        <v-btn color="primary" @click="e1 = 7">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 5">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="7">
+        <v-btn color="primary" @click="e1 = 8">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 6">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="8">
+        <WizardPrice />
+        <v-btn color="primary" @click="e1 = 9">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 7">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="9">
+        <WizardPromotion />
+        <v-btn color="primary" @click="e1 = 10">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 8">Cancel</v-btn>
+      </v-stepper-content>
+
+      <v-stepper-content step="10">
+        <WizardAdditionalPricing />
+        <v-btn color="primary" @click="e1 = 11">
+          Continue
+        </v-btn>
+        <v-btn text @click="e1 = 9">Cancel</v-btn>
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
@@ -82,12 +139,20 @@
 <script>
 import WizardCalendar from '~/components/step-3/WizardCalendar'
 import WizardAnswerTwoQuestions from '~/components/step-3/WizardAnswerTwoQuestions'
-import WizardAvailabilitySettings from '~/components/step-3/WizardAvailabilitySettings'
+import WizardAvailabilitySettingsDay from '~/components/step-3/WizardAvailabilitySettingsDay'
+import WizardAvailabilitySettingsMonth from '~/components/step-3/WizardAvailabilitySettingsMonth'
+import WizardPrice from '~/components/step-3/WizardPrice'
+import WizardPromotion from '~/components/step-3/WizardPromotion'
+import WizardAdditionalPricing from '~/components/step-3/WizardAdditionalPricing'
 export default {
   components: {
     WizardAnswerTwoQuestions,
     WizardCalendar,
-    WizardAvailabilitySettings
+    WizardAvailabilitySettingsDay,
+    WizardAvailabilitySettingsMonth,
+    WizardPrice,
+    WizardPromotion,
+    WizardAdditionalPricing
   },
   data() {
     return { e1: 1 }

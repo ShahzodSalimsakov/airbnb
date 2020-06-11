@@ -17,6 +17,8 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@riophae/vue-treeselect": "^0.4.0",
     "nuxt": "^2.0.0",
+    "vue-currency-input": "^1.18.4",
+    "vue-the-mask": "^0.11.1",
     "vuexplosive-modal": "^1.2.0"
   },
   "devDependencies": {
