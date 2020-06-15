@@ -9,14 +9,19 @@
             другие уведомления. У вас должна быть возможность принимать SMS или
             звонки на этот номер.
           </div>
-          <v-select v-model="selectedCode" :items="arrCountryCode" />
+          <v-select
+            :value="selectedCode"
+            :items="arrCountryCode"
+            @change="(val) => changeData('selectedCode', val)"
+          />
           <div>
             <span v-if="selectedCode" class="d-inline">{{
               getPhoneCode.code
             }}</span>
             <v-text-field
-              v-model="phoneNumber"
+              :value="phoneNumber"
               class="d-inline-block"
+              @change="(val) => changeData('phoneNumber', val)"
             ></v-text-field>
             <v-btn>Отправить</v-btn>
           </div>
@@ -27,11 +32,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'WizardVerifyPhone',
   data: () => ({
-    selectedCode: '',
-    phoneNumber: '',
     arrCountryCode: [
       {
         value: 'UZ',
@@ -51,10 +55,22 @@ export default {
     ]
   }),
   computed: {
+    ...mapGetters({
+      selectedCode: 'newLet/selectedCode',
+      phoneNumber: 'newLet/phoneNumber'
+    }),
     getPhoneCode() {
       return [...this.arrCountryCode].filter(
         (item) => item.value === this.selectedCode
       )[0]
+    }
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

@@ -67,10 +67,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  v-model="fromTwoYears"
+                  :value="fromTwoYears"
                   inset
                   color="success"
-                  value="success"
+                  @change="(val) => changeData('fromTwoYears', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -136,10 +136,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  v-model="beforeTwoYears"
+                  :value="beforeTwoYears"
                   inset
                   color="success"
-                  value="success"
+                  @change="(val) => changeData('beforeTwoYears', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -154,10 +154,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  v-model="possibleAnimals"
+                  :value="possibleAnimals"
                   inset
                   color="success"
-                  value="success"
+                  @change="(val) => changeData('possibleAnimals', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -172,10 +172,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  v-model="possibleSmoking"
+                  :value="possibleSmoking"
                   inset
                   color="success"
-                  value="success"
+                  @change="(val) => changeData('possibleSmoking', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -190,10 +190,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  v-model="possibleParty"
+                  :value="possibleParty"
                   inset
                   color="success"
-                  value="success"
+                  @change="(val) => changeData('possibleParty', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -310,21 +310,34 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       row: null,
-      beforeTwoYears: false,
       beforeTwoYearsDialog: false,
-      fromTwoYears: false,
       fromTwoYearsDialog: false,
-      possibleAnimals: false,
-      possibleSmoking: false,
-      possibleParty: false,
       rulesTextarea: [
         ((value) => !!value || 'Required.',
         (value) => (value || '').length <= 150 || 'Max 150 characters')
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      fromTwoYears: 'newLet/fromTwoYears',
+      beforeTwoYears: 'newLet/beforeTwoYears',
+      possibleAnimals: 'newLet/possibleAnimals',
+      possibleSmoking: 'newLet/possibleSmoking',
+      possibleParty: 'newLet/possibleParty'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

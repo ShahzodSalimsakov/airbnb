@@ -5,37 +5,43 @@
         <v-card-text>
           <v-select
             ref="place"
-            v-model="place"
+            :value="letType"
             :items="placeItems"
             label="Для начала сузим выбор"
             placeholder="Выберите 1 вариант"
+            @change="(val) => changeData('letType', val)"
           ></v-select>
         </v-card-text>
-        <div v-if="place">
+        <div v-if="letType">
           <v-card-text>
             <v-select
-              v-model="typeOfHousing"
+              :value="typeOfHousing"
               :items="type_of_housing"
               label="Теперь выберите тип жилья"
               placeholder="Выберите тип жилья"
+              @change="(val) => changeData('typeOfHousing', val)"
             ></v-select>
             <p v-if="typeOfHousing">{{ descriptionHouse.description }}</p>
           </v-card-text>
           <div v-if="typeOfHousing">
             <v-card-text>
               <h3>Что будет в распоряжении гостей?</h3>
-              <v-radio-group v-model="disposalOfGuests" :mandatory="false">
-                <v-radio label="Жилье целиком" value="radio-1"></v-radio>
+              <v-radio-group
+                :value="disposalOfGuests"
+                :mandatory="false"
+                @change="(val) => changeData('disposalOfGuests', val)"
+              >
+                <v-radio label="Жилье целиком" value="1"></v-radio>
                 <div>
                   Всё жилье целиком в распоряжении гостей: обычно это спальня,
                   ванная и кухня.
                 </div>
-                <v-radio label="Отдельная комната" value="radio-2"></v-radio>
+                <v-radio label="Отдельная комната" value="2"></v-radio>
                 <div>
                   Гостям предоставляется отдельная спальня, остальные помещения
                   используются совместно.
                 </div>
-                <v-radio label="Место в комнате" value="radio-3"></v-radio>
+                <v-radio label="Место в комнате" value="3"></v-radio>
                 <div>
                   Гости спят в общей спальне или помещении с другими людьми.
                 </div>
@@ -43,27 +49,35 @@
             </v-card-text>
             <v-card-text>
               <h3>Это помещение предназначено только для гостей?</h3>
-              <v-radio-group v-model="forGuest" :mandatory="false">
+              <v-radio-group
+                :value="forGuest"
+                :mandatory="false"
+                @change="(val) => changeData('forGuest', val)"
+              >
                 <v-radio
                   label="Да, им пользуются в основном только гости"
-                  value="radio-4"
+                  value="4"
                 ></v-radio>
                 <v-radio
                   label="Нет, я храню здесь личные вещи"
-                  value="radio-5"
+                  value="5"
                 ></v-radio>
               </v-radio-group>
             </v-card-text>
             <v-card-text>
               <h3>Вы размещаете объявление на Airbnb от лица компании?</h3>
-              <v-radio-group v-model="onBehalfOfTheCompany" :mandatory="false">
+              <v-radio-group
+                :value="onBehalfOfTheCompany"
+                :mandatory="false"
+                @change="(val) => changeData('onBehalfOfTheCompany', val)"
+              >
                 <v-radio
                   label="Да, я управляю компанией или работаю в ней"
-                  value="radio-6"
+                  value="6"
                 ></v-radio>
                 <v-radio
                   label="Нет, это ко мне не относится"
-                  value="radio-7"
+                  value="7"
                 ></v-radio>
                 <div>
                   Это даст вам доступ к подходящим функциям Airbnb — гости этого
@@ -80,13 +94,9 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data: () => ({
-    disposalOfGuests: '',
-    forGuest: '',
-    onBehalfOfTheCompany: '',
-    place: '',
-    typeOfHousing: '',
     placeItems: [
       {
         value: 1,
@@ -206,6 +216,13 @@ export default {
     ]
   }),
   computed: {
+    ...mapGetters({
+      letType: 'newLet/letType',
+      typeOfHousing: 'newLet/typeOfHousing',
+      disposalOfGuests: 'newLet/disposalOfGuests',
+      forGuest: 'newLet/forGuest',
+      onBehalfOfTheCompany: 'newLet/onBehalfOfTheCompany'
+    }),
     typeHouses() {
       return [...this.type_of_housing].filter((item) =>
         item.type.includes(this.place)
@@ -217,7 +234,14 @@ export default {
       )[0]
     }
   },
-  methods: {}
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
+    }
+  }
 }
 </script>
 

@@ -30,10 +30,11 @@
               <div>
                 <v-col>
                   <v-select
-                    v-model="bedsCount"
+                    :value="bedsCount"
                     :items="bedItems"
                     label="How many bedrooms can guests use?"
                     dense
+                    @change="(val) => changeData('bedsCount', val)"
                   ></v-select>
                 </v-col>
               </div>
@@ -47,32 +48,39 @@
                   <v-row align="center">
                     <v-row justify="space-around"> </v-row>
                     <v-expansion-panels popout>
-                      <v-expansion-panel v-for="i in bedsCount" :key="i">
+                      <v-expansion-panel
+                        v-for="(item, i) in bedsPerRoom"
+                        :key="i"
+                      >
                         <v-expansion-panel-header
-                          >Bedroom {{ i }}</v-expansion-panel-header
+                          >Bedroom {{ i + 1 }}</v-expansion-panel-header
                         >
                         <v-expansion-panel-content>
                           <v-row>
                             <v-col>
                               <v-list>
                                 <v-list-item
-                                  v-for="item in bedTypes"
-                                  :key="item"
+                                  v-for="(type, typeI) in bedTypes"
+                                  :key="typeI"
                                 >
                                   <v-list-item-content>
                                     <v-list-item-title>{{
-                                      item
+                                      type.label
                                     }}</v-list-item-title>
                                   </v-list-item-content>
 
                                   <v-list-item-icon>
                                     <v-text-field
-                                      :value="0"
+                                      :value="item[type.key]"
                                       class="mt-0 pt-0"
                                       hide-details
                                       single-line
                                       type="number"
                                       style="width: 60px;"
+                                      @change="
+                                        (val) =>
+                                          changeBedPerRoom(i, type.key, val)
+                                      "
                                     ></v-text-field>
                                   </v-list-item-icon>
                                 </v-list-item>
@@ -94,19 +102,66 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     items: [],
-    bedsCount: 0,
     bedItems: [],
-    bedTypes: ['Double', 'Single', 'Floor matress', 'Sofa', 'Sofa bed']
+    bedTypes: [
+      { key: 'double', label: 'Double' },
+      { key: 'single', label: 'Single' },
+      { key: 'floorMatress', label: 'Floor matress' },
+      { key: 'sofa', label: 'Sofa' },
+      { key: 'sofaBed', label: 'Sofa bed' }
+    ]
   }),
+  computed: {
+    ...mapGetters({
+      bedsCount: 'newLet/bedsCount',
+      bedsPerRoom: 'newLet/bedsPerRoom'
+    })
+  },
   mounted() {
     for (let i = 1; i <= 50; i++) {
       this.bedItems.push({
         text: `${i} bedrooms`,
         value: i
       })
+    }
+  },
+  methods: {
+    async changeData(key, val) {
+      await this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
+
+      if (key === 'bedsCount') {
+        const bedsPerRoom = []
+        for (let i = 1; i <= val; i++) {
+          bedsPerRoom.push({
+            double: 0,
+            single: 0,
+            floorMatress: 0,
+            sofa: 0,
+            sofaBed: 0
+          })
+        }
+
+        await this.$store.dispatch('newLet/setState', {
+          key: 'bedsPerRoom',
+          val: bedsPerRoom
+        })
+      }
+    },
+    changeBedPerRoom(i, key, val) {
+      // const beds = this.bedsPerRoom.map((item) => item)
+      // beds[i][key] = val
+      // console.log(beds)
+      // this.$store.dispatch('newLet/setState', {
+      //   key: 'bedsPerRoom',
+      //   val: bedsPerRoom
+      // })
     }
   }
 }

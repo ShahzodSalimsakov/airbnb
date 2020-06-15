@@ -15,9 +15,9 @@
           </div>
           <v-text-field
             v-model="week"
+            v-mask="mask"
             suffix="% скидки"
             value="0"
-            v-mask="mask"
           ></v-text-field>
           <v-btn text @click="week = 21">Совет: 21%</v-btn>
           <div class="caption">
@@ -31,9 +31,9 @@
           </div>
           <v-text-field
             v-model="month"
+            v-mask="mask"
             suffix="% скидки"
             value="0"
-            v-mask="mask"
           ></v-text-field>
           <v-btn text @click="month = 49">Совет: 49%</v-btn>
           <div class="caption">
