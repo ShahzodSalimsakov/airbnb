@@ -20,8 +20,9 @@
           <treeselect
             :options="options"
             placeholder="Страна / регион"
-            v-model="value"
+            :value="country"
             color="black"
+            @change="(val) => changeData('country', val)"
           />
         </v-card-text>
         <v-card-text>
@@ -54,14 +55,13 @@
 import Treeselect from '@riophae/vue-treeselect'
 // import the styles
 import '@riophae/vue-treeselect/dist/vue-treeselect.css'
-
+import { mapGetters } from 'vuex'
 export default {
   // register the component
   components: { Treeselect },
   data() {
     return {
       // define the default value
-      value: null,
       // define options
       options: [
         {
@@ -87,6 +87,19 @@ export default {
           label: 'c'
         }
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      country: 'newLet/country'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'index',
   render(createElement, context) {
     return createElement(
       'span',

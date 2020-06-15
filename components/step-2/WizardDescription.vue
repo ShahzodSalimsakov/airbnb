@@ -12,7 +12,7 @@
 
         <v-card-text>
           <v-textarea outlined auto-grow rows="4" row-height="30"></v-textarea>
-          <div class="my-2" v-if="moreButton === false">
+          <div v-if="moreButton === false" class="my-2">
             <v-btn text large color="primary" @click="moreButton = true">
               Добавить подробности (по желанию)
             </v-btn>
@@ -81,7 +81,7 @@
           </v-card-text>
 
           <v-card-text>
-            <div class="my-2" v-if="moreButton === true">
+            <div v-if="moreButton === true" class="my-2">
               <v-btn text large color="primary" @click="moreButton = false">
                 Меньше
               </v-btn>

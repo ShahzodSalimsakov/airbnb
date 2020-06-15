@@ -14,10 +14,11 @@
         <v-card-text>
           <v-col cols="12">
             <v-combobox
-              v-model="select"
+              :value="selectSpaces"
               :items="items"
               multiple
               chips
+              @change="(val) => changeData('selectSpaces', val)"
             ></v-combobox>
           </v-col>
         </v-card-text>
@@ -27,10 +28,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      select: ['Кухня', 'Парковка'],
       items: [
         'Кухня',
         'Стиральная машина',
@@ -40,6 +41,19 @@ export default {
         'Бассейн',
         'Джакузи'
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      selectSpaces: 'newLet/selectSpaces'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

@@ -8,11 +8,11 @@
 
         <v-card-text>
           <v-text-field
+            v-mask="mask"
             label="Цена"
             suffix="сум"
             outlined
             return-masked-value
-            v-mask="mask"
           >
           </v-text-field>
         </v-card-text>

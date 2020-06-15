@@ -12,10 +12,11 @@
         <v-card-text>
           <v-col cols="12">
             <v-combobox
-              v-model="select"
+              :value="select"
               :items="items"
               multiple
               chips
+              @change="(val) => changeData('select', val)"
             ></v-combobox>
           </v-col>
         </v-card-text>
@@ -24,10 +25,11 @@
           <v-col cols="12">
             <div class="subtitle-1">Оборудование для безопасности</div>
             <v-combobox
-              v-model="selectSafety"
+              :value="selectSafety"
               :items="itemsSafety"
               multiple
               chips
+              @change="(val) => changeData('selectSafety', val)"
             ></v-combobox>
           </v-col>
         </v-card-text>
@@ -37,18 +39,31 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      select: ['Wifi', 'Телевизор'],
       items: ['Телевизор', 'Отопление', 'Кондиционер', 'Wifi', 'Утюг'],
-      selectSafety: ['Видео наблючение', 'Дверь спальни запирается'],
       itemsSafety: [
         'Аптечка первой помощи',
         'Дверь спальни запирается',
         'Видео наблючение',
         'Решётки на окнах'
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      select: 'newLet/select',
+      selectSafety: 'newLet/selectSafety'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }
