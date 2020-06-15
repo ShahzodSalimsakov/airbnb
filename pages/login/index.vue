@@ -1,10 +1,12 @@
 <template>
-  <Nuxt />
+  <div>Login Page</div>
 </template>
 
 <script>
 export default {
-  components: {},
+  name: 'index',
   layout: 'default'
 }
 </script>
+
+<style scoped></style>

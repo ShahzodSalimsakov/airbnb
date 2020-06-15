@@ -1,10 +1,14 @@
 <template>
-  <Nuxt />
+  <div>
+    Help page
+  </div>
 </template>
 
 <script>
 export default {
-  components: {},
+  name: 'index',
   layout: 'default'
 }
 </script>
+
+<style scoped></style>
