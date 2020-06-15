@@ -9,8 +9,10 @@
         </v-card-text>
         <v-card-text>
           <v-select
+            :value="ReserveHouse"
             :items="arrReserveHouse"
             placeholder="Выберите 1 вариант"
+            @change="(val) => changeData('ReserveHouse', val)"
           ></v-select>
           <div class="subtitle-2">
             <div style="color: dodgerblue;">Совет.</div>
@@ -31,15 +33,19 @@
             <v-col md="6">
               Прибытие с
               <v-select
+                :value="reserveHouseHourFrom"
                 :items="arrHour"
                 placeholder="Выберите время"
+                @change="(val) => changeData('reserveHouseHourFrom', val)"
               ></v-select>
             </v-col>
             <v-col md="6">
               Прибытие до
               <v-select
+                :value="reserveHouseHourUntil"
                 :items="arrHour"
                 placeholder="Выберите время"
+                @change="(val) => changeData('reserveHouseHourUntil', val)"
               ></v-select>
             </v-col>
           </v-row>
@@ -50,6 +56,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -67,6 +74,21 @@ export default {
         '17:00',
         '18:00'
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      ReserveHouse: 'newLet/ReserveHouse',
+      reserveHouseHourFrom: 'newLet/reserveHouseHourFrom',
+      reserveHouseHourUntil: 'newLet/reserveHouseHourUntil'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

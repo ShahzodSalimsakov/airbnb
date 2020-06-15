@@ -155,6 +155,7 @@ export default {
       }
     },
     changeBedPerRoom(i, key, val) {
+      // TODO: complete logic of this function
       // const beds = this.bedsPerRoom.map((item) => item)
       // beds[i][key] = val
       // console.log(beds)

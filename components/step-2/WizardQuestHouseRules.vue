@@ -224,82 +224,91 @@
           <v-card-text>
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="climbStairs"
                 dark
                 hide-details
                 label="Необходимо подниматься по лестнице"
+                @change="(val) => changeData('climbStairs', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="noisy"
                 dark
                 hide-details
                 label="Возможно, будет шумно"
+                @change="(val) => changeData('noisy', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="pets"
                 dark
                 hide-details
                 label="В доме живут питомцы"
+                @change="(val) => changeData('pets', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="parking"
                 dark
                 hide-details
                 label="Своей парковки нет"
+                @change="(val) => changeData('parking', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="commonArea"
                 dark
                 hide-details
                 label="Некоторые зоны являются общими"
+                @change="(val) => changeData('commonArea', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="convenienceLimitations"
                 dark
                 hide-details
                 label="Ограничения удобства"
+                @change="(val) => changeData('convenienceLimitations', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="cctv"
                 dark
                 hide-details
                 label="Устройства наблюдения или записи на территории жилья"
+                @change="(val) => changeData('cctv', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="gun"
                 dark
                 hide-details
                 label="Оружие на территории жилья"
+                @change="(val) => changeData('gun', val)"
               ></v-checkbox>
             </v-card-text>
 
             <v-card-text>
               <v-checkbox
-                v-model="caseSensitive"
+                :value="dangerPets"
                 dark
                 hide-details
                 label="Опасные животные на территории жилья"
+                @change="(val) => changeData('dangerPets', val)"
               ></v-checkbox>
             </v-card-text>
           </v-card-text>
@@ -329,7 +338,16 @@ export default {
       beforeTwoYears: 'newLet/beforeTwoYears',
       possibleAnimals: 'newLet/possibleAnimals',
       possibleSmoking: 'newLet/possibleSmoking',
-      possibleParty: 'newLet/possibleParty'
+      possibleParty: 'newLet/possibleParty',
+      climbStairs: 'newLet/climbStairs',
+      noisy: 'newLet/noisy',
+      pets: 'newLet/pets',
+      parking: 'newLet/parking',
+      commonArea: 'newLet/commonArea',
+      convenienceLimitations: 'newLet/convenienceLimitations',
+      cctv: 'newLet/cctv',
+      gun: 'newLet/gun',
+      dangerPets: 'newLet/dangerPets'
     })
   },
   methods: {

@@ -7,16 +7,18 @@
         </v-card-text>
         <v-card-text>
           <v-select
-            v-model="rentedHouse"
+            :value="rentedHouse"
             :items="arrRentedHouse"
             label="Вы когда-нибудь уже сдавали жилье?"
             placeholder="Выберите 1 вариант"
+            @change="(val) => changeData('rentedHouse', val)"
           ></v-select>
           <v-select
-            v-model="receiveGuests"
+            :value="receiveGuests"
             :items="arrReceiveGuests"
             label="Как часто вы хотите принимать гостей?"
             placeholder="Выберите 1 вариант"
+            @change="(val) => changeData('receiveGuests', val)"
           ></v-select>
         </v-card-text>
       </v-card>
@@ -25,14 +27,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'WizardAnswerTwoQuestions',
   data() {
     return {
-      rentedHouse: '',
-      receiveGuests: '',
       arrRentedHouse: ['Я делаю это впервые', 'Опыт есть'],
       arrReceiveGuests: ['Часть времени', 'Как можно чаще']
+    }
+  },
+  computed: {
+    ...mapGetters({
+      rentedHouse: 'newLet/rentedHouse',
+      receiveGuests: 'newLet/receiveGuests'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

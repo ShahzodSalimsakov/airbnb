@@ -14,10 +14,10 @@
             Скидка за неделю
           </div>
           <v-text-field
-            v-model="week"
             v-mask="mask"
+            :value="discontWeek"
             suffix="% скидки"
-            value="0"
+            @change="(val) => changeData('discontWeek', val)"
           ></v-text-field>
           <v-btn text @click="week = 21">Совет: 21%</v-btn>
           <div class="caption">
@@ -30,10 +30,10 @@
             Скидка за месяц
           </div>
           <v-text-field
-            v-model="month"
             v-mask="mask"
+            :value="discontMonth"
             suffix="% скидки"
-            value="0"
+            @change="(val) => changeData('discontMonth', val)"
           ></v-text-field>
           <v-btn text @click="month = 49">Совет: 49%</v-btn>
           <div class="caption">
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { mask } from 'vue-the-mask'
 export default {
   directives: {
@@ -54,9 +55,22 @@ export default {
   },
   data() {
     return {
-      week: 0,
       month: 0,
       mask: '##'
+    }
+  },
+  computed: {
+    ...mapGetters({
+      discontWeek: 'newLet/discontWeek',
+      discontMonth: 'newLet/discontMonth'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

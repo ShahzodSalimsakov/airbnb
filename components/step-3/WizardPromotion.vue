@@ -6,7 +6,11 @@
           <div class="headline">Кое-что особенное для первых гостей</div>
         </v-card-text>
         <v-card-text>
-          <v-radio-group v-model="radios" :mandatory="false">
+          <v-radio-group
+            :value="specOffer"
+            :mandatory="false"
+            @change="(val) => changeData('specOffer', val)"
+          >
             <v-row>
               <v-col md="10" class="subtitle-2">
                 Предложите первым гостям скидку 20% РЕКОМЕНДУЕМ Первые гости
@@ -15,7 +19,7 @@
                 необходимое число отзывов (3) для присвоения рейтинга.
               </v-col>
               <v-col md="2">
-                <v-radio label="" value="radio-1"></v-radio>
+                <v-radio label="" value="true"></v-radio>
               </v-col>
 
               <v-col md="10" class="subtitle-2">
@@ -23,7 +27,7 @@
                 добавить предложение нельзя.
               </v-col>
               <v-col md="2">
-                <v-radio label="" value="radio-2"></v-radio>
+                <v-radio label="" value="false"></v-radio>
               </v-col>
             </v-row>
           </v-radio-group>
@@ -34,10 +38,24 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       radios: 'radio-1'
+    }
+  },
+  computed: {
+    ...mapGetters({
+      specOffer: 'newLet/specOffer'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

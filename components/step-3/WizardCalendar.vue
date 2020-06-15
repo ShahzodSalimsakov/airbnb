@@ -12,8 +12,9 @@
             оштрафуем вас и заблокируем соответствующие даты.
           </div>
           <v-checkbox
-            v-model="upToDate"
+            :value="upToDate"
             label="Ясно! Буду регулярно обновлять календарь."
+            @change="(val) => changeData('upToDate', val)"
           ></v-checkbox>
         </v-card-text>
       </v-card>
@@ -22,11 +23,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'WizardCalendar',
-  data() {
-    return {
-      upToDate: false
+  computed: {
+    ...mapGetters({
+      upToDate: 'newLet/upToDate'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }
