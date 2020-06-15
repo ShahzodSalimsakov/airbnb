@@ -9,11 +9,12 @@
         </v-card-text>
         <v-card-text>
           <v-select
-            v-model="reserveHouse"
+            :value="reserveHouseMonth"
             :items="arrReserveHouse"
             placeholder="Выберите 1 вариант"
+            @change="(val) => changeData('reserveHouseMonth', val)"
           ></v-select>
-          <div v-if="reserveHouse === 'Даты недоступны по умолчанию'">
+          <div v-if="reserveHouseMonth === 'Даты недоступны по умолчанию'">
             Календарь будет заблокирован по умолчанию. Чтобы принимать гостей,
             вам придется разблокировать даты вручную.
           </div>
@@ -31,10 +32,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      reserveHouse: '',
       arrReserveHouse: [
         'В любое время',
         'За 3 месяца',
@@ -43,6 +44,19 @@ export default {
         '1 год',
         'Даты недоступны по умолчанию'
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      reserveHouseMonth: 'newLet/reserveHouseMonth'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

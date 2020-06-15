@@ -8,11 +8,13 @@
 
         <v-card-text>
           <v-text-field
+            :value="price"
             v-mask="mask"
             label="Цена"
             suffix="сум"
             outlined
             return-masked-value
+            @change="(val) => changeData('price', val)"
           >
           </v-text-field>
         </v-card-text>
@@ -22,6 +24,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { mask } from 'vue-the-mask'
 export default {
   directives: {
@@ -30,6 +33,19 @@ export default {
   data() {
     return {
       mask: '###.###.###.###'
+    }
+  },
+  computed: {
+    ...mapGetters({
+      price: 'newLet/price'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }
