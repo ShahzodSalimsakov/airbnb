@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar light>
+    <v-toolbar light flat>
       <v-toolbar-items>
         <v-btn text to="/">Home</v-btn>
       </v-toolbar-items>
@@ -9,10 +9,12 @@
         <v-btn text>
           <v-select
             :items="items"
-            :menu-props="{ top: true, offsetY: true }"
+            :value="lang"
             prepend-icon="mdi-web"
+            solo
             hide-details
             single-line
+            class="w-56"
           ></v-select>
         </v-btn>
         <v-btn rounded text to="help">Помощь</v-btn>
@@ -118,9 +120,9 @@
 
 <script>
 export default {
-  name: 'header',
-  lang: '',
+  name: 'Header',
   data: () => ({
+    lang: 'ru',
     items: ['Русский', 'Английский'],
     reg: false,
     dialog: false
