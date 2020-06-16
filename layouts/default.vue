@@ -3,7 +3,7 @@
     <v-content>
       <Header />
       <v-container>
-        <Nuxt />
+        <nuxt />
       </v-container>
       <Footer />
     </v-content>

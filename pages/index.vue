@@ -1,10 +1,13 @@
 <template>
-  <Nuxt />
+  <div>
+    <AlignTabsWithToolbarTitle />
+  </div>
 </template>
 
 <script>
+import AlignTabsWithToolbarTitle from '~/components/tabs/AlignTabsWithToolbarTitle'
 export default {
-  components: {},
+  components: { AlignTabsWithToolbarTitle },
   layout: 'default'
 }
 </script>
