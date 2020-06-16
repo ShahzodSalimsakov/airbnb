@@ -1,67 +1,75 @@
 <template>
   <div>
     <v-footer color="white" padless absolute>
-      <v-card flat tile width="100%" class="white text-center">
+      <v-card flat tile width="100%" class="white text-center container">
         <v-card-text>
           <v-row>
-            <v-col md="3">
+            <v-col md="3" class="leading-9">
               <ul class="text-left">
+                <div class="text-black text-left font-semibold uppercase">
+                  О нас
+                </div>
                 <li
                   v-for="element in menuCol1"
                   :key="element.link"
                   class="d-block"
-                  color="black"
                   text
                 >
-                  <a :href="element.link" class="text-decoration-none">
+                  <a :href="element.link" class="text-black">
                     {{ element.title }}
                   </a>
                 </li>
               </ul>
             </v-col>
 
-            <v-col md="3">
+            <v-col md="3" class="leading-9">
               <ul class="text-left">
+                <div class="text-black text-left font-semibold uppercase">
+                  Сообщество
+                </div>
                 <li
                   v-for="element in menuCol2"
                   :key="element.link"
                   class="d-block"
-                  color="black"
                   text
                 >
-                  <a :href="element.link" class="text-decoration-none">
+                  <a :href="element.link" class="text-black">
                     {{ element.title }}
                   </a>
                 </li>
               </ul>
             </v-col>
 
-            <v-col md="3">
+            <v-col md="3" class="leading-9">
               <ul class="text-left">
+                <div class="text-black text-left font-semibold uppercase">
+                  Хозяин/организатор
+                </div>
                 <li
                   v-for="element in menuCol3"
                   :key="element.link"
                   class="d-block"
-                  color="black"
                   text
                 >
-                  <a :href="element.link" class="text-decoration-none">
+                  <a :href="element.link" class="text-black">
                     {{ element.title }}
                   </a>
                 </li>
               </ul>
             </v-col>
 
-            <v-col md="3">
+            <v-col md="3" class="leading-9">
               <ul class="text-left">
+                <div class="text-black text-left font-semibold uppercase">
+                  Поддержка
+                </div>
                 <li
                   v-for="element in menuCol4"
                   :key="element.link"
                   class="d-block"
-                  color="black"
                   text
                 >
-                  <a :href="element.link" class="text-decoration-none">
+                  <a :href="element.link" class="text-black">
                     {{ element.title }}
                   </a>
                 </li>
@@ -76,21 +84,27 @@
             <v-col md="8">
               <div class="float-left">
                 © {{ new Date().getFullYear() }} — Vuetify
-                <nuxt-link to="/" color="black">Конфиденциальность</nuxt-link>
-                <nuxt-link to="/">Условия</nuxt-link>
-                <nuxt-link to="/">Карта сайта</nuxt-link>
+                <nuxt-link to="/" class="text-black">
+                  Конфиденциальность
+                </nuxt-link>
+                <nuxt-link to="/" class="text-black">Условия</nuxt-link>
+                <nuxt-link to="/" class="text-black">Карта сайта</nuxt-link>
               </div>
             </v-col>
             <v-col md="4">
               <div class="float-right">
-                <v-btn
+                <a
                   v-for="icon in icons"
-                  :key="icon"
-                  class="mx-4 black--text"
+                  :key="icon.id"
+                  :href="icon.links"
+                  class="mx-4"
                   icon
+                  target="_blank"
                 >
-                  <v-icon size="24px">{{ icon }}</v-icon>
-                </v-btn>
+                  <v-icon size="24px" class="text-black">{{
+                    icon.value
+                  }}</v-icon>
+                </a>
               </div>
             </v-col>
           </v-row>
@@ -104,7 +118,12 @@
 export default {
   data() {
     return {
-      icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+      icons: [
+        { id: 1, value: 'mdi-facebook', links: 'https://www.facebook.com/' },
+        { id: 2, value: 'mdi-vk', links: 'https://vk.com/' },
+        { id: 3, value: 'mdi-twitter', links: 'http://twitter.com/' },
+        { id: 4, value: 'mdi-instagram', links: 'https://www.instagram.com/' }
+      ],
       menuCol1: [
         { link: '/', title: 'Личностное многообразие и принятие' },
         { link: '/', title: 'Доступность' },
@@ -140,7 +159,7 @@ export default {
 </script>
 
 <style scoped>
-.theme--dark.v-select .v-select__selection--comma {
+.text-black {
   color: #333333 !important;
 }
 </style>
