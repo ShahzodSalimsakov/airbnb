@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-footer color="white" padless absolute>
+    <v-footer color="white" padless>
       <v-card flat tile width="100%" class="white text-center container">
         <v-card-text>
           <v-row>
@@ -126,7 +126,7 @@ export default {
       ],
       menuCol1: [
         { link: '/', title: 'Личностное многообразие и принятие' },
-        { link: '/', title: 'Доступность' },
+        { link: '/accessibility', title: 'Доступность' },
         { link: '/', title: 'Доверие и безопасность' },
         { link: '/', title: 'Airbnb Citizen' },
         { link: '/', title: 'Олимпийские игры' },
