@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar light>
+    <v-toolbar light flat>
       <v-toolbar-items>
         <v-btn text to="/">Home</v-btn>
       </v-toolbar-items>
@@ -9,15 +9,17 @@
         <v-btn text>
           <v-select
             :items="items"
-            :menu-props="{ top: true, offsetY: true }"
+            :value="lang"
             prepend-icon="mdi-web"
+            solo
             hide-details
             single-line
+            class="w-56"
           ></v-select>
         </v-btn>
-        <v-btn rounded text to="help">Помощь</v-btn>
-        <v-btn rounded text to="sign-up">Зарегистрироваться</v-btn>
-        <v-btn rounded text to="login">Войти</v-btn>
+        <v-btn text to="help">Помощь</v-btn>
+        <v-btn text to="sign-up">Зарегистрироваться</v-btn>
+        <v-btn text to="login">Войти</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>
@@ -25,10 +27,13 @@
 
 <script>
 export default {
-  name: 'header',
-  lang: '',
+  name: 'Header',
   data: () => ({
-    items: ['Русский', 'Английский']
+    lang: 'ru',
+    items: [
+      { text: 'Русский', value: 'ru' },
+      { text: 'Английский', value: 'en' }
+    ]
   })
 }
 </script>
