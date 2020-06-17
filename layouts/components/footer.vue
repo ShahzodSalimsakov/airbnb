@@ -127,7 +127,7 @@ export default {
       menuCol1: [
         { link: '/', title: 'Личностное многообразие и принятие' },
         { link: '/accessibility', title: 'Доступность' },
-        { link: '/', title: 'Доверие и безопасность' },
+        { link: '/trust', title: 'Доверие и безопасность' },
         { link: '/', title: 'Airbnb Citizen' },
         { link: '/', title: 'Олимпийские игры' },
         { link: '/', title: 'Пресс-центр' }

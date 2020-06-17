@@ -70,6 +70,7 @@
                                   </v-list-item-content>
 
                                   <v-list-item-icon>
+                                    <increment-decrement />
                                     <v-text-field
                                       :value="item[type.key]"
                                       class="mt-0 pt-0"
@@ -103,7 +104,9 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import IncrementDecrement from '~/components/inputs/IncrementDecrement'
 export default {
+  components: { IncrementDecrement },
   data: () => ({
     items: [],
     bedItems: [],

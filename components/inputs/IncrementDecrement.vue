@@ -6,6 +6,7 @@
       >
       <div class="d-inline-block">
         <v-text-field
+          style="width: 30px;"
           v-model="val"
           type="number"
           min="0"
