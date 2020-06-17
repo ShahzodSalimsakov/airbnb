@@ -27,23 +27,30 @@
         </v-card-text>
         <v-card-text>
           <v-text-field
+            :value="adres"
             type="text"
             label="Адрес"
             placeholder="например, ул. Ленина, д. 12"
+            @change="(val) => changeData('adres', val)"
           ></v-text-field>
         </v-card-text>
         <v-card-text>
           <v-text-field
+            :value="appartment"
             type="text"
-            label="Квартира (необязательно)"
+            label="Квартира
+          (необязательно)"
             placeholder="например, кв. №7"
+            @change="(val) => changeData('appartment', val)"
           ></v-text-field>
         </v-card-text>
         <v-card-text>
           <v-text-field
+            :value="indeks"
             type="text"
             label="Индекс"
             placeholder="100100"
+            @change="(val) => changeData('indeks', val)"
           ></v-text-field>
         </v-card-text>
       </v-card>
@@ -91,7 +98,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      country: 'newLet/country'
+      country: 'newLet/country',
+      adres: 'newLet/adres',
+      appartment: 'newLet/appartment'
     })
   },
   methods: {
