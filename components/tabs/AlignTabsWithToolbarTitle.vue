@@ -3,7 +3,7 @@
     <v-toolbar flat>
       <template v-slot:extension>
         <v-tabs v-model="tab" align-with-title>
-          <v-tabs-slider color="black"></v-tabs-slider>
+          <v-tabs-slider color="primary"></v-tabs-slider>
           <v-tab v-for="item in items" :key="item">
             {{ item }}
           </v-tab>
@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       tab: null,
-      items: ['Жилье', 'Долгосрочная аренда', 'Впечатдения']
+      items: ['Жилье', 'Долгосрочная аренда', 'Впечатления']
     }
   }
 }

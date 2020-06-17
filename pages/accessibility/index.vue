@@ -20,7 +20,7 @@
         class="container mx-auto flex px-5 py-24 items-center justify-center flex-col"
       >
         <img
-          class="w-5/6 mb-10 object-cover object-center rounded"
+          class="w-6/6 mb-10 object-cover object-center rounded"
           alt="hero"
           src="https://a0.muscache.com/pictures/e93b26f2-3f2d-4ad3-a89e-6b6309201d24.jpg"
         />
@@ -64,7 +64,7 @@
         </div>
       </div>
     </section>
-    <!--    Photo Section-->
+    <!--    Tips Guests   -->
     <section class="text-gray-700 body-font pt-12">
       <div
         class="container mx-auto flex px-5 py-24 items-center justify-center flex-col"
@@ -87,43 +87,113 @@
         </div>
       </div>
     </section>
+
     <section class="text-gray-700 body-font pt-12">
       <div
-        v-for="secTwo in sectionTwo"
-        :key="secTwo.id"
+        v-for="guests in tipsGuests"
+        :key="guests.id"
         class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
       >
         <div
-          v-if="secTwo.positionLeft === true"
+          v-if="guests.positionLeft === true"
           class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
             class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
           >
-            {{ secTwo.name }}
+            {{ guests.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ secTwo.title }}
+            {{ guests.title }}
           </p>
         </div>
         <div class="lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <img
             class="object-cover object-center rounded"
             alt="hero"
-            :src="secTwo.src"
+            :src="guests.src"
           />
         </div>
         <div
-          v-if="secTwo.positionLeft === false"
+          v-if="guests.positionLeft === false"
           class="lg:flex-grow md:w-1/2 lg:pl-24 sm:order-none order-first md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
             class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
           >
-            {{ secTwo.name }}
+            {{ guests.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ secTwo.title }}
+            {{ guests.title }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-700 body-font pt-12">
+      <div
+        class="container mx-auto flex px-5 py-24 items-center justify-center flex-col"
+      >
+        <img
+          class="w-6/6 mb-10 object-cover object-center rounded"
+          alt="hero"
+          src="https://a0.muscache.com/pictures/10bfbb08-c561-4bd6-b1d5-d7a319da0bb7.jpg"
+        />
+
+        <div class="flex mt-6 justify-center mb-8">
+          <div class="w-20 h-1 rounded-full bg-black inline-flex"></div>
+        </div>
+
+        <div class="text-center lg:w-2/3 w-full">
+          <h1
+            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-800"
+          >
+            Советы хозяевам
+          </h1>
+          <p class="mb-8 leading-relaxed text-2xl">
+            Вот как можно поддержать гостей с ограниченными возможностями
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-700 body-font pt-12">
+      <div
+        v-for="owners in tipsOwners"
+        :key="owners.id"
+        class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+      >
+        <div
+          v-if="owners.positionLeft === true"
+          class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-left"
+        >
+          <h1
+            class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
+          >
+            {{ owners.name }}
+          </h1>
+          <p class="mb-8 leading-relaxed">
+            {{ owners.title }}
+          </p>
+        </div>
+        <div class="lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <img
+            class="object-cover object-center rounded"
+            alt="hero"
+            :src="owners.src"
+          />
+        </div>
+        <div
+          v-if="owners.positionLeft === false"
+          class="lg:flex-grow md:w-1/2 lg:pl-24 sm:order-none order-first md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
+        >
+          <h1
+            class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
+          >
+            {{ owners.name }}
+          </h1>
+          <p class="mb-8 leading-relaxed">
+            {{ owners.title }}
           </p>
         </div>
       </div>
@@ -164,7 +234,7 @@ export default {
             'Более доступные Впечатления на Airbnb — уникальные мероприятия, которые проводят местные эксперты, — уже скоро появятся на платформе.'
         }
       ],
-      sectionTwo: [
+      tipsGuests: [
         {
           id: 0,
           name: 'Найдите нужное место',
@@ -191,6 +261,35 @@ export default {
           src:
             'https://a0.muscache.com/pictures/485486e9-2cd6-465f-a68e-513a916d934a.jpg',
           positionLeft: true
+        }
+      ],
+      tipsOwners: [
+        {
+          id: 0,
+          name: 'Сделайте жилье более доступным',
+          title:
+            'Вероятно, вы не догадываетесь, что в вашем объявлении уже есть удобства для гостей с особыми потребностями, такие как широкие дверные проемы или дополнительное пространство вокруг унитаза, или что вы можете добавить некоторые из них без особых усилий или затрат. Узнайте, как вы можете поддержать гостей с ограниченной мобильностью.',
+          src:
+            'https://a0.muscache.com/pictures/6c347c3c-1e92-4e81-9a5f-a1b19c84d47b.jpg',
+          positionLeft: false
+        },
+        {
+          id: 1,
+          name: 'Добавьте фото для гостей с ограниченными возможностями',
+          title:
+            'Добавив фото удобств для гостей с особыми потребностями, вы будете каждый месяц привлекать внимание более 70 000 пользователей с ограниченной мобильностью. Чтобы начать, перейдите в область Управление объявлением для объявления, для которого хотите добавить удобства для гостей с особыми потребностями. Напишите подписи к каждому фото и ознакомьтесь с нашими советами по фото.',
+          src:
+            'https://a0.muscache.com/pictures/58b84b86-762d-4c49-bd34-4d2dd2a6f79f.jpg',
+          positionLeft: true
+        },
+        {
+          id: 2,
+          name: 'Узнайте о животных-помощниках',
+          title:
+            'Служебные животные помогают людям с различными формами инвалидности, и правила Airbnb почти всегда разрешают их использование. Узнайте, как поддерживать гостей с животными-помощниками.',
+          src:
+            'https://a0.muscache.com/pictures/2b7b568c-b2b2-4779-91c0-d066ded6ddb7.jpg',
+          positionLeft: false
         }
       ]
     }
