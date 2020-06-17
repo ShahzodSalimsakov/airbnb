@@ -73,12 +73,28 @@
             v-on="on"
           />
         </template>
-        <v-card>
-          <v-list>
-            <v-list-item> asdasd</v-list-item>
-            <v-list-item> asdasd</v-list-item>
-            <v-list-item> asdasd</v-list-item>
-          </v-list>
+        <v-card class="divide-y divide-gray-400">
+          <div class="flex p-2">
+            <div class="">
+              <div class="font-black">Взрослые</div>
+              <div>Возраст от 13</div>
+            </div>
+            <DecrementIncrement />
+          </div>
+          <div class="flex p-2">
+            <div>
+              <div class="font-black">Дети</div>
+              <div>Возраст: 2—12</div>
+            </div>
+            <DecrementIncrement />
+          </div>
+          <div class="flex p-2">
+            <div>
+              <div class="font-black">Младенцы</div>
+              <div>До 2</div>
+            </div>
+            <DecrementIncrement />
+          </div>
         </v-card>
       </v-menu>
     </div>
@@ -90,10 +106,15 @@
 </template>
 
 <script>
+import DecrementIncrement from '~/components/DecrementIncrement'
 export default {
   name: 'Housing',
+  components: { DecrementIncrement },
   data() {
     return {
+      adult: 0,
+      children: 0,
+      babies: 0,
       location: '',
       arrival: new Date().toISOString().substr(0, 10),
       departure: '',
@@ -101,6 +122,9 @@ export default {
       menu2: false,
       menu: false
     }
+  },
+  mounted() {
+    console.log(this.$data) // => 'foo'
   }
 }
 </script>

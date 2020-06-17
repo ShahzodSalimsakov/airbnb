@@ -1,7 +1,9 @@
 <template>
   <div class="d-flex">
     <div class="d-inline">
-      <v-btn :disabled="disabledButton" rounded @click="decrement">-</v-btn>
+      <v-btn :disabled="disabledButton" rounded fab depressed @click="decrement"
+        >-</v-btn
+      >
       <div class="d-inline-block">
         <v-text-field
           style="width: 30px;"
@@ -12,7 +14,7 @@
           @input="checkDisable"
         />
       </div>
-      <v-btn rounded @click="increment">+</v-btn>
+      <v-btn rounded fab depressed @click="increment">+</v-btn>
     </div>
   </div>
 </template>
