@@ -36,7 +36,10 @@ export const state = () => ({
   price: '',
   specOffer: false,
   discontWeek: '',
-  discontMonth: ''
+  discontMonth: '',
+  adres: '',
+  appartment: '',
+  indeks: ''
 })
 
 export const getters = {
@@ -77,7 +80,10 @@ export const getters = {
   price: (state) => state.price,
   specOffer: (state) => state.specOffer,
   discontWeek: (state) => state.discontWeek,
-  discontMonth: (state) => state.discontMonth
+  discontMonth: (state) => state.discontMonth,
+  adres: (state) => state.adres,
+  appartment: (state) => state.appartment,
+  indeks: (state) => state.indeks
 }
 
 export const mutations = {
