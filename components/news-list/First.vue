@@ -1,7 +1,7 @@
 <template>
   <section class="text-gray-700 body-font">
     <h1
-      class="title-font sm:text-5xl md:w-2/3 font-bold text-2xl mb-4 font-medium text-red-700"
+      class="title-font sm:text-5xl md:w-2/3 font-bold text-2xl mb-4 font-medium text-red-700 p-4"
     >
       За счастьем не обязательно ехать далеко
     </h1>
