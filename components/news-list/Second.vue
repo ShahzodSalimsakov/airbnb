@@ -10,7 +10,7 @@
           <div class="rounded-lg h-40 overflow-hidden">
             <img
               alt="content"
-              class="object-cover object-center w-5/12"
+              class="object-cover object-center w-1/4 sm:w-1/4 md:w-2/4 lg:w-2/5"
               :src="list.src"
             />
           </div>

@@ -4,7 +4,7 @@
       <v-card flat tile width="100%" class="white text-center container">
         <v-card-text>
           <v-row>
-            <v-col md="3" class="leading-9">
+            <v-col md="4" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
                   О нас
@@ -22,10 +22,10 @@
               </ul>
             </v-col>
 
-            <v-col md="3" class="leading-9">
+            <v-col md="4" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  Сообщество
+                  Хозяин/организатор
                 </div>
                 <li
                   v-for="element in menuCol2"
@@ -43,28 +43,10 @@
             <v-col md="3" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  Хозяин/организатор
-                </div>
-                <li
-                  v-for="element in menuCol3"
-                  :key="element.link"
-                  class="d-block"
-                  text
-                >
-                  <nuxt-link :to="element.link" class="text-black">
-                    {{ element.title }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </v-col>
-
-            <v-col md="3" class="leading-9">
-              <ul class="text-left">
-                <div class="text-black text-left font-semibold uppercase">
                   Поддержка
                 </div>
                 <li
-                  v-for="element in menuCol4"
+                  v-for="element in menuCol3"
                   :key="element.link"
                   class="d-block"
                   text
@@ -125,36 +107,22 @@ export default {
         { id: 4, value: 'mdi-instagram', links: 'https://www.instagram.com/' }
       ],
       menuCol1: [
-        { link: '/1', title: 'Личностное многообразие и принятие' },
         { link: '/accessibility', title: 'Доступность' },
         { link: '/trust', title: 'Доверие и безопасность' },
-        { link: '/2', title: 'Airbnb Citizen' },
-        { link: '/3', title: 'Олимпийские игры' },
-        { link: '/4', title: 'Пресс-центр' }
+        { link: '/', title: 'Airbnb Citizen' },
+        { link: '/', title: 'Пресс-центр' }
       ],
       menuCol2: [
-        { link: '/5', title: 'Журнал Airbnb Magazine' },
-        { link: '/6', title: 'Airbnb для бизнеса' },
-        { link: '/7', title: 'Пригласите друзей' },
-        { link: '/8', title: 'Работа' }
+        { link: '/', title: 'Принимайте гостей' },
+        { link: '/', title: 'Airbnb для бизнеса' },
+        { link: '/', title: 'Центр ресурсов' },
+        { link: '/', title: 'Центр общения' }
       ],
       menuCol3: [
-        { link: '/9', title: 'Принимайте гостей' },
-        { link: '/10', title: 'Организовать онлайн-Впечатление' },
-        {
-          link: '/11',
-          title: 'Обращение генерального директора Брайана Чески'
-        },
-        { link: '/12', title: 'Ответственный прием гостей' },
-        { link: '/13', title: 'Open Homes' },
-        { link: '/14', title: 'Центр ресурсов' },
-        { link: '/15', title: 'Центр общения' }
-      ],
-      menuCol4: [
-        { link: '/16', title: 'Новости о коронавирусе' },
-        { link: '/17', title: 'Центр помощи' },
-        { link: '/18', title: 'Варианты отмены' },
-        { link: '/19', title: 'Поддержка соседей' }
+        { link: '/', title: 'Новости о коронавирусе' },
+        { link: '/', title: 'Центр помощи' },
+        { link: '/', title: 'Варианты отмены' },
+        { link: '/', title: 'Поддержка соседей' }
       ]
     }
   }

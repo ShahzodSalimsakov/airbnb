@@ -1,5 +1,14 @@
 <template class="text-black">
-  <TrustTabs />
+  <div>
+    <div class="ml-12 pt-20 primary--text text-lg font-bold">
+      Доверие и безопасность
+    </div>
+    <div class="ml-12 pt-5 pb-16 text-5xl font-bold text-gray-800">
+      Ваша безопасность превыше всего
+    </div>
+
+    <TrustTabs />
+  </div>
 </template>
 
 <script>

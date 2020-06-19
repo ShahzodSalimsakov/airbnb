@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-tabs v-model="tab" align-with-title>
+    <v-tabs v-model="tab" align-with-title class="sticky top-0 z-50">
       <v-tabs-slider color="primary"></v-tabs-slider>
 
       <v-tab v-for="item in items" :key="item">
