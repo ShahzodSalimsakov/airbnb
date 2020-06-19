@@ -13,26 +13,20 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            <Housing />
-          </v-card-text>
+        <v-card flat class="mt-3 p-3">
+          <Housing />
         </v-card>
       </v-tab-item>
       <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            <Housing />
-          </v-card-text>
+        <v-card flat class="mt-3 p-3">
+          <Housing />
         </v-card>
       </v-tab-item>
-      <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            Item 3
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
+      <!--      <v-tab-item>-->
+      <!--        <v-card flat class="mt-3 p-3">-->
+      <!--          Item 3-->
+      <!--        </v-card>-->
+      <!--      </v-tab-item>-->
     </v-tabs-items>
   </div>
 </template>
@@ -45,7 +39,7 @@ export default {
   data() {
     return {
       tab: null,
-      items: ['Жилье', 'Долгосрочная аренда', 'Впечатления']
+      items: ['Жилье', 'Долгосрочная аренда']
     }
   }
 }
