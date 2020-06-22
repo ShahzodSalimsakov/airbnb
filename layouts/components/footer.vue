@@ -15,9 +15,9 @@
                   class="d-block"
                   text
                 >
-                  <a :href="element.link" class="text-black">
+                  <nuxt-link :to="element.link" class="text-black">
                     {{ element.title }}
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </v-col>
@@ -33,9 +33,9 @@
                   class="d-block"
                   text
                 >
-                  <a :href="element.link" class="text-black">
+                  <nuxt-link :to="element.link" class="text-black">
                     {{ element.title }}
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </v-col>
@@ -51,9 +51,9 @@
                   class="d-block"
                   text
                 >
-                  <a :href="element.link" class="text-black">
+                  <nuxt-link :to="element.link" class="text-black">
                     {{ element.title }}
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </v-col>
