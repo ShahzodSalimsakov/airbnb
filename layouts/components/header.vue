@@ -50,8 +50,13 @@
           >
             Помощь
           </nuxt-link>
-          <sign-up />
-          <login />
+          <template v-if="!authenticated">
+            <sign-up />
+            <login />
+          </template>
+          <template v-else>
+            <HeaderProfileDropdown />
+          </template>
         </div>
       </div>
     </nav>
@@ -59,16 +64,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import SignUp from '~/components/auth/sign-up'
 import Login from '~/components/auth/login'
+import HeaderProfileDropdown from '~/components/auth/header_profile_dropdown'
 export default {
   name: 'Header',
-  components: { Login, SignUp },
+  components: { HeaderProfileDropdown, Login, SignUp },
   data() {
     return {
       lang: 'ru',
       items: ['Русский', 'English', "O'zbekcha"]
     }
+  },
+  computed: {
+    ...mapGetters({
+      authenticated: 'authenticated'
+    })
   },
   methods: {
     getKey: () => Object.keys(this.items)

@@ -31,10 +31,18 @@ export default {
    ** Global CSS
    */
   css: ['~/assets/style.css'],
+  router: {
+    middleware: ['clearValidationErrors']
+  },
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    './plugins/mixins/user.js',
+    './plugins/axios.js',
+    './plugins/mixins/validation.js',
+    './plugins/DataProvider.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,13 +60,47 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': {
+      target: 'https://apiair.fungeek.net/api',
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true
+    }
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'api/login',
+            method: 'post',
+            propertyName: 'meta.token'
+          },
+          user: {
+            url: 'api/user',
+            method: 'get',
+            propertyName: 'data'
+          },
+          logout: {
+            url: 'api/logout',
+            method: 'post'
+          }
+        }
+      }
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
