@@ -3,9 +3,9 @@
     <v-row class="row">
       <v-text-field
         v-model="location"
-        label="Местоположение"
-        placeholder="Куда едете?"
-        class="px-4 w-3/12 col-2"
+        :label="$t('location')"
+        :placeholder="$t('whereAreYouGoing')"
+        class="px-4 w-3/12"
         outlined
       />
       <v-menu
@@ -19,9 +19,9 @@
         <template v-slot:activator="{ on, attrs }">
           <v-text-field
             :value="computedDateFormattedMoment"
-            label="Прибытие и выезд"
+            :label="$t('arrivalAndDeparture')"
             readonly
-            placeholder="Когда?"
+            :placeholder="$t('when')"
             v-bind="attrs"
             class="px-4 col-4"
             outlined
@@ -49,8 +49,8 @@
       >
         <template v-slot:activator="{ on, attrs }">
           <v-text-field
-            label="Количество гостей"
-            placeholder="Сколько гостей?"
+            :label="$t('numberOfGuests')"
+            :placeholder="$t('howManyGuests')"
             class="px-4 col-3"
             outlined
             readonly
@@ -61,21 +61,21 @@
         <v-card class="divide-y divide-gray-400">
           <div class="flex justify-around p-2">
             <div class="w-1/3">
-              <div class="font-black">Взрослые</div>
-              <div>Возраст от 13</div>
+              <div class="font-black">{{ $t('adults') }}</div>
+              <div>{{ $t('ageFrom') }} 13</div>
             </div>
             <DecrementIncrement class="pt-2" />
           </div>
           <div class="flex justify-around p-2">
             <div class="w-1/3">
-              <div class="font-black">Дети</div>
-              <div>Возраст: 2—12</div>
+              <div class="font-black">{{ $t('children') }}</div>
+              <div>{{ $t('ageFrom') }} 2—12</div>
             </div>
             <DecrementIncrement class="pt-2" />
           </div>
           <div class="flex justify-around p-2">
             <div class="w-1/3">
-              <div class="font-black">Младенцы</div>
+              <div class="font-black">{{ $t('babies') }}</div>
               <div>До 2</div>
             </div>
             <DecrementIncrement class="pt-2" />

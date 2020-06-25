@@ -1,4 +1,21 @@
 export default {
   signIn: 'Войти',
-  signUp: 'Зарегистрироваться'
+  signUp: 'Зарегистрироваться',
+  help: 'Помощь',
+  name: 'Имя',
+  surname: 'Фамилия',
+  password: 'Пароль',
+  city: 'Город',
+  location: 'Местоположение',
+  housing: 'Жилье',
+  longTermRental: 'Долгосрочная аренда',
+  whereAreYouGoing: 'Куда едете?',
+  arrivalAndDeparture: 'Прибытие и выезд',
+  when: 'Когда?',
+  numberOfGuests: 'Количество гостей',
+  howManyGuests: 'Сколько гостей?',
+  adults: 'Взрослые',
+  ageFrom: 'Возраст от',
+  children: 'Дети',
+  babies: 'Младенцы'
 }

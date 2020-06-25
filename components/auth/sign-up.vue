@@ -6,7 +6,7 @@
         class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base"
         v-on="on"
       >
-        Зарегистрироваться
+        {{ $t('signUp') }}
       </div>
     </template>
     <div class="w-full">
@@ -14,16 +14,15 @@
         v-model="regFormValid"
         class="bg-white shadow-md rounded w-full max-w-lg px-8 pt-6 pb-8"
       >
-        <span class="block font-semibold mb-4 text-2xl uppercase"
-          >Зарегистрироваться</span
-        >
+        <span class="block font-semibold mb-4 text-2xl uppercase">{{
+          $t('signUp')
+        }}</span>
         <v-row>
           <v-col cols="6" md="6" sm="12">
             <v-text-field
               v-model="form.first_name"
               :rules="rules.first_name"
-              label="Имя"
-              placeholder="Шухрат"
+              :label="$t('name')"
               outlined
             ></v-text-field>
           </v-col>
@@ -31,8 +30,7 @@
             <v-text-field
               v-model="form.last_name"
               :rules="rules.last_name"
-              label="Фамилия"
-              placeholder="Махкамов"
+              :label="$t('surname')"
               outlined
             ></v-text-field>
           </v-col>
@@ -43,7 +41,6 @@
               v-model="form.email"
               :rules="rules.email"
               label="Email"
-              placeholder="Email"
               outlined
               :error="emailError.length > 0"
               :error-messages="emailError[0]"
@@ -59,7 +56,7 @@
               :rules="rules.password"
               :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show ? 'text' : 'password'"
-              label="Пароль"
+              :label="$t('password')"
               placeholder="******"
               outlined
               hint="Не менее 6 символов"
@@ -71,7 +68,7 @@
             <v-select
               v-model="form.city"
               :rules="rules.city"
-              label="Город"
+              :label="$t('city')"
               :items="arrSitys"
               outlined
             ></v-select>
@@ -86,7 +83,7 @@
             @click="signup"
             :loading="formLoading"
           >
-            Зарегистрироваться
+            {{ $t('signUp') }}
           </v-btn>
         </div>
       </v-form>
