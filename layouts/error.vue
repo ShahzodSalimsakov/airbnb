@@ -1,20 +1,34 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
-  </v-app>
+  <v-container v-if="error.statusCode === 404" light>
+    <v-row>
+      <v-col cols="6">
+        <div align="left" class="pb-3px">
+          <h1 style="font-size: 130px;">
+            {{ $t('oops') }}
+          </h1>
+          <p style="font-size: 30px;">
+            {{ $t('cannotFind') }}
+          </p>
+          <p style="font-size: 25px; color: red;">
+            {{ $t('error404') }}
+          </p>
+          <NuxtLink to="/" style="font-size: 25px;">
+            {{ $t('homePage') }}
+          </NuxtLink>
+        </div>
+      </v-col>
+      <v-col cols="6">
+        <div align="center" class="pb-3px">
+          <img src="@/assets/images/error404.png" />
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  layout: 'empty',
+  layout: 'default',
   props: {
     error: {
       type: Object,
@@ -23,8 +37,7 @@ export default {
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFoundParagraph1: 'Error 404'
     }
   },
   head() {
@@ -37,8 +50,4 @@ export default {
 }
 </script>
 
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>
+<style scoped></style>
