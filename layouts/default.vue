@@ -1,6 +1,6 @@
 <template>
   <v-app light>
-    <v-content class="font-mono">
+    <v-content class="font-serif">
       <Header />
       <v-container>
         <nuxt />

@@ -6,7 +6,7 @@
       >
         <div class="text-center lg:w-2/3 w-full">
           <h1
-            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-800"
+            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
             Airbnb для всех
           </h1>
@@ -26,12 +26,12 @@
         />
 
         <div class="flex mt-6 justify-center mb-8">
-          <div class="w-20 h-1 rounded-full bg-black inline-flex"></div>
+          <div class="w-20 h-px rounded-full bg-black inline-flex"></div>
         </div>
 
         <div class="text-center lg:w-2/3 w-full">
           <h1
-            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-800"
+            class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
             К чему мы стремимся
           </h1>
@@ -53,7 +53,7 @@
             class="p-4 md:w-1/2 md:mb-0 mb-6 flex"
           >
             <div class="flex-grow pl-6">
-              <h2 class="text-gray-800 text-2xl title-font font-extrabold mb-2">
+              <h2 class="text-gray-900 text-2xl title-font font-extrabold mb-2">
                 {{ secOne.name }}
               </h2>
               <p class="leading-relaxed text-base">
@@ -70,12 +70,12 @@
         class="container mx-auto flex px-5 py-24 items-center justify-center flex-col"
       >
         <div class="flex mt-6 justify-center mb-8">
-          <div class="w-20 h-1 rounded-full bg-black inline-flex"></div>
+          <div class="w-20 h-px rounded-full bg-black inline-flex"></div>
         </div>
 
         <div class="text-center lg:w-2/3 w-full">
           <h1
-            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-800"
+            class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
             Советы гостям
           </h1>
@@ -141,12 +141,12 @@
         />
 
         <div class="flex mt-6 justify-center mb-8">
-          <div class="w-20 h-1 rounded-full bg-black inline-flex"></div>
+          <div class="w-20 h-px rounded-full bg-black inline-flex"></div>
         </div>
 
         <div class="text-center lg:w-2/3 w-full">
           <h1
-            class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-800"
+            class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
             Советы хозяевам
           </h1>

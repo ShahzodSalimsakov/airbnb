@@ -27,4 +27,21 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+#my_timeLine .v-timeline-item__divider {
+  display: inline;
+}
+#my_timeLine .v-timeline-item__divider .v-timeline-item__dot {
+  width: 75px;
+  height: 75px;
+  margin-right: 75px;
+  margin-left: 75px;
+}
+.v-application--is-ltr
+  .v-timeline--dense#my_timeLine:not(.v-timeline--reverse):before {
+  left: calc(113px - 1px);
+}
+#my_timeLine .v-timeline-item__body {
+  width: 50%;
+}
+</style>

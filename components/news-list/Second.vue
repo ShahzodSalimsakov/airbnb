@@ -7,14 +7,17 @@
           :key="list.id"
           class="p-4 md:w-1/3 sm:mb-0 mb-6 mt-10"
         >
-          <div class="rounded-lg h-40 overflow-hidden">
+          <span v-if="list.ico">
+            <v-icon>mdi-check-circle-outline</v-icon>
+          </span>
+          <div v-if="list.src" class="rounded-lg h-40 overflow-hidden">
             <img
               alt="content"
               class="object-cover object-center w-1/4 sm:w-1/4 md:w-2/4 lg:w-2/5"
               :src="list.src"
             />
           </div>
-          <h2 class="text-xl font-black title-font text-gray-900 mt-5 mb-8">
+          <h2 class="text-xl font-black title-font text-gray-900 mt-5 mb-7">
             {{ list.name }}
           </h2>
           <p class="text-base leading-relaxed mt-2">
@@ -36,4 +39,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+.v-icon.v-icon {
+  font-size: 60px;
+}
+</style>
