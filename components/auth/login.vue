@@ -6,7 +6,7 @@
         v-bind="attrs"
         v-on="on"
       >
-        Войти
+        {{ $t('signIn') }}
       </div>
     </template>
     <div class="w-full max-w-xs">
@@ -14,7 +14,9 @@
         v-model="regFormValid"
         class="bg-white shadow-md rounded px-8 pt-6 pb-8"
       >
-        <span class="block font-semibold mb-4 text-2xl uppercase">Войти</span>
+        <span class="block font-semibold mb-4 text-2xl uppercase">{{
+          $t('signIn')
+        }}</span>
         <v-alert v-show="!!errors.email" color="red lighten-2" dark>
           {{ errors.email && errors.email[0] }}
         </v-alert>

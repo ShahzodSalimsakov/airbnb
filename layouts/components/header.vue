@@ -13,7 +13,9 @@
             d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
           />
         </svg>
-        <nuxt-link class="black--text text-xl tracking-tight" to="/"
+        <nuxt-link
+          class="black--text text-xl tracking-tight"
+          :to="localePath('/')"
           >Home</nuxt-link
         >
       </div>
@@ -32,7 +34,7 @@
         </button>
       </div>
       <div class="w-full block lg:flex lg:items-center lg:w-auto pt-10">
-        <div class="text-sm lg:flex-grow flex">
+        <div class="lg:flex-grow flex">
           <!--          <v-select-->
           <!--            :items="items"-->
           <!--            prepend-icon="mdi-web"-->
@@ -45,12 +47,15 @@
           <!--            class="w-56 block lg:inline-block lg:mt-0 mr-4"-->
           <!--          ></v-select>-->
           <v-overflow-btn
-            append-icon="mdi-web"
-            class="my-2 lang"
-            :items="items"
+            v-model="lang"
+            class="my-2 w-56 mr-2 lang"
+            full-width
+            dense
+            :items="availableLangs"
+            @change="changeLanguage"
           />
           <nuxt-link
-            to="help"
+            :to="localePath('help')"
             class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base black--text"
           >
             Помощь
@@ -78,19 +83,39 @@ export default {
   components: { HeaderProfileDropdown, Login, SignUp },
   data() {
     return {
-      lang: 'ru',
-      items: ['Русский', 'English', "O'zbekcha"]
+      lang: 'ru'
     }
   },
   computed: {
     ...mapGetters({
       authenticated: 'authenticated'
-    })
+    }),
+    availableLangs() {
+      return this.$i18n.locales.map((i) => ({
+        value: i.code,
+        text: i.name
+      }))
+    }
+  },
+  mounted() {
+    this.lang = this.$i18n.locale
   },
   methods: {
-    getKey: () => Object.keys(this.items)
+    changeLanguage(val) {
+      const language = val.toLocaleLowerCase()
+      this.$i18n.setLocaleCookie(language)
+      this.$router.replace(this.switchLocalePath(language))
+    }
   }
 }
 </script>
 
-<style scoped lang="sass"></style>
+<style>
+.lang {
+  margin-top: -10px;
+}
+.lang > div .v-input__slot {
+  border-width: 0;
+  border: none;
+}
+</style>
