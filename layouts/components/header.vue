@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <nav class="flex items-center justify-between flex-wrap p-6">
+    <nav class="flex items-center justify-between">
       <div class="flex items-center flex-shrink-0 mr-6">
         <svg
           class="fill-current h-8 w-8 mr-2"
@@ -33,17 +33,22 @@
       </div>
       <div class="w-full block lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow flex">
-          <v-select
+          <!--          <v-select-->
+          <!--            :items="items"-->
+          <!--            prepend-icon="mdi-web"-->
+          <!--            solo-->
+          <!--            hide-details-->
+          <!--            dense-->
+          <!--            flat-->
+          <!--            hide-selected-->
+          <!--            single-line-->
+          <!--            class="w-56 block lg:inline-block lg:mt-0 mr-4"-->
+          <!--          ></v-select>-->
+          <v-overflow-btn
+            append-icon="mdi-web"
+            class="my-2 lang"
             :items="items"
-            prepend-icon="mdi-web"
-            solo
-            hide-details
-            dense
-            flat
-            hide-selected
-            single-line
-            class="w-56 block lg:inline-block lg:mt-0 mr-4"
-          ></v-select>
+          />
           <nuxt-link
             to="help"
             class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base black--text"
@@ -76,4 +81,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="sass"></style>

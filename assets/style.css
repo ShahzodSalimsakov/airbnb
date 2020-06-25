@@ -26,3 +26,8 @@ input[type=number] {
 #my_timeLine .v-timeline-item__body {
   width: 50%;
 }
+
+.lang  .v-input__slot{
+  border-width: 0;
+  border: none
+}
