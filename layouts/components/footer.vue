@@ -114,7 +114,7 @@ export default {
       ],
       menuCol2: [
         { link: '/welcome-guests', title: 'Принимайте гостей' },
-        { link: '/', title: 'Airbnb для бизнеса' },
+        // { link: '/', title: 'Airbnb для бизнеса' },
         { link: '/', title: 'Центр ресурсов' },
         { link: '/', title: 'Центр общения' }
       ],
