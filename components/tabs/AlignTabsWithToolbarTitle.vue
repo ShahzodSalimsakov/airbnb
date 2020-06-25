@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       tab: null,
-      items: ['Жилье', 'Долгосрочная аренда']
+      items: [this.$t('housing'), this.$t('longTermRental')]
     }
   }
 }

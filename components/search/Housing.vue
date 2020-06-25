@@ -1,91 +1,93 @@
 <template>
-  <div class="row">
-    <v-text-field
-      v-model="location"
-      label="Местоположение"
-      placeholder="Куда едете?"
-      class="px-4 w-3/12 col-2"
-      outlined
-    />
-    <v-menu
-      v-model="menu1"
-      :close-on-content-click="false"
-      :nudge-right="40"
-      transition="scale-transition"
-      offset-y
-      min-width="290px"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-text-field
-          :value="computedDateFormattedMoment"
-          label="Прибытие и выезд"
-          readonly
-          placeholder="Когда?"
-          v-bind="attrs"
-          class="px-4 col-4"
-          outlined
-          allowed-dates
-          v-on="on"
-        ></v-text-field>
-      </template>
-      <v-date-picker
-        v-model="arrivalAndDepartureDate"
-        locale="ru"
-        show-current
-        :min="minDate"
-        range
-        no-title
-        @input="menu1 = false"
+  <v-container fluid>
+    <v-row class="row">
+      <v-text-field
+        v-model="location"
+        :label="$t('location')"
+        :placeholder="$t('whereAreYouGoing')"
+        class="px-4 w-3/12"
+        outlined
+      />
+      <v-menu
+        v-model="menu1"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        transition="scale-transition"
+        offset-y
+        min-width="290px"
       >
-      </v-date-picker>
-    </v-menu>
-    <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      :nudge-width="100"
-      offset-y
-      auto
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-text-field
-          label="Количество гостей"
-          placeholder="Сколько гостей?"
-          class="px-4 col-3"
-          outlined
-          readonly
-          v-bind="attrs"
-          v-on="on"
-        />
-      </template>
-      <v-card class="divide-y divide-gray-400">
-        <div class="flex justify-around p-2">
-          <div class="w-1/3">
-            <div class="font-black">Взрослые</div>
-            <div>Возраст от 13</div>
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            :value="computedDateFormattedMoment"
+            :label="$t('arrivalAndDeparture')"
+            readonly
+            :placeholder="$t('when')"
+            v-bind="attrs"
+            class="px-4 col-4"
+            outlined
+            allowed-dates
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          v-model="arrivalAndDepartureDate"
+          locale="ru"
+          show-current
+          :min="minDate"
+          range
+          no-title
+          @input="menu1 = false"
+        >
+        </v-date-picker>
+      </v-menu>
+      <v-menu
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="100"
+        offset-y
+        auto
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            :label="$t('numberOfGuests')"
+            :placeholder="$t('howManyGuests')"
+            class="px-4 col-3"
+            outlined
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          />
+        </template>
+        <v-card class="divide-y divide-gray-400">
+          <div class="flex justify-around p-2">
+            <div class="w-1/3">
+              <div class="font-black">{{ $t('adults') }}</div>
+              <div>{{ $t('ageFrom') }} 13</div>
+            </div>
+            <DecrementIncrement class="pt-2" />
           </div>
-          <DecrementIncrement class="pt-2" />
-        </div>
-        <div class="flex justify-around p-2">
-          <div class="w-1/3">
-            <div class="font-black">Дети</div>
-            <div>Возраст: 2—12</div>
+          <div class="flex justify-around p-2">
+            <div class="w-1/3">
+              <div class="font-black">{{ $t('children') }}</div>
+              <div>{{ $t('ageFrom') }} 2—12</div>
+            </div>
+            <DecrementIncrement class="pt-2" />
           </div>
-          <DecrementIncrement class="pt-2" />
-        </div>
-        <div class="flex justify-around p-2">
-          <div class="w-1/3">
-            <div class="font-black">Младенцы</div>
-            <div>До 2</div>
+          <div class="flex justify-around p-2">
+            <div class="w-1/3">
+              <div class="font-black">{{ $t('babies') }}</div>
+              <div>До 2</div>
+            </div>
+            <DecrementIncrement class="pt-2" />
           </div>
-          <DecrementIncrement class="pt-2" />
-        </div>
-      </v-card>
-    </v-menu>
-    <v-btn color="error" class="ma-2 white--text">
-      Поиск
-      <v-icon right dark>mdi-magnify</v-icon>
-    </v-btn>
-  </div>
+        </v-card>
+      </v-menu>
+      <v-btn color="error" class="ma-2 white--text">
+        Поиск
+        <v-icon right dark>mdi-magnify</v-icon>
+      </v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

@@ -4,5 +4,22 @@ export default {
   oops: 'АНА ХОЛОС!!!',
   cannotFind: 'Сиз қидираётган саҳифани тополмаётганга ўхшаймиз.',
   error404: 'Хатолик 404',
-  homePage: 'Асосий сахифа'
+  homePage: 'Асосий сахифа',
+  help: 'Ёрдам',
+  name: 'Исм',
+  surname: 'Фамилия',
+  password: 'Пароль',
+  city: 'Шахар',
+  location: 'Манзил',
+  housing: 'Уй-жой',
+  longTermRental: 'Узоқ муддатли ижара',
+  whereAreYouGoing: 'Қайерга кетяпсиз?',
+  arrivalAndDeparture: 'Келиш ва кетиш',
+  when: 'Қачон?',
+  numberOfGuests: 'Меҳмонлар сони',
+  howManyGuests: 'Қанча меҳмонлар?',
+  adults: 'Катталар',
+  ageFrom: 'Ёши:',
+  children: 'Болалар',
+  babies: 'Чақалоқлар'
 }

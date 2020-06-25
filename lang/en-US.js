@@ -5,4 +5,21 @@ export default {
   cannotFind: 'We can not seem to find the page you are looking for.',
   error404: 'Error 404',
   homePage: 'Home page'
+  help: 'help',
+  name: 'Name',
+  surname: 'Surname',
+  password: 'Password',
+  city: 'City',
+  location: 'Location',
+  housing: 'Housing',
+  longTermRental: 'Long term rental',
+  whereAreYouGoing: 'Where are you going?',
+  arrivalAndDeparture: 'Arrival and Departure',
+  when: 'When?',
+  numberOfGuests: 'Number of guests',
+  howManyGuests: 'How many guests?',
+  adults: 'Adults',
+  ageFrom: 'Age from',
+  children: 'Children',
+  babies: 'Babies'
 }

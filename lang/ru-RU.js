@@ -4,5 +4,22 @@ export default {
   oops: 'ОЙ!!!',
   cannotFind: 'Мы не можем найти страницу, которую вы ищете.',
   error404: 'Ошибка 404',
-  homePage: 'Домашняя страница'
+  homePage: 'Домашняя страница',
+  help: 'Помощь',
+  name: 'Имя',
+  surname: 'Фамилия',
+  password: 'Пароль',
+  city: 'Город',
+  location: 'Местоположение',
+  housing: 'Жилье',
+  longTermRental: 'Долгосрочная аренда',
+  whereAreYouGoing: 'Куда едете?',
+  arrivalAndDeparture: 'Прибытие и выезд',
+  when: 'Когда?',
+  numberOfGuests: 'Количество гостей',
+  howManyGuests: 'Сколько гостей?',
+  adults: 'Взрослые',
+  ageFrom: 'Возраст от',
+  children: 'Дети',
+  babies: 'Младенцы'
 }
