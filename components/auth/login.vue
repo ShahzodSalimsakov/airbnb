@@ -39,7 +39,7 @@
               :rules="rules.password"
               :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show ? 'text' : 'password'"
-              label="Пароль"
+              :label="$t('password')"
               placeholder="******"
               outlined
               hint="Не менее 6 символов"
@@ -56,7 +56,7 @@
             :loading="formLoading"
             @click="signin"
           >
-            Войти
+            {{ $t('signIn') }}
           </v-btn>
         </div>
       </v-form>

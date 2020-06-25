@@ -58,7 +58,7 @@
             :to="localePath('help')"
             class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base black--text"
           >
-            Помощь
+            {{ $t('help') }}
           </nuxt-link>
           <template v-if="!authenticated">
             <sign-up />
