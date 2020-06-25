@@ -56,7 +56,7 @@
             :loading="formLoading"
             @click="signin"
           >
-            Войти
+            {{ $t('signIn') }}
           </v-btn>
         </div>
       </v-form>
