@@ -110,10 +110,10 @@ export default {
         { link: '/accessibility', title: 'Доступность' },
         { link: '/trust', title: 'Доверие и безопасность' },
         { link: '/', title: 'Airbnb Citizen' },
-        { link: '/', title: 'Пресс-центр' }
+        { link: '/news', title: 'Новости' }
       ],
       menuCol2: [
-        { link: '/', title: 'Принимайте гостей' },
+        { link: '/welcome-guests', title: 'Принимайте гостей' },
         { link: '/', title: 'Airbnb для бизнеса' },
         { link: '/', title: 'Центр ресурсов' },
         { link: '/', title: 'Центр общения' }
