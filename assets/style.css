@@ -27,7 +27,7 @@ input[type=number] {
   width: 50%;
 }
 
-.lang  .v-input__slot{
+.lang > div .v-input__slot{
   border-width: 0;
   border: none
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nav class="flex items-center justify-between">
-      <div class="flex items-center flex-shrink-0 mr-6">
+      <div class="flex">
         <svg
           class="fill-current h-8 w-8 mr-2"
           width="54"
@@ -31,7 +31,7 @@
           </svg>
         </button>
       </div>
-      <div class="w-full block lg:flex lg:items-center lg:w-auto">
+      <div class="w-full block lg:flex lg:items-center lg:w-auto pt-10">
         <div class="text-sm lg:flex-grow flex">
           <!--          <v-select-->
           <!--            :items="items"-->
