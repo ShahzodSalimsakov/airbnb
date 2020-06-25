@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="reg" persistent max-width="500px">
+  <v-dialog v-model="reg" max-width="500px">
     <template v-slot:activator="{ on, attrs }">
       <div
         v-bind="attrs"
@@ -14,6 +14,9 @@
         v-model="regFormValid"
         class="bg-white shadow-md rounded w-full max-w-lg px-8 pt-6 pb-8"
       >
+        <span class="block font-semibold mb-4 text-2xl uppercase"
+          >Зарегистрироваться</span
+        >
         <v-row>
           <v-col cols="6" md="6" sm="12">
             <v-text-field
