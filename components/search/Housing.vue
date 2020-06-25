@@ -17,7 +17,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          :value="computedDateFormattedMomentjs"
+          :value="computedDateFormattedMoment"
           label="Прибытие и выезд"
           readonly
           placeholder="Когда?"
@@ -110,9 +110,11 @@ export default {
     }
   },
   computed: {
-    computedDateFormattedMomentjs() {
-      return Array.isArray(this.arrivalAndDepartureDate)
-        ? this.arrivalAndDepartureDate
+    computedDateFormattedMoment() {
+      const arrival = this.arrivalAndDepartureDate
+      return Array.isArray(arrival)
+        ? arrival
+            .sort()
             .map((item) => moment(item, '').format('D MMM'))
             .join(' - ')
         : ''
