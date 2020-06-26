@@ -1,45 +1,7 @@
 <template>
   <section class="text-gray-700 body-font">
     <div class="mx-auto flex pb-8 md:flex-row flex-col items-center">
-      <v-carousel
-        cycle
-        height="500"
-        hide-delimiter-background
-        show-arrows-on-hover
-      >
-        <div v-for="slide in news" :key="slide.id">
-          <v-carousel-item v-if="slide.slider">
-            <v-row class="fill-height ml-0" align="center" justify="center">
-              <nuxt-link to="/">
-                <div
-                  class="lg:max-w-2xl lg:w-full md:w-2/3 w-5/6 mb-10 pl-3 md:mb-0"
-                >
-                  <img
-                    :alt="slide.name"
-                    class="object-cover object-center rounded"
-                    :src="slide.src"
-                  />
-                </div>
-              </nuxt-link>
-              <div
-                class="lg:flex-grow md:w-1/3 sm:px-5 lg:pl-12 md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
-              >
-                <nuxt-link to="/">
-                  <h1
-                    class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900"
-                  >
-                    {{ slide.name }}
-                  </h1>
-                </nuxt-link>
-                <p class="mb-8 leading-relaxed">
-                  {{ slide.title }}
-                </p>
-                <p class="font-bold">{{ slide.date.toDateString() }}</p>
-              </div>
-            </v-row>
-          </v-carousel-item>
-        </div>
-      </v-carousel>
+      <news-carousel :items="news" :height="newsHeight" />
     </div>
 
     <v-divider light class="pb-12"></v-divider>
@@ -128,15 +90,17 @@
             </p>
           </div>
         </div>
-        <v-btn v-if="news.length > more" @click="more += 2">Ёще</v-btn>
+        <v-btn v-if="news.length > more" @click="more += 2">Ёще </v-btn>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import NewsCarousel from '~/components/slider-carousel/news-carousel'
 export default {
   name: 'index',
+  components: { NewsCarousel },
   data() {
     return {
       tab: null,
@@ -148,6 +112,7 @@ export default {
         { name: 'Week', code: 'week' },
         { name: 'Month', code: 'month' }
       ],
+      newsHeight: 500,
       news: [
         {
           id: 0,
@@ -157,7 +122,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-30'),
           src: 'https://dummyimage.com/875x650/0000/fff',
-          slider: true
+          slider: true,
+          link: '/'
         },
         {
           id: 1,
@@ -168,7 +134,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-15'),
           src: 'https://dummyimage.com/875x650/636363/0000',
-          slider: true
+          slider: true,
+          link: '/'
         },
         {
           id: 2,
@@ -178,7 +145,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-20'),
           src: 'https://dummyimage.com/875x875/ff0000/0000',
-          slider: false
+          slider: false,
+          link: '/'
         },
         {
           id: 3,
@@ -188,7 +156,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-28'),
           src: 'https://dummyimage.com/875x875/1100ff/fff',
-          slider: false
+          slider: false,
+          link: '/'
         },
         {
           id: 4,
@@ -198,7 +167,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-30'),
           src: 'https://dummyimage.com/875x650/0000/fff',
-          slider: true
+          slider: true,
+          link: '/'
         },
         {
           id: 5,
@@ -209,7 +179,8 @@ export default {
             'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
           date: new Date('2020-08-15'),
           src: 'https://dummyimage.com/875x650/636363/0000',
-          slider: true
+          slider: true,
+          link: '/'
         }
       ]
     }

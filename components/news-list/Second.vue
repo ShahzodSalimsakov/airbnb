@@ -1,5 +1,5 @@
 <template>
-  <section class="text-gray-700 body-font">
+  <section class="second-news text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
         <div
@@ -17,7 +17,7 @@
               :src="list.src"
             />
           </div>
-          <h2 class="text-xl font-black title-font text-gray-900 mt-5 mb-7">
+          <h2 class="text-2xl font-black title-font text-gray-900 mt-5 mb-7">
             {{ list.name }}
           </h2>
           <p class="text-base leading-relaxed mt-2">
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style>
-.v-icon.v-icon {
+.second-news .v-icon.v-icon {
   font-size: 60px;
 }
 </style>
