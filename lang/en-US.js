@@ -21,5 +21,7 @@ export default {
   adults: 'Adults',
   ageFrom: 'Age from',
   children: 'Children',
-  babies: 'Babies'
+  babies: 'Babies',
+  upTo: 'up to',
+  search: 'Search'
 }

@@ -21,5 +21,7 @@ export default {
   adults: 'Взрослые',
   ageFrom: 'Возраст от',
   children: 'Дети',
-  babies: 'Младенцы'
+  babies: 'Младенцы',
+  upTo: 'до',
+  search: 'Поиск'
 }

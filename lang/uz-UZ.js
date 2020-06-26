@@ -21,5 +21,7 @@ export default {
   adults: 'Катталар',
   ageFrom: 'Ёши:',
   children: 'Болалар',
-  babies: 'Чақалоқлар'
+  babies: 'Чақалоқлар',
+  upTo: 'гача',
+  search: 'Қидириш'
 }
