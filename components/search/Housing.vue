@@ -76,14 +76,15 @@
           <div class="flex justify-around p-2">
             <div class="w-1/3">
               <div class="font-black">{{ $t('babies') }}</div>
-              <div>До 2</div>
+              <div v-if="this.$route.path === '/uz'">2 {{ $t('upTo') }}</div>
+              <div v-else>{{ $t('upTo') }} 2</div>
             </div>
             <DecrementIncrement class="pt-2" />
           </div>
         </v-card>
       </v-menu>
       <v-btn color="error" class="ma-2 white--text">
-        Поиск
+        {{ $t('search') }}
         <v-icon right dark>mdi-magnify</v-icon>
       </v-btn>
     </v-row>
