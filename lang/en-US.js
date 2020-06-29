@@ -5,7 +5,7 @@ export default {
   cannotFind: 'We can not seem to find the page you are looking for.',
   error404: 'Error 404',
   homePage: 'Home page',
-  help: 'help',
+  help: 'Help',
   name: 'Name',
   surname: 'Surname',
   password: 'Password',
@@ -23,5 +23,13 @@ export default {
   children: 'Children',
   babies: 'Babies',
   upTo: 'up to',
-  search: 'Search'
+  search: 'Search',
+  bookingTravel: 'Booking and travel',
+  bookingTravelTitle:
+    'Get help with booking changes, communication with the owner and more.',
+  featuredArticles: 'Featured articles',
+  allTopics: 'All topics',
+  about: 'About',
+  proprietor: 'Proprietor',
+  support: 'Support'
 }

@@ -23,5 +23,13 @@ export default {
   children: 'Болалар',
   babies: 'Чақалоқлар',
   upTo: 'гача',
-  search: 'Қидириш'
+  search: 'Қидириш',
+  bookingTravel: 'Буюртма ва саёхат',
+  bookingTravelTitle:
+    'Буюртмани ўзгартириш, эгаси билан алоқа қилиш ва бошқа нарсалар тўғрисида ёрдам олинг.',
+  featuredArticles: 'Тавсия етиладиган мақолалар',
+  allTopics: 'Барча мавзулар',
+  about: 'Биз ҳақимизда',
+  proprietor: 'Эгаси',
+  support: 'Қўллаб-қувватлаш'
 }

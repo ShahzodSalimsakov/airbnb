@@ -7,7 +7,7 @@
             <v-col md="4" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  О нас
+                  {{ $t('about') }}
                 </div>
                 <li
                   v-for="element in menuCol1"
@@ -25,7 +25,7 @@
             <v-col md="4" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  Хозяин/организатор
+                  {{ $t('proprietor') }}
                 </div>
                 <li
                   v-for="element in menuCol2"
@@ -43,7 +43,7 @@
             <v-col md="3" class="leading-9">
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  Поддержка
+                  {{ $t('support') }}
                 </div>
                 <li
                   v-for="element in menuCol3"
