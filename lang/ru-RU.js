@@ -23,5 +23,13 @@ export default {
   children: 'Дети',
   babies: 'Младенцы',
   upTo: 'до',
-  search: 'Поиск'
+  search: 'Поиск',
+  bookingTravel: 'Бронирования и путешествия',
+  bookingTravelTitle:
+    'Получите помощь с изменением бронирования, общением с хозяином и не только.',
+  featuredArticles: 'Рекомендованные статьи',
+  allTopics: 'Все темы',
+  about: 'О нас',
+  proprietor: 'Хозяин',
+  support: 'Поддержка'
 }
