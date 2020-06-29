@@ -2,34 +2,29 @@
   <section class="news-list-recomended text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-        <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
+        <div
+          v-for="item in items"
+          :key="item.id"
+          class="p-4 md:w-1/3 md:mb-0 mb-6 flex"
+        >
           <div
-            class="w-12 h-12 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
+            class="w-8 h-8 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
           >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
+            <v-icon size="24px" class="text-black">mdi-{{ icon }}</v-icon>
           </div>
-          <div class="flex-grow pl-6">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
-              Shooting Stars
-            </h2>
+          <div class="flex-grow pl-2">
+            <nuxt-link :to="item.link">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
+                {{ item.name }}
+              </h2>
+            </nuxt-link>
             <p class="leading-relaxed text-base">
-              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh
-              mi pug VHS try-hard ugh iceland kickstarter tumblr live-edge
-              tilde.
+              {{ item.title }}
             </p>
-            <a class="mt-3 text-indigo-500 inline-flex items-center"
-              >Learn More
+            <nuxt-link
+              :to="item.link"
+              class="mt-3 text-indigo-500 inline-flex items-center"
+              >Подробнее
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -41,7 +36,7 @@
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -51,7 +46,8 @@
 
 <script>
 export default {
-  name: 'recomended'
+  name: 'recomended',
+  props: ['items', 'icon']
 }
 </script>
 
