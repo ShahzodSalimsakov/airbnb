@@ -31,10 +31,10 @@
       <v-col md="4" class="leading-9">
         <ul class="align-left">
           <div class="text-black text-left font-semibold">
-            Изменения и отмены
+            {{ menuCol1.name }}
           </div>
           <li
-            v-for="element in menuCol1"
+            v-for="element in menuCol1.items"
             :key="element.link"
             class="d-block text-black"
             text
@@ -48,10 +48,10 @@
       <v-col md="4" class="leading-9">
         <ul class="align-left">
           <div class="text-black text-left font-semibold">
-            Оплата бронирования
+            {{ menuCol2.name }}
           </div>
           <li
-            v-for="element in menuCol2"
+            v-for="element in menuCol2.items"
             :key="element.link"
             class="d-block text-black"
             text
@@ -65,10 +65,10 @@
       <v-col md="4" class="leading-9">
         <ul class="align-left">
           <div class="text-black text-left font-semibold">
-            Доверие и безопасность
+            {{ menuCol3.name }}
           </div>
           <li
-            v-for="element in menuCol3"
+            v-for="element in menuCol3.items"
             :key="element.link"
             class="d-block text-black"
             text
@@ -88,51 +88,60 @@ export default {
   name: 'index',
   data() {
     return {
-      menuCol1: [
-        {
-          link: '/',
-          title:
-            'Положение о применении уважительных причин и вспышка коронавируса COVID-19'
-        },
-        {
-          link: '/',
-          title: 'Как официально заявить об уважительных причинах?'
-        },
-        {
-          link: '/',
-          title:
-            'Что, если мне нужно отменить бронирование из-за непредвиденных или непредотвратимых обстоятельств?'
-        }
-      ],
-      menuCol2: [
-        {
-          link: '/',
-          title: 'Какие способы оплаты принимает Airbnb? '
-        },
-        {
-          link: '/',
-          title: 'Как отредактировать, удалить или добавить способ оплаты?'
-        },
-        {
-          link: '/',
-          title: 'Когда нужно будет оплатить бронирование?'
-        }
-      ],
-      menuCol3: [
-        {
-          link: '/',
-          title: 'Как Airbnb подтверждает личность?'
-        },
-        {
-          link: '/',
-          title:
-            'Как быть, если кто-то просит меня оплатить бронирование вне сайта Airbnb?'
-        },
-        {
-          link: '/',
-          title: 'Советы по обеспечению безопасности для гостей'
-        }
-      ]
+      menuCol1: {
+        name: 'Изменения и отмены',
+        items: [
+          {
+            link: '/',
+            title:
+              'Положение о применении уважительных причин и вспышка коронавируса COVID-19'
+          },
+          {
+            link: '/',
+            title: 'Как официально заявить об уважительных причинах?'
+          },
+          {
+            link: '/',
+            title:
+              'Что, если мне нужно отменить бронирование из-за непредвиденных или непредотвратимых обстоятельств?'
+          }
+        ]
+      },
+      menuCol2: {
+        name: 'Оплата бронирования',
+        items: [
+          {
+            link: '/',
+            title: 'Какие способы оплаты принимает Airbnb? '
+          },
+          {
+            link: '/',
+            title: 'Как отредактировать, удалить или добавить способ оплаты?'
+          },
+          {
+            link: '/',
+            title: 'Когда нужно будет оплатить бронирование?'
+          }
+        ]
+      },
+      menuCol3: {
+        name: 'Доверие и безопасность',
+        items: [
+          {
+            link: '/',
+            title: 'Как Airbnb подтверждает личность?'
+          },
+          {
+            link: '/',
+            title:
+              'Как быть, если кто-то просит меня оплатить бронирование вне сайта Airbnb?'
+          },
+          {
+            link: '/',
+            title: 'Советы по обеспечению безопасности для гостей'
+          }
+        ]
+      }
     }
   }
 }
