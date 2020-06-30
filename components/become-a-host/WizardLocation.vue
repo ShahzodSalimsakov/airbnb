@@ -93,7 +93,8 @@ export default {
           id: 'c',
           label: 'c'
         }
-      ]
+      ],
+      indeks: ''
     }
   },
   computed: {
