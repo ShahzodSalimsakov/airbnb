@@ -1,10 +1,10 @@
 <template class="text-black">
   <div>
     <div class="ml-12 pt-20 primary--text text-lg font-bold">
-      Доверие и безопасность
+      {{ $t('trustSecurity') }}
     </div>
     <div class="ml-12 pt-5 pb-16 text-5xl font-bold text-gray-800">
-      Ваша безопасность превыше всего
+      {{ $t('trustSecurityTitle') }}
     </div>
 
     <TrustTabs />

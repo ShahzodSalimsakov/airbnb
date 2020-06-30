@@ -4,49 +4,44 @@
       <v-card flat tile width="100%" class="white text-center container">
         <v-card-text>
           <v-row>
-            <v-col md="4" class="leading-9">
-              <ul class="text-left">
-                <div class="text-black text-left font-semibold uppercase">
-                  {{ $t('about') }}
-                </div>
-                <li
-                  v-for="element in menuCol1"
-                  :key="element.link"
-                  class="d-block"
-                  text
+            <div
+              class="w-64 flex-shrink-0 md:mx-0 text-start items-center md:text-left"
+            >
+              <a
+                class="flex title-font font-medium items-center md:justify-start justify-start text-gray-900"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                  viewBox="0 0 24 24"
                 >
-                  <nuxt-link :to="element.link" class="text-black">
-                    {{ element.title }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </v-col>
-
-            <v-col md="4" class="leading-9">
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  ></path>
+                </svg>
+                <span class="ml-3 text-xl">tailblocks</span>
+              </a>
+              <p class="mt-2 text-sm text-gray-500">
+                Air plant banjo lyft occupy retro adaptogen indego
+              </p>
+            </div>
+            <v-col
+              md="4"
+              v-for="menu in footerMenu"
+              :key="menu.name"
+              class="leading-9"
+            >
               <ul class="text-left">
                 <div class="text-black text-left font-semibold uppercase">
-                  {{ $t('proprietor') }}
+                  {{ menu.name }}
                 </div>
                 <li
-                  v-for="element in menuCol2"
-                  :key="element.link"
-                  class="d-block"
-                  text
-                >
-                  <nuxt-link :to="element.link" class="text-black">
-                    {{ element.title }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </v-col>
-
-            <v-col md="3" class="leading-9">
-              <ul class="text-left">
-                <div class="text-black text-left font-semibold uppercase">
-                  {{ $t('support') }}
-                </div>
-                <li
-                  v-for="element in menuCol3"
+                  v-for="element in menu.items"
                   :key="element.link"
                   class="d-block"
                   text
@@ -106,23 +101,26 @@ export default {
         { id: 3, value: 'mdi-twitter', links: 'http://twitter.com/' },
         { id: 4, value: 'mdi-instagram', links: 'https://www.instagram.com/' }
       ],
-      menuCol1: [
-        { link: '/accessibility', title: 'Доступность' },
-        { link: '/trust', title: 'Доверие и безопасность' },
-        { link: '/', title: 'Airbnb Citizen' },
-        { link: '/news', title: 'Новости' }
-      ],
-      menuCol2: [
-        { link: '/welcome-guests', title: 'Принимайте гостей' },
-        // { link: '/', title: 'Airbnb для бизнеса' },
-        { link: '/resources', title: 'Центр ресурсов' },
-        { link: '/', title: 'Центр общения' }
-      ],
-      menuCol3: [
-        // { link: '/', title: 'Новости о коронавирусе' },
-        { link: '/help', title: 'Центр помощи' },
-        { link: '/', title: 'Варианты отмены' },
-        { link: '/', title: 'Поддержка соседей' }
+      footerMenu: [
+        {
+          name: this.$t('about'),
+          items: [
+            { link: '/accessibility', title: 'Доступность' },
+            { link: '/trust', title: 'Доверие и безопасность' },
+            { link: '/help', title: 'Центр помощи' },
+            { link: '/', title: 'Airbnb Citizen' },
+            { link: '/news', title: 'Новости' }
+          ]
+        },
+        {
+          name: this.$t('proprietor'),
+          items: [
+            { link: '/welcome-guests', title: 'Принимайте гостей' },
+            // { link: '/', title: 'Airbnb для бизнеса' },
+            { link: '/resources', title: 'Центр ресурсов' },
+            { link: '/', title: 'Центр общения' }
+          ]
+        }
       ]
     }
   }

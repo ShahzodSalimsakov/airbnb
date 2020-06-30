@@ -1,7 +1,7 @@
 <template>
   <div class="help-page">
     <div class="text-3xl text-gray-900 font-bold mb-2">
-      Здравствуйте! Чем вам помочь?
+      {{ $t('helpPageHeadline') }}
     </div>
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
@@ -20,12 +20,11 @@
             <div class="xl:w-2/3 md:w-2/3 sm:w-2/3 pl-7">
               <nuxt-link to="/help/booking">
                 <h2 class="text-lg text-gray-900 font-bold title-font mb-2">
-                  Бронирование
+                  {{ $t('bookingTravel') }}
                 </h2>
               </nuxt-link>
               <p class="leading-relaxed text-base">
-                Получите помощь с изменением бронирования, общением с хозяином и
-                не только.
+                {{ $t('bookingTravelTitle') }}
               </p>
             </div>
           </div>
@@ -45,12 +44,11 @@
             <div class="xl:w-2/3 md:w-2/3 sm:w-2/3 pl-7">
               <nuxt-link to="/help/hosting">
                 <h2 class="text-lg text-gray-900 font-bold title-font mb-2">
-                  Приём гостей
+                  {{ $t('receptionGuest') }}
                 </h2>
               </nuxt-link>
               <p class="leading-relaxed text-base">
-                Получите помощь с обновлением календаря, общением с гостями и не
-                только.
+                {{ $t('receptionGuestTitle') }}
               </p>
             </div>
           </div>
@@ -58,7 +56,7 @@
       </div>
     </div>
     <div class="text-2xl text-gray-900 font-bold mb-2">
-      Рекомендованные статьи
+      {{ $t('featuredArticles') }}
     </div>
     <news-list-recomended
       :items="sortRecomendation"
@@ -66,90 +64,21 @@
     />
     <div class="help-page-menu">
       <div class="text-2xl text-gray-900 font-bold mb-6">
-        Что нужно знать об Airbnb
+        {{ $t('whatYouNeedToKnowAboutAirbnb') }}
       </div>
       <v-row class="text-black">
-        <v-col md="3" class="leading-9">
+        <v-col v-for="menu in menus" :key="menu.name" md="3" class="leading-9">
           <div
             class="w-8 h-8 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
           >
-            <v-icon size="65px" class="pl-2">mdi-flag-outline</v-icon>
+            <v-icon size="65px" class="pl-2">mdi-{{ menu.icon }}</v-icon>
           </div>
           <ul class="align-left">
             <div class="text-black text-left font-semibold">
-              Об Airbnb
+              {{ menu.name }}
             </div>
             <li
-              v-for="element in menuCol1"
-              :key="element.link"
-              class="d-block text-black"
-              text
-            >
-              <nuxt-link :to="element.link" class="text-black">
-                {{ element.title }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </v-col>
-
-        <v-col md="3" class="leading-9">
-          <div
-            class="w-8 h-8 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
-          >
-            <v-icon size="65px" class="pl-2">mdi-account-check</v-icon>
-          </div>
-          <ul class="align-left">
-            <div class="text-black text-left font-semibold">
-              Ваш аккаунт
-            </div>
-            <li
-              v-for="element in menuCol2"
-              :key="element.link"
-              class="d-block text-black"
-              text
-            >
-              <nuxt-link :to="element.link" class="text-black">
-                {{ element.title }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </v-col>
-
-        <v-col md="3" class="leading-9">
-          <div
-            class="w-8 h-8 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
-          >
-            <v-icon size="65px" class="pl-2">mdi-shield-check-outline</v-icon>
-          </div>
-          <ul class="align-left">
-            <div class="text-black text-left font-semibold">
-              Безопасность и доступность
-            </div>
-            <li
-              v-for="element in menuCol3"
-              :key="element.link"
-              class="d-block text-black"
-              text
-            >
-              <nuxt-link :to="element.link" class="text-black">
-                {{ element.title }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </v-col>
-
-        <v-col md="3" class="leading-9">
-          <div
-            class="w-8 h-8 inline-flex items-center justify-center rounded-full text-indigo-500 mb-4 flex-shrink-0"
-          >
-            <v-icon size="65px" class="pl-2">mdi-book-open-variant</v-icon>
-          </div>
-          <ul class="align-left">
-            <div class="text-black text-left font-semibold">
-              Условия и правила
-            </div>
-            <li
-              v-for="element in menuCol4"
+              v-for="element in menu.items"
               :key="element.link"
               class="d-block text-black"
               text
@@ -222,34 +151,52 @@ export default {
           link: '/'
         }
       ],
-      menuCol1: [
-        { link: '/', title: 'С чего начать' },
-        { link: '/', title: 'Как всё устроено на Airbnb' },
-        { link: '/', title: 'Переписка' },
-        { link: '/', title: 'Стандарты сообщества' },
-        { link: '/', title: 'Партнерство' }
-      ],
-      menuCol2: [
-        { link: '/', title: 'Как создать аккаунт' },
-        { link: '/', title: 'Управление аккаунтом' },
-        { link: '/', title: 'Удостоверение личности и подтверждение' },
-        { link: '/', title: 'Защита аккаунта' },
-        { link: '/', title: 'Отзывы' }
-      ],
-      menuCol3: [
-        { link: '/', title: 'Вопросы безопасности' },
-        { link: '/', title: 'Советы по безопасности' },
-        { link: '/', title: 'Как сообщить о проблеме' },
-        { link: '/', title: 'Доступность' }
-      ],
-      menuCol4: [
-        { link: '/', title: 'Правила для всех участников' },
-        { link: '/', title: 'Дополнительные правила' },
-        { link: '/', title: 'Требования' },
-        { link: '/', title: 'Дополнительные правила и условия' },
-        { link: '/', title: 'Сборы' },
-        { link: '/', title: 'Другие правовые ресурсы' },
-        { link: '/', title: 'Официальное предупреждение о поездках' }
+      menus: [
+        {
+          name: 'Об Airbnb',
+          icon: 'flag-outline',
+          items: [
+            { link: '/', title: 'С чего начать' },
+            { link: '/', title: 'Как всё устроено на Airbnb' },
+            { link: '/', title: 'Переписка' },
+            { link: '/', title: 'Стандарты сообщества' },
+            { link: '/', title: 'Партнерство' }
+          ]
+        },
+        {
+          name: 'Ваш аккаунт',
+          icon: 'account-check',
+          items: [
+            { link: '/', title: 'Как создать аккаунт' },
+            { link: '/', title: 'Управление аккаунтом' },
+            { link: '/', title: 'Удостоверение личности и подтверждение' },
+            { link: '/', title: 'Защита аккаунта' },
+            { link: '/', title: 'Отзывы' }
+          ]
+        },
+        {
+          name: 'Безопасность и доступность',
+          icon: 'shield-check-outline',
+          items: [
+            { link: '/', title: 'Вопросы безопасности' },
+            { link: '/', title: 'Советы по безопасности' },
+            { link: '/', title: 'Как сообщить о проблеме' },
+            { link: '/', title: 'Доступность' }
+          ]
+        },
+        {
+          name: 'Условия и правила',
+          icon: 'book-open-variant',
+          items: [
+            { link: '/', title: 'Правила для всех участников' },
+            { link: '/', title: 'Дополнительные правила' },
+            { link: '/', title: 'Требования' },
+            { link: '/', title: 'Дополнительные правила и условия' },
+            { link: '/', title: 'Сборы' },
+            { link: '/', title: 'Другие правовые ресурсы' },
+            { link: '/', title: 'Официальное предупреждение о поездках' }
+          ]
+        }
       ]
     }
   },
