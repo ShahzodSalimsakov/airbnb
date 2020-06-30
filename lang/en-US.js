@@ -24,6 +24,7 @@ export default {
   babies: 'Babies',
   upTo: 'up to',
   search: 'Search',
+  receptionGuest: 'The reception of guests'
   bookingTravel: 'Booking and travel',
   bookingTravelTitle:
     'Get help with booking changes, communication with the owner and more.',
