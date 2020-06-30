@@ -23,5 +23,11 @@ export default {
   children: 'Дети',
   babies: 'Младенцы',
   upTo: 'до',
-  search: 'Поиск'
+  search: 'Поиск',
+  helpCenter: 'Центр помоши',
+  helloHowWeCanHelp: 'Здравствуйте! Чем вам помочь?',
+  bookTravel: 'Бронирование и путешествие',
+  getHelp:
+    'Получите помощь с изменением бронирования, общением с хозяином и не только.',
+  receptionGuest: 'Прием гостей'
 }

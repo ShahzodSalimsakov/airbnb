@@ -23,5 +23,6 @@ export default {
   children: 'Children',
   babies: 'Babies',
   upTo: 'up to',
-  search: 'Search'
+  search: 'Search',
+  receptionGuest: 'The reception of guests'
 }
