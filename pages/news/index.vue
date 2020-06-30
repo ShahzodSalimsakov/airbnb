@@ -6,7 +6,7 @@
 
     <v-divider light class="pb-12"></v-divider>
 
-    <div class="text-3xl pb-6 font-bold px-4">Последние новости</div>
+    <div class="text-3xl pb-6 font-bold px-4">{{ $t('latestNews') }}</div>
 
     <div class="pb-12 mx-auto">
       <div class="flex flex-wrap text-center">
