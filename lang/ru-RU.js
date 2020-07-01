@@ -67,5 +67,7 @@ export default {
   overview: 'Обзор',
   travels: 'Путешествовать',
   hosting: 'Принимать гостей',
-  communityStandarts: 'Стандарты сообщества'
+  communityStandarts: 'Стандарты сообщества',
+  authorizedNewHostLink: 'К приёму гостей',
+  unAuthorizedNewHostLink: 'Принимайте гостей'
 }

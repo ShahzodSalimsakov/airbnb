@@ -68,5 +68,7 @@ export default {
   overview: 'Умумий тасаввур',
   travels: 'Саёҳат',
   hosting: 'Меҳмонларни қабул қилинг',
-  communityStandards: 'Жамият стандартлари'
+  communityStandards: 'Жамият стандартлари',
+  authorizedNewHostLink: 'Mehmonlar qabuliga',
+  unAuthorizedNewHostLink: 'Mehmonlar qabul qiling'
 }

@@ -61,5 +61,7 @@ export default {
   overview: 'Overview',
   travels: 'Traveling',
   hosting: 'Hosting',
-  communityStandards: 'Community Standards'
+  communityStandards: 'Community Standards',
+  authorizedNewHostLink: 'Switch to hosting',
+  unAuthorizedNewHostLink: 'Host your home'
 }
