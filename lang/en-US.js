@@ -24,13 +24,11 @@ export default {
   babies: 'Babies',
   upTo: 'up to',
   search: 'Search',
-<<<<<<< HEAD
   receptionGuest: 'The reception of guests',
   receptionGuestparagraph:
     'Management of announcements and payments, communication with guests and' +
-    ' other issues.'
-=======
-  receptionGuest: 'The reception of guests'
+    ' other issues.',
+  receptionGuest: 'The reception of guests',
   bookingTravel: 'Booking and travel',
   bookingTravelTitle:
     'Get help with booking changes, communication with the owner and more.',
@@ -39,5 +37,4 @@ export default {
   about: 'About',
   proprietor: 'Proprietor',
   support: 'Support'
->>>>>>> 4c4bd2ba0de197c6fc23b87a0155e11f457a6a4f
 }
