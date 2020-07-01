@@ -39,14 +39,6 @@
           </v-card-text>
         </v-card>
       </v-tab-item>
-
-      <v-tab-item>
-        <v-card flat>
-          <v-card-text>
-            <HousingSafety />
-          </v-card-text>
-        </v-card>
-      </v-tab-item>
     </v-tabs-items>
   </div>
 </template>
@@ -56,10 +48,9 @@ import Overview from '~/pages/trust/component/Overview'
 import Travels from '~/pages/trust/component/Travels'
 import Setout from '~/pages/trust/component/Setout'
 import CommunityStandards from '~/pages/trust/component/CommunityStandards'
-import HousingSafety from '~/pages/trust/component/HousingSafety'
 export default {
   name: 'TrustTabs',
-  components: { HousingSafety, CommunityStandards, Setout, Travels, Overview },
+  components: { CommunityStandards, Setout, Travels, Overview },
   data() {
     return {
       tab: null,
@@ -67,8 +58,7 @@ export default {
         this.$t('overview'),
         this.$t('travels'),
         this.$t('hosting'),
-        'Стандарты сообщества',
-        'Программа «Безопасность жилья»'
+        this.$t('communityStandards')
       ]
     }
   }

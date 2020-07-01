@@ -62,27 +62,27 @@ export default {
     return {
       steps: [
         {
-          label: 'Какое жилье вы сдаете?',
+          label: this.$t('becomeAHostStep1'),
           active: true
         },
         {
-          label: 'Сколько гостей вмещает ваше жилье?',
+          label: this.$t('becomeAHostStep2'),
           active: false
         },
         {
-          label: 'Сколько ванных?',
+          label: this.$t('becomeAHostStep3'),
           active: false
         },
         {
-          label: 'Где находится ваше жилье?',
+          label: this.$t('becomeAHostStep4'),
           active: false
         },
         {
-          label: 'Какие удобства вы предлагаете?',
+          label: this.$t('becomeAHostStep5'),
           active: false
         },
         {
-          label: 'Какими помещениями гости могут пользоваться?',
+          label: this.$t('becomeAHostStep6'),
           active: false
         }
       ],
