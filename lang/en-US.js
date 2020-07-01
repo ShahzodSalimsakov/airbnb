@@ -25,7 +25,6 @@ export default {
   babies: 'Babies',
   upTo: 'up to',
   search: 'Search',
-  receptionGuest: 'The reception of guests',
   receptionGuestparagraph:
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
