@@ -1,17 +1,17 @@
 <template>
   <div class="">
     <section>
-      <h1 class="text-5xl w-1/3 leading-none">
-        <span class="text-red-600">Ресурсы о коронавирусе</span>
+      <h1 class="text-5xl w-2/5 leading-none">
+        <span class="text-red-600"> {{ $t('coronavirusResources') }}</span>
       </h1>
     </section>
     <div class="pt-2 text-xl">
-      Узнайте, какую помощь получают хозяева, организаторы и путешественники.
+      {{ $t('coronavirusResourcesTitle') }}
     </div>
     <v-row>
       <v-col class="flex">
         <v-col md="8">
-          <v-tabs background-color="white" color="deep-purple accent-4">
+          <v-tabs background-color="white" color="primary">
             <v-tab>Хозяевам</v-tab>
             <v-tab>Путешественникам</v-tab>
             <v-tab-item v-for="n in 3" :key="n">
@@ -33,7 +33,9 @@
         </v-col>
         <v-col md="4 mt-12">
           <v-container fluid>
-            <span class="text-3xl">Новости</span>
+            <span class="text-3xl">
+              {{ $t('news') }}
+            </span>
             <div v-for="(item, index) in items.slice(0, 5)" :key="index">
               <div v-if="item.date" :key="item.date">{{ item.date }}</div>
               <v-divider></v-divider>

@@ -64,9 +64,9 @@ export default {
     return {
       tab: null,
       items: [
-        'Обзор',
-        'Путешествия',
-        'Прием гостей',
+        this.$t('overview'),
+        this.$t('travels'),
+        this.$t('hosting'),
         'Стандарты сообщества',
         'Программа «Безопасность жилья»'
       ]
