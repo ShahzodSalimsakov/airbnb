@@ -70,5 +70,11 @@ export default {
   hosting: 'Меҳмонларни қабул қилинг',
   communityStandards: 'Жамият стандартлари',
   authorizedNewHostLink: 'Mehmonlar qabuliga',
-  unAuthorizedNewHostLink: 'Mehmonlar qabul qiling'
+  unAuthorizedNewHostLink: 'Mehmonlar qabul qiling',
+  becomeAHostStep1: 'Сиз қайси турдаги турар жойни ижарага беряпсиз?',
+  becomeAHostStep2: 'Сизнинг турар жойингиз қанча меҳмонга тўғри келади?',
+  becomeAHostStep3: 'Ҳаммомлар сони?',
+  becomeAHostStep4: 'Сизнинг турар жойингиз қаерда жойлашган?',
+  becomeAHostStep5: 'Сиз қандай қулайликларни таклиф қиласиз?',
+  becomeAHostStep6: 'Меҳмонлар қайси ҳоналардан фойдаланишлари мумкун'
 }

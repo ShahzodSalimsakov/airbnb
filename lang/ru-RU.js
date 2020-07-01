@@ -69,5 +69,12 @@ export default {
   hosting: 'Принимать гостей',
   communityStandarts: 'Стандарты сообщества',
   authorizedNewHostLink: 'К приёму гостей',
-  unAuthorizedNewHostLink: 'Принимайте гостей'
+  unAuthorizedNewHostLink: 'Принимайте гостей',
+  communityStandards: 'Стандарты сообщества',
+  becomeAHostStep1: 'Какое жилье вы сдаете?',
+  becomeAHostStep2: 'Сколько гостей вмещает ваше жилье?',
+  becomeAHostStep3: 'Сколько ванных?',
+  becomeAHostStep4: 'Где находится ваше жилье?',
+  becomeAHostStep5: 'Какие удобства вы предлагаете?',
+  becomeAHostStep6: 'Какими помещениями гости могут пользоваться?'
 }

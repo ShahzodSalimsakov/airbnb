@@ -28,7 +28,6 @@ export default {
   receptionGuestparagraph:
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
-  receptionGuest: 'The reception of guests',
   receptionGuestTitle:
     'Get help updating your calendar, chatting with guests, and more.',
   bookingTravel: 'Booking and travel',
@@ -63,5 +62,11 @@ export default {
   hosting: 'Hosting',
   communityStandards: 'Community Standards',
   authorizedNewHostLink: 'Switch to hosting',
-  unAuthorizedNewHostLink: 'Host your home'
+  unAuthorizedNewHostLink: 'Host your home',
+  becomeAHostStep1: 'What type of housing do you rent?',
+  becomeAHostStep2: 'How many guests does your accommodation accommodate?',
+  becomeAHostStep3: 'How many bathrooms?',
+  becomeAHostStep4: 'Where is your accommodation located?',
+  becomeAHostStep5: 'What conveniences do you offer?',
+  becomeAHostStep6: 'What facilities can guests use?'
 }
