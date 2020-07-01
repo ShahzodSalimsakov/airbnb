@@ -225,7 +225,6 @@
             <v-card-text>
               <v-checkbox
                 :value="climbStairs"
-                dark
                 hide-details
                 label="Необходимо подниматься по лестнице"
                 @change="(val) => changeData('climbStairs', val)"
@@ -235,7 +234,6 @@
             <v-card-text>
               <v-checkbox
                 :value="noisy"
-                dark
                 hide-details
                 label="Возможно, будет шумно"
                 @change="(val) => changeData('noisy', val)"
@@ -245,7 +243,6 @@
             <v-card-text>
               <v-checkbox
                 :value="pets"
-                dark
                 hide-details
                 label="В доме живут питомцы"
                 @change="(val) => changeData('pets', val)"
@@ -255,7 +252,6 @@
             <v-card-text>
               <v-checkbox
                 :value="parking"
-                dark
                 hide-details
                 label="Своей парковки нет"
                 @change="(val) => changeData('parking', val)"
@@ -265,7 +261,6 @@
             <v-card-text>
               <v-checkbox
                 :value="commonArea"
-                dark
                 hide-details
                 label="Некоторые зоны являются общими"
                 @change="(val) => changeData('commonArea', val)"
@@ -275,7 +270,6 @@
             <v-card-text>
               <v-checkbox
                 :value="convenienceLimitations"
-                dark
                 hide-details
                 label="Ограничения удобства"
                 @change="(val) => changeData('convenienceLimitations', val)"
@@ -285,7 +279,6 @@
             <v-card-text>
               <v-checkbox
                 :value="cctv"
-                dark
                 hide-details
                 label="Устройства наблюдения или записи на территории жилья"
                 @change="(val) => changeData('cctv', val)"
@@ -295,7 +288,6 @@
             <v-card-text>
               <v-checkbox
                 :value="gun"
-                dark
                 hide-details
                 label="Оружие на территории жилья"
                 @change="(val) => changeData('gun', val)"
@@ -305,7 +297,6 @@
             <v-card-text>
               <v-checkbox
                 :value="dangerPets"
-                dark
                 hide-details
                 label="Опасные животные на территории жилья"
                 @change="(val) => changeData('dangerPets', val)"

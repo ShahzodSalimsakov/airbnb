@@ -2,7 +2,7 @@
   <v-stepper v-model="e1">
     <v-stepper-header>
       <v-stepper-step :complete="e1 > 1" step="1">
-        1
+        Вот как гости будут у вас бронировать
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -55,8 +55,14 @@
 
       <v-divider></v-divider>
 
+      <v-stepper-step :complete="e1 > 10" step="10">
+        Цены с учетом срока проживания
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
       <v-stepper-step :complete="e1 > 11" step="11">
-        Local laws
+        Местные законы и налоги
       </v-stepper-step>
 
       <v-divider></v-divider>
@@ -145,9 +151,6 @@
 
       <v-stepper-content step="11">
         <WizardLocalLaws />
-        <v-btn color="primary" @click="e1 = 11">
-          Continue
-        </v-btn>
         <v-btn text @click="e1 = 10">Cancel</v-btn>
       </v-stepper-content>
     </v-stepper-items>
