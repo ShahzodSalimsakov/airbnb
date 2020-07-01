@@ -9,8 +9,7 @@
             {{ $t('receptionGuest') }}
           </h2>
           <p class="leading-relaxed text-xl text-base">
-            Получите помощь с изменением бронирования, общением с хозяином и не
-            только.
+            {{ $t('receptionGuestparagraph') }}
           </p>
         </div>
 
