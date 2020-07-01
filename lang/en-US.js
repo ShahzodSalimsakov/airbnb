@@ -25,6 +25,10 @@ export default {
   upTo: 'up to',
   search: 'Search',
   receptionGuest: 'The reception of guests',
+  receptionGuestparagraph:
+    'Management of announcements and payments, communication with guests and' +
+    ' other issues.',
+  receptionGuest: 'The reception of guests',
   receptionGuestTitle:
     'Get help updating your calendar, chatting with guests, and more.',
   bookingTravel: 'Booking and travel',
