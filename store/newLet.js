@@ -3,9 +3,22 @@ export const state = () => ({
   typeOfHousing: '',
   disposalOfGuests: '',
   forGuest: '',
+  guestsCount: 1,
   onBehalfOfTheCompany: '',
-  bedsCount: '',
-  bedsPerRoom: [],
+  bedsCount: 1,
+  location: {
+    lat: 41.310897130276416,
+    lon: 69.28018172715117
+  },
+  bedsPerRoom: [
+    {
+      double: 0,
+      single: 0,
+      floorMatress: 0,
+      sofa: 0,
+      sofaBed: 0
+    }
+  ],
   country: '',
   select: '',
   selectSafety: '',
@@ -47,6 +60,8 @@ export const getters = {
   typeOfHousing: (state) => state.typeOfHousing,
   disposalOfGuests: (state) => state.disposalOfGuests,
   forGuest: (state) => state.forGuest,
+  location: (state) => state.location,
+  guestsCount: (state) => state.guestsCount,
   onBehalfOfTheCompany: (state) => state.onBehalfOfTheCompany,
   bedsCount: (state) => state.bedsCount,
   bedsPerRoom: (state) => state.bedsPerRoom,
@@ -89,11 +104,17 @@ export const getters = {
 export const mutations = {
   SET_STATE(state, { key, val }) {
     state[key] = val
+  },
+  SET_BEDS_PER_ROOM(state, { index, key, val }) {
+    state.bedsPerRoom[index][key] = +val
   }
 }
 
 export const actions = {
   setState({ commit }, { key, val }) {
     commit('SET_STATE', { key, val })
+  },
+  setBedsPerRoom({ commit }, { index, key, val }) {
+    commit('SET_BEDS_PER_ROOM', { index, key, val })
   }
 }

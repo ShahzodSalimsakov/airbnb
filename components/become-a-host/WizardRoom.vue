@@ -1,94 +1,108 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-card ref="form">
-        <v-card-text>
-          <v-select
-            ref="place"
-            :value="letType"
-            :items="placeItems"
-            label="Для начала сузим выбор"
-            placeholder="Выберите 1 вариант"
-            @change="(val) => changeData('letType', val)"
-          ></v-select>
-        </v-card-text>
-        <div v-if="letType">
+      <v-alert type="error" v-show="showRequiredError">
+        Для продолжения заполните поля
+      </v-alert>
+      <v-form ref="form" v-model="valid">
+        <v-card outlined ref="form">
           <v-card-text>
             <v-select
-              :value="typeOfHousing"
-              :items="type_of_housing"
-              label="Теперь выберите тип жилья"
-              placeholder="Выберите тип жилья"
-              @change="(val) => changeData('typeOfHousing', val)"
+              ref="place"
+              :value="letType"
+              :items="placeItems"
+              :rules="rules.letType"
+              required
+              label="Для начала сузим выбор"
+              placeholder="Выберите 1 вариант"
+              @change="(val) => changeData('letType', val)"
             ></v-select>
-            <p v-if="typeOfHousing">{{ descriptionHouse.description }}</p>
           </v-card-text>
-          <div v-if="typeOfHousing">
+          <div>
             <v-card-text>
-              <h3>Что будет в распоряжении гостей?</h3>
-              <v-radio-group
-                :value="disposalOfGuests"
-                :mandatory="false"
-                @change="(val) => changeData('disposalOfGuests', val)"
-              >
-                <v-radio label="Жилье целиком" value="1"></v-radio>
-                <div>
-                  Всё жилье целиком в распоряжении гостей: обычно это спальня,
-                  ванная и кухня.
-                </div>
-                <v-radio label="Отдельная комната" value="2"></v-radio>
-                <div>
-                  Гостям предоставляется отдельная спальня, остальные помещения
-                  используются совместно.
-                </div>
-                <v-radio label="Место в комнате" value="3"></v-radio>
-                <div>
-                  Гости спят в общей спальне или помещении с другими людьми.
-                </div>
-              </v-radio-group>
+              <v-select
+                :value="typeOfHousing"
+                :items="type_of_housing"
+                :disabled="!letType"
+                :rules="rules.typeOfHousing"
+                required
+                label="Теперь выберите тип жилья"
+                placeholder="Выберите тип жилья"
+                @change="(val) => changeData('typeOfHousing', val)"
+              ></v-select>
+              <p v-if="typeOfHousing">{{ descriptionHouse.description }}</p>
             </v-card-text>
-            <v-card-text>
-              <h3>Это помещение предназначено только для гостей?</h3>
-              <v-radio-group
-                :value="forGuest"
-                :mandatory="false"
-                @change="(val) => changeData('forGuest', val)"
-              >
-                <v-radio
-                  label="Да, им пользуются в основном только гости"
-                  value="4"
-                ></v-radio>
-                <v-radio
-                  label="Нет, я храню здесь личные вещи"
-                  value="5"
-                ></v-radio>
-              </v-radio-group>
-            </v-card-text>
-            <v-card-text>
-              <h3>Вы размещаете объявление на Airbnb от лица компании?</h3>
-              <v-radio-group
-                :value="onBehalfOfTheCompany"
-                :mandatory="false"
-                @change="(val) => changeData('onBehalfOfTheCompany', val)"
-              >
-                <v-radio
-                  label="Да, я управляю компанией или работаю в ней"
-                  value="6"
-                ></v-radio>
-                <v-radio
-                  label="Нет, это ко мне не относится"
-                  value="7"
-                ></v-radio>
-                <div>
-                  Это даст вам доступ к подходящим функциям Airbnb — гости этого
-                  не увидят, и выбор никак не повлияет на позиции вашего жилья в
-                  поиске.
-                </div>
-              </v-radio-group>
-            </v-card-text>
+            <div v-show="typeOfHousing">
+              <v-card-text>
+                <h3>Что будет в распоряжении гостей?</h3>
+                <v-radio-group
+                  :value="disposalOfGuests"
+                  :rules="rules.disposalOfGuests"
+                  required
+                  :mandatory="false"
+                  @change="(val) => changeData('disposalOfGuests', val)"
+                >
+                  <v-radio label="Жилье целиком" value="1"></v-radio>
+                  <div>
+                    Всё жилье целиком в распоряжении гостей: обычно это спальня,
+                    ванная и кухня.
+                  </div>
+                  <v-radio label="Отдельная комната" value="2"></v-radio>
+                  <div>
+                    Гостям предоставляется отдельная спальня, остальные
+                    помещения используются совместно.
+                  </div>
+                  <v-radio label="Место в комнате" value="3"></v-radio>
+                  <div>
+                    Гости спят в общей спальне или помещении с другими людьми.
+                  </div>
+                </v-radio-group>
+              </v-card-text>
+              <v-card-text>
+                <h3>Это помещение предназначено только для гостей?</h3>
+                <v-radio-group
+                  :value="forGuest"
+                  :rules="rules.forGuest"
+                  required
+                  :mandatory="false"
+                  @change="(val) => changeData('forGuest', val)"
+                >
+                  <v-radio
+                    label="Да, им пользуются в основном только гости"
+                    value="4"
+                  ></v-radio>
+                  <v-radio
+                    label="Нет, я храню здесь личные вещи"
+                    value="5"
+                  ></v-radio>
+                </v-radio-group>
+              </v-card-text>
+              <v-card-text>
+                <h3>Вы размещаете объявление на Airbnb от лица компании?</h3>
+                <v-radio-group
+                  :value="onBehalfOfTheCompany"
+                  :mandatory="false"
+                  @change="(val) => changeData('onBehalfOfTheCompany', val)"
+                >
+                  <v-radio
+                    label="Да, я управляю компанией или работаю в ней"
+                    value="6"
+                  ></v-radio>
+                  <v-radio
+                    label="Нет, это ко мне не относится"
+                    value="7"
+                  ></v-radio>
+                  <div>
+                    Это даст вам доступ к подходящим функциям Airbnb — гости
+                    этого не увидят, и выбор никак не повлияет на позиции вашего
+                    жилья в поиске.
+                  </div>
+                </v-radio-group>
+              </v-card-text>
+            </div>
           </div>
-        </div>
-      </v-card>
+        </v-card>
+      </v-form>
     </v-col>
   </v-row>
 </template>
@@ -213,7 +227,15 @@ export default {
         description:
           'Квартиры находятся в многоквартирных домах или комплексах, где живут и другие люди.'
       }
-    ]
+    ],
+    valid: false,
+    showRequiredError: false,
+    rules: {
+      letType: [(v) => !!v || 'Поле обязательно для заполнения'],
+      typeOfHousing: [(v) => !!v || 'Поле обязательно для заполнения'],
+      disposalOfGuests: [(v) => !!v || 'Поле обязательно для заполнения'],
+      forGuest: [(v) => !!v || 'Поле обязательно для заполнения']
+    }
   }),
   computed: {
     ...mapGetters({
@@ -240,6 +262,11 @@ export default {
         key,
         val
       })
+    },
+    submit() {
+      this.$refs.form.validate()
+      this.showRequiredError = !this.valid
+      return this.valid
     }
   }
 }

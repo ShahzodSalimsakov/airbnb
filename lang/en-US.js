@@ -61,6 +61,8 @@ export default {
   travels: 'Traveling',
   hosting: 'Hosting',
   communityStandards: 'Community Standards',
+  authorizedNewHostLink: 'Switch to hosting',
+  unAuthorizedNewHostLink: 'Host your home',
   becomeAHostStep1: 'What type of housing do you rent?',
   becomeAHostStep2: 'How many guests does your accommodation accommodate?',
   becomeAHostStep3: 'How many bathrooms?',
