@@ -29,6 +29,8 @@ export default {
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
   receptionGuest: 'The reception of guests',
+  receptionGuestTitle:
+    'Get help updating your calendar, chatting with guests, and more.',
   bookingTravel: 'Booking and travel',
   bookingTravelTitle:
     'Get help with booking changes, communication with the owner and more.',
@@ -36,5 +38,20 @@ export default {
   allTopics: 'All topics',
   about: 'About',
   proprietor: 'Proprietor',
-  support: 'Support'
+  support: 'Support',
+  helpPageHeadline: 'Hello! How can I help you?',
+  whatYouNeedToKnowAboutAirbnb: 'What you need to know about Airbnb',
+  airbnbForAll: 'Airbnb for all',
+  howToBuildAirbnb: "Here's How We Build Airbnb For Everyone",
+  whatAreWeStrivingFor: 'What are we striving for',
+  whatAreWeStrivingForTitle:
+    'We want travel to be more inclusive and accessible to all. This job cannot have an endpoint. See what we are already doing to increase inclusiveness on the platform.',
+  tipsForGuests: 'Tips for guests',
+  tipsForGuestsTitle:
+    'We know that finding a home or experience that meets your needs needs may not be easy. Here are some tips on how to make the trip as enjoyable as possible.',
+  adviceOwners: 'Advice to the owners',
+  adviceOwnersTitle: "Here's how to support guests with disabilities",
+  trustSecurity: 'Trust and security',
+  trustSecurityTitle: 'Your safety comes first',
+  latestNews: 'Latest news'
 }

@@ -8,10 +8,10 @@
           <h1
             class="title-font sm:text-6xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
-            Airbnb для всех
+            {{ $t('airbnbForAll') }}
           </h1>
           <p class="mb-8 leading-relaxed text-2xl">
-            Вот как мы строим Airbnb для всех
+            {{ $t('howToBuildAirbnb') }}
           </p>
         </div>
       </div>
@@ -33,12 +33,10 @@
           <h1
             class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
-            К чему мы стремимся
+            {{ $t('whatAreWeStrivingFor') }}
           </h1>
           <p class="mb-8 leading-relaxed text-2xl">
-            Мы хотим, чтобы путешествия были более инклюзивными и доступными для
-            всех. У этой работы не может быть конечной точки. Посмотрите, что мы
-            уже делаем для повышения инклюзивности на платформе.
+            {{ $t('whatAreWeStrivingForTitle') }}
           </p>
         </div>
       </div>
@@ -77,12 +75,10 @@
           <h1
             class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
-            Советы гостям
+            {{ $t('tipsForGuests') }}
           </h1>
           <p class="mb-8 leading-relaxed text-2xl">
-            Мы знаем, что найти жилье или Впечатление, отвечающие вашим
-            потребностям, может быть непросто. Вот несколько советов о том, как
-            сделать поездки максимально приятными.
+            {{ $t('tipsForGuestsTitle') }}
           </p>
         </div>
       </div>
@@ -148,10 +144,10 @@
           <h1
             class="title-font sm:text-5xl font-bold text-3xl mb-4 font-medium text-gray-900"
           >
-            Советы хозяевам
+            {{ $t('adviceOwners') }}
           </h1>
           <p class="mb-8 leading-relaxed text-2xl">
-            Вот как можно поддержать гостей с ограниченными возможностями
+            {{ $t('adviceOwnersTitle') }}
           </p>
         </div>
       </div>
