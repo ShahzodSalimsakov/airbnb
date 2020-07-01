@@ -69,6 +69,8 @@ export default {
   travels: 'Саёҳат',
   hosting: 'Меҳмонларни қабул қилинг',
   communityStandards: 'Жамият стандартлари',
+  authorizedNewHostLink: 'Mehmonlar qabuliga',
+  unAuthorizedNewHostLink: 'Mehmonlar qabul qiling',
   becomeAHostStep1: 'Сиз қайси турдаги турар жойни ижарага беряпсиз?',
   becomeAHostStep2: 'Сизнинг турар жойингиз қанча меҳмонга тўғри келади?',
   becomeAHostStep3: 'Ҳаммомлар сони?',

@@ -11,7 +11,6 @@
         <v-card-text>
           <v-col cols="12">
             <v-file-input
-              :rules="rules"
               accept="image/*"
               :placeholder="$t('choosePhoto')"
               prepend-icon="mdi-camera"

@@ -41,7 +41,8 @@ export default {
     './plugins/mixins/user.js',
     './plugins/axios.js',
     './plugins/mixins/validation.js',
-    './plugins/DataProvider.js'
+    './plugins/DataProvider.js',
+    { src: './plugins/ymapPlugin.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
