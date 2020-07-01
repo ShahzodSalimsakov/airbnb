@@ -3,17 +3,16 @@
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card ref="form">
         <v-card-text>
-          <div class="headline">Добавьте фото в объявление</div>
+          <div class="headline">{{ $t('addPhotoToAd') }}</div>
           <div class="body-2">
-            Фото помогают гостям представить, каково это — жить в вашем доме.
-            Начните с одного и добавьте остальные после публикации.
+            {{ $t('addPhotoToAdTitle') }}
           </div>
         </v-card-text>
         <v-card-text>
           <v-col cols="12">
             <v-file-input
               accept="image/*"
-              placeholder="Выбрать фотографию"
+              :placeholder="$t('choosePhoto')"
               prepend-icon="mdi-camera"
             ></v-file-input>
           </v-col>

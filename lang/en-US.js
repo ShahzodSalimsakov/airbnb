@@ -68,5 +68,33 @@ export default {
   becomeAHostStep3: 'How many bathrooms?',
   becomeAHostStep4: 'Where is your accommodation located?',
   becomeAHostStep5: 'What conveniences do you offer?',
-  becomeAHostStep6: 'What facilities can guests use?'
+  becomeAHostStep6: 'What facilities can guests use?',
+  preview: 'Preview',
+  continue: 'Continue',
+  addPhotoToAd: 'Add photo to ad',
+  addPhotoToAdTitle:
+    "Photos help guests imagine what it's like to live in your home. Start with one and add the rest after posting.",
+  tellGuestsAboutLodging: 'Tell guests about lodging',
+  tellGuestsAboutLodgingTitle:
+    'Tell us why your area is interesting and indicate housing features such as fast Wi-Fi or parking.',
+  createAdName: 'Create ad name',
+  addProfilePhoto: 'Add profile photo',
+  whatAmenitiesDoYouOffer: 'What amenities do you offer?',
+  viewAirbnbGuestRequirements: 'View Airbnb guest requirements',
+  defineHouseRulesForGuests: 'Define house rules for guests',
+  choosePhoto: 'Choose a photo',
+  addDetailsOptional: 'Add details (optional)',
+  yourHomeOptional: 'Your home (optional)',
+  yourHomeOptionalTitle:
+    'Describe the appearance and atmosphere of the housing. Pay attention to the design, a cozy reading corner or garden furniture.',
+  communicationWithGuestsOptional: 'Communication with guests (optional)',
+  communicationWithGuestsOptionalTitle:
+    'Please indicate how often guests may contact you during your stay. For security reasons, do not provide your phone number or email address before confirming your reservation.',
+  yourAreaOptional: 'Your area (optional)',
+  yourAreaOptionalTitle:
+    'Describe what distinguishes your area from others. Mention the atmosphere, cafes, unique attractions, places nearby.',
+  whereToGoOptional: 'Where to go (optional)',
+  whereToGoOptionalTitle:
+    'Tell us about the public transport available in your area, how best to get there by car or walk.',
+  smaller: 'Smaller'
 }
