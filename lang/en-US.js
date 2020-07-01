@@ -1,6 +1,7 @@
 export default {
   signIn: 'Sign in',
   signUp: 'Sign up',
+  homeHeadline: 'It’s not necessary to go far for happiness',
   oops: 'OOPS!!!',
   cannotFind: 'We can not seem to find the page you are looking for.',
   error404: 'Error 404',
@@ -53,5 +54,13 @@ export default {
   adviceOwnersTitle: "Here's how to support guests with disabilities",
   trustSecurity: 'Trust and security',
   trustSecurityTitle: 'Your safety comes first',
-  latestNews: 'Latest news'
+  latestNews: 'Latest news',
+  all: 'All',
+  coronavirusResources: 'Coronavirus resources',
+  coronavirusResourcesTitle: 'Find out what help hosts and travelers get.',
+  news: 'News',
+  overview: 'Overview',
+  travels: 'Traveling',
+  hosting: 'Hosting',
+  communityStandards: 'Community Standards'
 }

@@ -1,6 +1,7 @@
 export default {
   signIn: 'Кириш',
   signUp: 'Рўйхатдан ўтиш',
+  homeHeadline: 'Бахт учун узоққа бориш шарт эмас',
   oops: 'АНА ХОЛОС!!!',
   cannotFind: 'Сиз қидираётган саҳифани тополмаётганга ўхшаймиз.',
   error404: 'Хатолик 404',
@@ -58,5 +59,14 @@ export default {
   adviceOwnersTitle: 'Ногирон меҳмонларга қандай ёрдам бериш кераклиги ҳақида',
   trustSecurity: 'Ишонч ва хавфсизлик',
   trustSecurityTitle: 'Хавфсизлигингиз биринчи ўринда туради',
-  latestNews: 'Сўнги янгиликлар'
+  latestNews: 'Сўнги янгиликлар',
+  all: 'Хаммаси',
+  coronavirusResources: 'Коронавирус ҳақида манбалари',
+  coronavirusResourcesTitle:
+    'Уй эгалари ва саёҳатчилар қандай ёрдам олишларини билиб олинг.',
+  news: 'Янгиликлар',
+  overview: 'Умумий тасаввур',
+  travels: 'Саёҳат',
+  hosting: 'Меҳмонларни қабул қилинг',
+  communityStandards: 'Жамият стандартлари'
 }
