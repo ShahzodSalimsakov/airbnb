@@ -96,9 +96,14 @@ export default {
   tellGuestsAboutLodgingTitle:
     'Tell us why your area is interesting and indicate housing features such as fast Wi-Fi or parking.',
   createAdName: 'Create ad name',
+  createAdNameTitle:
+    'Guests will be attracted by the name, reflecting the uniqueness of housing',
   addProfilePhoto: 'Add profile photo',
+  addProfilePhotoTitle: 'Make sure your face is clearly visible in the photo.',
   whatAmenitiesDoYouOffer: 'What amenities do you offer?',
   viewAirbnbGuestRequirements: 'View Airbnb guest requirements',
+  viewAirbnbGuestRequirementsTitle:
+    'Guests must meet certain requirements to book accommodations on Airbnb.',
   defineHouseRulesForGuests: 'Define house rules for guests',
   choosePhoto: 'Choose a photo',
   addDetailsOptional: 'Add details (optional)',
@@ -121,5 +126,23 @@ export default {
   selectOne: 'Select one',
   chooseProperty: 'Now choose a property type',
   propertyType: 'Select property type',
-  guestsHave: 'What will guests have?'
+  guestsHave: 'What will guests have?',
+  required: 'Required',
+  max50Characters: 'Maximum 50 characters',
+  useFacebookPhotos: 'Use Facebook photos',
+  uploadPhoto: 'Upload a photo',
+  addMobileNumber: 'Add mobile number',
+  addMobileNumberTitle:
+    'We will send you booking requests, reminders and other notifications. You should be able to receive SMS or calls to this number.',
+  submit: 'Submit',
+  allAirbnbGuestsMustSubmitTheFollowing:
+    'All Airbnb guests must submit the following',
+  emailAddress: 'E-mail address',
+  phoneNumberVerified: 'Phone number verified',
+  billingInformation: 'Billing Information',
+  beforeBookingYourAccommodationGuestsMust:
+    'Before booking your accommodation, guests must',
+  takeYourRulesAtHome: 'Take your rules at home',
+  sendYouAMessageAboutYourTrip: 'Send you a message about your trip',
+  warnAboutTheNumberOfVisitors: 'Warn about the number of visitors'
 }

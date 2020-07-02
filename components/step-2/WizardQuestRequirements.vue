@@ -4,53 +4,52 @@
       <v-card ref="form">
         <v-card-text>
           <div class="headline">
-            Ознакомиться с требованиями Airbnb к гостям
+            {{ $t('viewAirbnbGuestRequirements') }}
           </div>
           <div class="body-2">
-            Для бронирования жилья на Airbnb гости должны соответствовать
-            определенным требованиям.
+            {{ $t('viewAirbnbGuestRequirementsTitle') }}
           </div>
         </v-card-text>
 
         <v-card-text>
           <div class="title">
-            Все гости Airbnb должны представить следующее:
+            {{ $t('allAirbnbGuestsMustSubmitTheFollowing') }}:
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Адрес электронной почты
+            {{ $t('emailAddress') }}
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Номер телефона подтвержден
+            {{ $t('phoneNumberVerified') }}
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Платежная информация
+            {{ $t('billinginformation') }}
           </div>
         </v-card-text>
 
         <v-card-text>
           <div class="title">
-            Перед бронированием вашего жилья гости должны:
+            {{ $t('beforeBookingYourAccommodationGuestsMust') }}:
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Принять ваши правила дома
+            {{ $t('takeYourRulesAtHome') }}
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Отправить вам сообщение о своей поездке
+            {{ $t('sendYouAMessageAboutYourTrip') }}
           </div>
 
           <div class="subtitle-1">
             <v-icon left color="success">mdi-check</v-icon>
-            Предупредить о количестве приезжающих
+            {{ $t('warnAboutTheNumberOfVisitors') }}
           </div>
 
           <div class="subtitle-1">

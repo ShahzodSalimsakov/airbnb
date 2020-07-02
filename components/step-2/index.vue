@@ -35,11 +35,15 @@
     <div
       class="border-t-2 elevation-10 flex justify-evenly py-3 steps-pagination"
     >
-      <v-btn color="primary" :disabled="activeStepIndex === 0" @click="goToPrev"
-        >Prev</v-btn
+      <v-btn
+        color="primary"
+        :disabled="activeStepIndex === 0"
+        @click="goToPrev"
       >
+        {{ $t('preview') }}
+      </v-btn>
       <v-btn color="primary" :loading="isStepLoading" @click="goToNext">
-        Continue
+        {{ $t('continue') }}
       </v-btn>
     </div>
   </div>
@@ -69,31 +73,31 @@ export default {
     return {
       steps: [
         {
-          label: 'Добавьте фото в объявление',
+          label: this.$t('addPhotoToAd'),
           active: true
         },
         {
-          label: 'Расскажите гостям о жилье',
+          label: this.$t('tellGuestsAboutLodging'),
           active: false
         },
         {
-          label: 'Создать название объявления',
+          label: this.$t('createAdName'),
           active: false
         },
         {
-          label: 'Добавьте фото профиля',
+          label: this.$t('addProfilePhoto'),
           active: false
         },
         {
-          label: 'Какие удобства вы предлагаете?',
+          label: this.$t('addMobileNumber'),
           active: false
         },
         {
-          label: 'Ознакомиться с требованиями Airbnb к гостям',
+          label: this.$t('viewAirbnbGuestRequirements'),
           active: false
         },
         {
-          label: 'Определите для гостей правила дома',
+          label: this.$t('defineHouseRulesForGuests'),
           active: false
         }
       ],

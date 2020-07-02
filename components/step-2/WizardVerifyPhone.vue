@@ -3,11 +3,11 @@
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
         <v-card-text>
-          <h2>Добавьте номер мобильного телефона</h2>
-          <div class="pt-2">
-            Мы будем отправлять вам запросы на бронирование, напоминания и
-            другие уведомления. У вас должна быть возможность принимать SMS или
-            звонки на этот номер.
+          <div class="headline">
+            {{ $t('addMobileNumber') }}
+          </div>
+          <div class="body-2">
+            {{ $t('addMobileNumberTitle') }}
           </div>
           <v-select
             :value="selectedCode"
@@ -23,7 +23,9 @@
               class="d-inline-block"
               @change="(val) => changeData('phoneNumber', val)"
             ></v-text-field>
-            <v-btn>Отправить</v-btn>
+            <v-btn>
+              {{ $t('submit') }}
+            </v-btn>
           </div>
         </v-card-text>
       </v-card>
