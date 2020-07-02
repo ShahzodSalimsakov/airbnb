@@ -111,6 +111,8 @@ export default {
   viewAirbnbGuestRequirementsTitle:
     'Для бронирования жилья на Airbnb гости должны соответствовать определенным требованиям.',
   defineHouseRulesForGuests: 'Определите для гостей правила дома',
+  defineHouseRulesForGuestsTitle:
+    'Гости принимают правила дома до отправки запроса на бронирование.',
   choosePhoto: 'Выбрать фотографию',
   addDetailsOptional: 'Добавить подробности (по желанию)',
   yourHomeOptional: 'Ваше жилье (по желанию)',
@@ -133,8 +135,23 @@ export default {
   chooseProperty: 'Теперь выберите тип жиль',
   propertyType: 'Выберите тип жилья',
   guestsHave: 'Что будет в распоряжении гостей?',
+  entirePlace: 'Жилье целиком',
+  wholePlace:
+    'Всё жилье целиком в распоряжении гостей: обычно это спальня,ванная и кухня.',
+  privateRoom: 'Отдельная комната',
+  privateRoomSub:
+    'Гостям предоставляется отдельная спальня, остальные помещения используются совместно.',
+  sharedRoom: 'Место в комнате',
+  guestsSleep: 'Гости спят в общей спальне или помещении с другими людьми.',
+  onlyForGuests: 'Это помещение предназначено только для гостей?',
+  primarilyGuests: 'Да, им пользуются в основном только гости',
+  keepBelongings: 'Нет, я храню здесь личные вещи',
+  listingCompany: 'Вы размещаете объявление на Airbnb от лица компании?',
+  hostingRegisteredBusiness: 'Да, я управляю компанией или работаю в ней',
+  hostingIndividualOwner: 'Нет, это ко мне не относится',
   required: 'Обязательный',
   max50Characters: 'Максимум 50 символов',
+  max150Characters: 'Максимум 150 символов',
   useFacebookPhotos: 'Использовать фото из Facebook',
   uploadPhoto: 'Загрузить фото',
   addMobileNumber: 'Добавьте номер мобильного телефона',
@@ -150,5 +167,33 @@ export default {
     'Перед бронированием вашего жилья гости должны',
   takeYourRulesAtHome: 'Принять ваши правила дома',
   sendYouAMessageAboutYourTrip: 'Отправить вам сообщение о своей поездке',
-  warnAboutTheNumberOfVisitors: 'Предупредить о количестве приезжающих'
+  warnAboutTheNumberOfVisitors: 'Предупредить о количестве приезжающих',
+  confirmArrivalTime:
+    'Подтвердить время приезда, если он планируется в ближайшие 2 дня',
+  addOtherRequirements: 'Добавить другие требования',
+  officialID: 'Официальное удостоверение личности, отправленное в Airbnb',
+  moreRequirementsLessBookings: 'Больше требований — меньше бронирований.',
+  noBadReviews: 'Рекомендовано другими хозяевами, нет плохих отзывов',
+  suitableForChildren: 'Подходит для детей (2–12 лет)',
+  explainWhy: 'Объяснить, почему',
+  notSuitableForChildren: 'Объясните, почему ваше жилье не подходит для детей',
+  notSuitableForChildrenTitle:
+    'Какие детали вашего жилья легко повредить или они представляют опасность для детей?',
+  suitableForChildrenExample: 'Пример: на лестнице на второй этаж нет перил.',
+  suitableForBabies: 'Подходит для младенцев (младше 2 лет)',
+  possibleWithAnimals: 'Можно с животными',
+  canSmoke: 'Можно курить',
+  partiesAllowed: 'Разрешены вечеринки',
+  additionalRules: 'Дополнительные правила',
+  add: 'Добавить',
+  whatGuestsShouldKnowAboutYourHome: 'Что должны знать гости о вашем доме',
+  needToClimbStairs: 'Необходимо подниматься по лестнице',
+  mayBeNoisy: 'Возможно, будет шумно',
+  petsLiveHouse: 'В доме живут питомцы',
+  noParking: 'Своей парковки нет',
+  someAreasAreShared: 'Некоторые зоны являются общими',
+  convenienceLimitations: 'Ограничения удобства',
+  homeMonitoringRecordingDevices:
+    'Устройства наблюдения или записи на территории жилья',
+  dangerousAnimalsOnThePremises: 'Опасные животные на территории жилья'
 }

@@ -3,16 +3,16 @@
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card ref="form">
         <v-card-text>
-          <div class="headline">Создать название объявления</div>
+          <div class="headline">{{ $t('defineHouseRulesForGuests') }}</div>
           <div class="body-2">
-            Гостей привлечет название, отражающее уникальность жилья
+            {{ $t('defineHouseRulesForGuestsTitle') }}
           </div>
         </v-card-text>
         <v-card-text>
           <div class="body-2">
             <v-row>
               <v-col md="8">
-                Подходит для детей (2–12 лет)
+                {{ $t('suitableForChildren') }}
                 <v-dialog
                   v-if="!fromTwoYears"
                   v-model="fromTwoYearsDialog"
@@ -21,18 +21,17 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn text small color="primary" v-bind="attrs" v-on="on">
-                      Объяснить, почему
+                      {{ $t('explainWhy') }}
                     </v-btn>
                   </template>
                   <v-card>
                     <v-card-text>
                       <v-card-text>
                         <div class="headline">
-                          Объясните, почему ваше жилье не подходит для детей
+                          {{ $t('notSuitableForChildren') }}
                         </div>
                         <div class="body-2">
-                          Какие детали вашего жилья легко повредить или они
-                          представляют опасность для детей?
+                          {{ $t('notSuitableForChildrenTitle') }}
                         </div>
                       </v-card-text>
                       <v-card-text>
@@ -41,7 +40,7 @@
                           auto-grow
                           rows="4"
                           row-height="30"
-                          placeholder="Пример: на лестнице на второй этаж нет перил."
+                          :placeholder="$t('suitableForChildrenExample')"
                           :rules="rulesTextarea"
                           counter="150"
                         ></v-textarea>
@@ -81,7 +80,7 @@
           <div class="body-2">
             <v-row>
               <v-col md="8">
-                Подходит для младенцев (младше 2 лет)
+                {{ $t('suitableForBabies') }}
                 <v-dialog
                   v-if="!beforeTwoYears"
                   v-model="beforeTwoYearsDialog"
@@ -90,18 +89,17 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn text small color="primary" v-bind="attrs" v-on="on">
-                      Объяснить, почему
+                      {{ $t('explainWhy') }}
                     </v-btn>
                   </template>
                   <v-card>
                     <v-card-text>
                       <v-card-text>
                         <div class="headline">
-                          Объясните, почему ваше жилье не подходит для детей
+                          {{ $t('notSuitableForChildren') }}
                         </div>
                         <div class="body-2">
-                          Какие детали вашего жилья легко повредить или они
-                          представляют опасность для детей?
+                          {{ $t('notSuitableForChildrenTitle') }}
                         </div>
                       </v-card-text>
                       <v-card-text>
@@ -110,7 +108,7 @@
                           auto-grow
                           rows="4"
                           row-height="30"
-                          placeholder="Пример: на лестнице на второй этаж нет перил."
+                          :placeholder="$t('suitableForChildrenExample')"
                           :rules="rulesTextarea"
                           counter="150"
                         ></v-textarea>
@@ -150,7 +148,7 @@
           <div class="body-2">
             <v-row>
               <v-col md="8">
-                Можно с животными
+                {{ $t('possibleWithAnimals') }}
               </v-col>
               <v-col md="4">
                 <v-switch
@@ -167,9 +165,7 @@
         <v-card-text>
           <div class="body-2">
             <v-row>
-              <v-col md="8">
-                Можно курить
-              </v-col>
+              <v-col md="8"> {{ $t('canSmoke') }}</v-col>
               <v-col md="4">
                 <v-switch
                   :value="possibleSmoking"
@@ -186,7 +182,7 @@
           <div class="body-2">
             <v-row>
               <v-col md="8">
-                Разрешены вечеринки
+                {{ $t('partiesAllowed') }}
               </v-col>
               <v-col md="4">
                 <v-switch
@@ -201,7 +197,9 @@
         </v-card-text>
 
         <v-card-text>
-          <div class="body-1 font-weight-bold">Дополнительные правила</div>
+          <div class="body-1 font-weight-bold">
+            {{ $t('additionalRules') }}
+          </div>
           <v-row>
             <v-col md="8">
               <v-text-field
@@ -210,7 +208,7 @@
             </v-col>
             <v-col md="4">
               <v-btn class="ma-2" tile large style="margin: 0 !important;">
-                Добавить
+                {{ $t('add') }}
               </v-btn>
             </v-col>
           </v-row>
@@ -218,7 +216,7 @@
 
         <v-card-text>
           <div class="body-1 font-weight-bold">
-            Что должны знать гости о вашем доме
+            {{ $t('whatGuestsShouldKnowAboutYourHome') }}
           </div>
 
           <v-card-text>
@@ -226,7 +224,7 @@
               <v-checkbox
                 :value="climbStairs"
                 hide-details
-                label="Необходимо подниматься по лестнице"
+                :label="$t('needToClimbStairs')"
                 @change="(val) => changeData('climbStairs', val)"
               ></v-checkbox>
             </v-card-text>
@@ -235,7 +233,7 @@
               <v-checkbox
                 :value="noisy"
                 hide-details
-                label="Возможно, будет шумно"
+                :label="$t('mayBeNoisy')"
                 @change="(val) => changeData('noisy', val)"
               ></v-checkbox>
             </v-card-text>
@@ -244,7 +242,7 @@
               <v-checkbox
                 :value="pets"
                 hide-details
-                label="В доме живут питомцы"
+                :label="$t('petsLiveHouse')"
                 @change="(val) => changeData('pets', val)"
               ></v-checkbox>
             </v-card-text>
@@ -253,7 +251,7 @@
               <v-checkbox
                 :value="parking"
                 hide-details
-                label="Своей парковки нет"
+                :label="$t('noParking')"
                 @change="(val) => changeData('parking', val)"
               ></v-checkbox>
             </v-card-text>
@@ -262,7 +260,7 @@
               <v-checkbox
                 :value="commonArea"
                 hide-details
-                label="Некоторые зоны являются общими"
+                :label="$t('someAreasAreShared')"
                 @change="(val) => changeData('commonArea', val)"
               ></v-checkbox>
             </v-card-text>
@@ -271,7 +269,7 @@
               <v-checkbox
                 :value="convenienceLimitations"
                 hide-details
-                label="Ограничения удобства"
+                :label="$t('convenienceLimitations')"
                 @change="(val) => changeData('convenienceLimitations', val)"
               ></v-checkbox>
             </v-card-text>
@@ -280,17 +278,8 @@
               <v-checkbox
                 :value="cctv"
                 hide-details
-                label="Устройства наблюдения или записи на территории жилья"
+                :label="$t('homeMonitoringRecordingDevices')"
                 @change="(val) => changeData('cctv', val)"
-              ></v-checkbox>
-            </v-card-text>
-
-            <v-card-text>
-              <v-checkbox
-                :value="gun"
-                hide-details
-                label="Оружие на территории жилья"
-                @change="(val) => changeData('gun', val)"
               ></v-checkbox>
             </v-card-text>
 
@@ -298,7 +287,7 @@
               <v-checkbox
                 :value="dangerPets"
                 hide-details
-                label="Опасные животные на территории жилья"
+                :label="$t('dangerousAnimalsOnThePremises')"
                 @change="(val) => changeData('dangerPets', val)"
               ></v-checkbox>
             </v-card-text>
@@ -318,8 +307,8 @@ export default {
       beforeTwoYearsDialog: false,
       fromTwoYearsDialog: false,
       rulesTextarea: [
-        ((value) => !!value || 'Required.',
-        (value) => (value || '').length <= 150 || 'Max 150 characters')
+        ((value) => !!value || this.$t('required'),
+        (value) => (value || '').length <= 150 || this.$t('max150Characters'))
       ]
     }
   },

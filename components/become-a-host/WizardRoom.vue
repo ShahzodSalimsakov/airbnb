@@ -34,7 +34,7 @@
             </v-card-text>
             <div v-show="typeOfHousing">
               <v-card-text>
-                <h3>Что будет в распоряжении гостей?</h3>
+                <h3>{{ $t('guestsHave') }}</h3>
                 <v-radio-group
                   :value="disposalOfGuests"
                   :rules="rules.disposalOfGuests"
@@ -42,24 +42,22 @@
                   :mandatory="false"
                   @change="(val) => changeData('disposalOfGuests', val)"
                 >
-                  <v-radio label="Жилье целиком" value="1"></v-radio>
+                  <v-radio :label="$t('entirePlace')" value="1"></v-radio>
                   <div>
-                    Всё жилье целиком в распоряжении гостей: обычно это спальня,
-                    ванная и кухня.
+                    {{ $t('wholePlace') }}
                   </div>
-                  <v-radio label="Отдельная комната" value="2"></v-radio>
+                  <v-radio :label="$t('privateRoom')" value="2"></v-radio>
                   <div>
-                    Гостям предоставляется отдельная спальня, остальные
-                    помещения используются совместно.
+                    {{ $t('privateRoomSub') }}
                   </div>
-                  <v-radio label="Место в комнате" value="3"></v-radio>
+                  <v-radio :label="$t('sharedRoom')" value="3"></v-radio>
                   <div>
-                    Гости спят в общей спальне или помещении с другими людьми.
+                    {{ $t('guestsSleep') }}
                   </div>
                 </v-radio-group>
               </v-card-text>
               <v-card-text>
-                <h3>Это помещение предназначено только для гостей?</h3>
+                <h3>{{ $t('onlyForGuests') }}</h3>
                 <v-radio-group
                   :value="forGuest"
                   :rules="rules.forGuest"
@@ -67,29 +65,23 @@
                   :mandatory="false"
                   @change="(val) => changeData('forGuest', val)"
                 >
-                  <v-radio
-                    label="Да, им пользуются в основном только гости"
-                    value="4"
-                  ></v-radio>
-                  <v-radio
-                    label="Нет, я храню здесь личные вещи"
-                    value="5"
-                  ></v-radio>
+                  <v-radio :label="$t('primarilyGuests')" value="4"></v-radio>
+                  <v-radio :label="$t('keepBelongings')" value="5"></v-radio>
                 </v-radio-group>
               </v-card-text>
               <v-card-text>
-                <h3>Вы размещаете объявление на Airbnb от лица компании?</h3>
+                <h3>{{ $t('listingCompany') }}</h3>
                 <v-radio-group
                   :value="onBehalfOfTheCompany"
                   :mandatory="false"
                   @change="(val) => changeData('onBehalfOfTheCompany', val)"
                 >
                   <v-radio
-                    label="Да, я управляю компанией или работаю в ней"
+                    :label="$t('hostingRegisteredBusiness')"
                     value="6"
                   ></v-radio>
                   <v-radio
-                    label="Нет, это ко мне не относится"
+                    :label="$t('hostingIndividualOwner')"
                     value="7"
                   ></v-radio>
                   <div>

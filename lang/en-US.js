@@ -105,6 +105,8 @@ export default {
   viewAirbnbGuestRequirementsTitle:
     'Guests must meet certain requirements to book accommodations on Airbnb.',
   defineHouseRulesForGuests: 'Define house rules for guests',
+  defineHouseRulesForGuestsTitle:
+    'Гости принимают правила дома до отправки запроса на бронирование.',
   choosePhoto: 'Choose a photo',
   addDetailsOptional: 'Add details (optional)',
   yourHomeOptional: 'Your home (optional)',
@@ -127,8 +129,24 @@ export default {
   chooseProperty: 'Now choose a property type',
   propertyType: 'Select property type',
   guestsHave: 'What will guests have?',
+  entirePlace: 'Entire place',
+  wholePlace:
+    'Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen.',
+  privateRoom: 'Private room',
+  privateRoomSub:
+    'Guests have their own private room for sleeping. Other areas could be shared.',
+  sharedRoom: 'Shared room',
+  guestsSleep:
+    'Guests sleep in a bedroom or a common area that could be shared with others.',
+  onlyForGuests: 'Is this set up as a dedicated guest space?',
+  primarilyGuests: 'Yes, it’s primarily set up for guests',
+  keepBelongings: 'No, I keep my personal belongings here',
+  listingCompany: 'Are you listing on Airbnb as part of a company?',
+  hostingRegisteredBusiness: 'I’m hosting as a registered business',
+  hostingIndividualOwner: 'I’m hosting as an individual or sole owner',
   required: 'Required',
   max50Characters: 'Maximum 50 characters',
+  max150Characters: 'Maximum 150 characters',
   useFacebookPhotos: 'Use Facebook photos',
   uploadPhoto: 'Upload a photo',
   addMobileNumber: 'Add mobile number',
@@ -144,5 +162,34 @@ export default {
     'Before booking your accommodation, guests must',
   takeYourRulesAtHome: 'Take your rules at home',
   sendYouAMessageAboutYourTrip: 'Send you a message about your trip',
-  warnAboutTheNumberOfVisitors: 'Warn about the number of visitors'
+  warnAboutTheNumberOfVisitors: 'Warn about the number of visitors',
+  confirmArrivalTime:
+    'Confirm arrival time if it is planned in the next 2 days',
+  addOtherRequirements: 'Add other requirements',
+  officialID: 'Official ID sent to Airbnb',
+  moreRequirementsLessBookings: 'More requirements - less bookings.',
+  noBadReviews: 'Recommended by other owners, no bad reviews',
+  suitableForChildren: 'Suitable for children (2–12 years old)',
+  explainWhy: 'Explain why',
+  notSuitableForChildren:
+    'Explain why your accommodation is not suitable for children.',
+  notSuitableForChildrenTitle:
+    'What parts of your home are easy to damage or are they dangerous for children?',
+  suitableForChildrenExample:
+    'Example: there are no railings on the stairs to the second floor.',
+  suitableForBabies: 'Suitable for babies (under 2 years old)',
+  possibleWithAnimals: 'It is possible with animals',
+  canSmoke: 'Can smoke',
+  partiesAllowed: 'Parties allowed',
+  additionalRules: 'Additional Rules',
+  add: 'Add',
+  whatGuestsShouldKnowAboutYourHome: 'What guests should know about your home',
+  needToClimbStairs: 'Need to climb stairs',
+  mayBeNoisy: 'May be noisy',
+  petsLiveHouse: 'Pets live in the house',
+  noParking: 'There is no parking',
+  someAreasAreShared: 'Some areas are shared',
+  convenienceLimitations: 'Convenience limitations',
+  homeMonitoringRecordingDevices: 'Home monitoring or recording devices',
+  dangerousAnimalsOnThePremises: 'Dangerous animals on the premises'
 }
