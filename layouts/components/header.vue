@@ -60,6 +60,16 @@
           >
             {{ $t('help') }}
           </nuxt-link>
+          <nuxt-link
+            :to="localePath('/become-a-host/')"
+            class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base black--text"
+          >
+            {{
+              authenticated
+                ? $t('authorizedNewHostLink')
+                : $t('unAuthorizedNewHostLink')
+            }}
+          </nuxt-link>
           <template v-if="!authenticated">
             <sign-up />
             <login />

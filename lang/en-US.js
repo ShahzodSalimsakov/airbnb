@@ -1,6 +1,7 @@
 export default {
   signIn: 'Sign in',
   signUp: 'Sign up',
+  homeHeadline: 'It’s not necessary to go far for happiness',
   oops: 'OOPS!!!',
   cannotFind: 'We can not seem to find the page you are looking for.',
   error404: 'Error 404',
@@ -25,7 +26,7 @@ export default {
   upTo: 'up to',
   search: 'Search',
   receptionGuest: 'The reception of guests',
-  receptionGuestparagraphar:
+  receptionGuestparagraph:
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
   receptionGuestTitle:
@@ -69,5 +70,49 @@ export default {
   bedroomsUse: 'How many bedrooms can guests use?',
   sleepingArrangements: 'Sleeping arrangements',
   sharingBeds:
-    'Sharing the types of beds in each room can help people understand the sleeping arrangements.'
+    'Sharing the types of beds in each room can help people understand the sleeping arrangements.',
+  all: 'All',
+  coronavirusResources: 'Coronavirus resources',
+  coronavirusResourcesTitle: 'Find out what help hosts and travelers get.',
+  news: 'News',
+  overview: 'Overview',
+  travels: 'Traveling',
+  hosting: 'Hosting',
+  communityStandards: 'Community Standards',
+  authorizedNewHostLink: 'Switch to hosting',
+  unAuthorizedNewHostLink: 'Host your home',
+  becomeAHostStep1: 'What type of housing do you rent?',
+  becomeAHostStep2: 'How many guests does your accommodation accommodate?',
+  becomeAHostStep3: 'How many bathrooms?',
+  becomeAHostStep4: 'Where is your accommodation located?',
+  becomeAHostStep5: 'What conveniences do you offer?',
+  becomeAHostStep6: 'What facilities can guests use?',
+  preview: 'Preview',
+  continue: 'Continue',
+  addPhotoToAd: 'Add photo to ad',
+  addPhotoToAdTitle:
+    "Photos help guests imagine what it's like to live in your home. Start with one and add the rest after posting.",
+  tellGuestsAboutLodging: 'Tell guests about lodging',
+  tellGuestsAboutLodgingTitle:
+    'Tell us why your area is interesting and indicate housing features such as fast Wi-Fi or parking.',
+  createAdName: 'Create ad name',
+  addProfilePhoto: 'Add profile photo',
+  whatAmenitiesDoYouOffer: 'What amenities do you offer?',
+  viewAirbnbGuestRequirements: 'View Airbnb guest requirements',
+  defineHouseRulesForGuests: 'Define house rules for guests',
+  choosePhoto: 'Choose a photo',
+  addDetailsOptional: 'Add details (optional)',
+  yourHomeOptional: 'Your home (optional)',
+  yourHomeOptionalTitle:
+    'Describe the appearance and atmosphere of the housing. Pay attention to the design, a cozy reading corner or garden furniture.',
+  communicationWithGuestsOptional: 'Communication with guests (optional)',
+  communicationWithGuestsOptionalTitle:
+    'Please indicate how often guests may contact you during your stay. For security reasons, do not provide your phone number or email address before confirming your reservation.',
+  yourAreaOptional: 'Your area (optional)',
+  yourAreaOptionalTitle:
+    'Describe what distinguishes your area from others. Mention the atmosphere, cafes, unique attractions, places nearby.',
+  whereToGoOptional: 'Where to go (optional)',
+  whereToGoOptionalTitle:
+    'Tell us about the public transport available in your area, how best to get there by car or walk.',
+  smaller: 'Smaller'
 }

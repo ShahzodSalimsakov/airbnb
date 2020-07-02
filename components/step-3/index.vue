@@ -6,7 +6,7 @@
       >
       <v-progress-linear v-model="stepsProgress" height="5"></v-progress-linear>
     </div>
-    <div class="overflow-x-hidden steps-content py-10">
+    <div class="overflow-x-hidden steps-content py-10 bg-gray-300">
       <v-overlay :value="isStepLoading">
         <v-progress-circular indeterminate size="64"></v-progress-circular>
       </v-overlay>
@@ -70,6 +70,7 @@ import WizardReviewHowGuestsBook from '~/components/step-3/WizardReviewHowGuests
 import WizardLocalLaws from '~/components/step-3/WizardLocalLaws'
 export default {
   layout: 'wizard',
+  name: 'ThirdStepWizard',
   components: {
     WizardAnswerTwoQuestions,
     WizardCalendar,

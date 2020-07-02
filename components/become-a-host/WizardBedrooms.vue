@@ -16,10 +16,11 @@
                   <v-col>{{ $t('guests') }}</v-col>
                   <v-col>
                     <v-text-field
-                      :value="0"
+                      :value="guestsCount"
                       class="mt-0 pt-0"
                       hide-details
                       single-line
+                      min="1"
                       type="number"
                       style="width: 60px;"
                     ></v-text-field>
@@ -121,7 +122,8 @@ export default {
   computed: {
     ...mapGetters({
       bedsCount: 'newLet/bedsCount',
-      bedsPerRoom: 'newLet/bedsPerRoom'
+      bedsPerRoom: 'newLet/bedsPerRoom',
+      guestsCount: 'newLet/guestsCount'
     })
   },
   mounted() {
@@ -157,8 +159,9 @@ export default {
         })
       }
     },
-    changeBedPerRoom(i, key, val) {
+    changeBedPerRoom(index, key, val) {
       // TODO: complete logic of this function
+      this.$store.dispatch('newLet/setBedsPerRoom', { index, key, val })
       // const beds = this.bedsPerRoom.map((item) => item)
       // beds[i][key] = val
       // console.log(beds)

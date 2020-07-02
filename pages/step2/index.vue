@@ -114,6 +114,53 @@
         </v-stepper-items>
       </v-stepper>
     </template>
+  <div class="flex flex-col h-screen overflow-hidden">
+    <div class="wizard-title">
+      <span class="block pl-10 py-2 text-4xl"
+        >{{ activeStepIndex + 1 }}. {{ activeTitle }}</span
+      >
+      <v-progress-linear v-model="stepsProgress" height="5"></v-progress-linear>
+    </div>
+    <div class="overflow-x-hidden steps-content py-10">
+      <v-overlay :value="isStepLoading">
+        <v-progress-circular indeterminate size="64"></v-progress-circular>
+      </v-overlay>
+      <template v-if="activeStepIndex === 0">
+        <WizardPhotos />
+      </template>
+      <template v-else-if="activeStepIndex === 1">
+        <WizardDescription />
+      </template>
+      <template v-else-if="activeStepIndex === 2">
+        <WizardTitle />
+      </template>
+      <template v-else-if="activeStepIndex === 3">
+        <WizardProfilePhoto />
+      </template>
+      <template v-else-if="activeStepIndex === 4">
+        <WizardVerifyPhone />
+      </template>
+      <template v-else-if="activeStepIndex === 5">
+        <WizardQuestRequirements />
+      </template>
+      <template v-else-if="activeStepIndex === 6">
+        <WizardQuestHouseRules />
+      </template>
+    </div>
+    <div
+      class="border-t-2 elevation-10 flex justify-evenly py-3 steps-pagination"
+    >
+      <v-btn
+        color="primary"
+        :disabled="activeStepIndex === 0"
+        @click="goToPrev"
+      >
+        {{ $t('preview') }}
+      </v-btn>
+      <v-btn color="primary" :loading="isStepLoading" @click="goToNext">
+        {{ $t('continue') }}
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -126,6 +173,7 @@ import WizardVerifyPhone from '~/components/step-2/WizardVerifyPhone'
 import WizardQuestRequirements from '~/components/step-2/WizardQuestRequirements'
 import WizardQuestHouseRules from '~/components/step-2/WizardQuestHouseRules'
 export default {
+  layout: 'wizard',
   components: {
     WizardPhotos,
     WizardDescription,
@@ -137,11 +185,78 @@ export default {
   },
   data() {
     return {
-      e1: 1
+      steps: [
+        {
+          label: this.$t('addPhotoToAd'),
+          active: true
+        },
+        {
+          label: this.$t('tellGuestsAboutLodging'),
+          active: false
+        },
+        {
+          label: this.$t('createAdName'),
+          active: false
+        },
+        {
+          label: this.$t('addProfilePhoto'),
+          active: false
+        },
+        {
+          label: this.$t('whatAmenitiesDoYouOffer'),
+          active: false
+        },
+        {
+          label: this.$t('viewAirbnbGuestRequirements'),
+          active: false
+        },
+        {
+          label: this.$t('defineHouseRulesForGuests'),
+          active: false
+        }
+      ],
+      e1: 1,
+      isStepLoading: false
     }
   },
-  layout: 'wizard'
+  computed: {
+    activeTitle() {
+      return this.steps.filter((item) => item.active)[0].label
+    },
+    activeStepIndex() {
+      return this.steps.findIndex((item) => item.active)
+    },
+    stepsProgress() {
+      const currentIndex = this.steps.findIndex((item) => item.active)
+      return parseInt(((currentIndex + 1) / this.steps.length) * 100, 0)
+    }
+  },
+  methods: {
+    goToNext() {
+      let currentIndex = this.steps.findIndex((item) => item.active)
+      this.steps[currentIndex].active = false
+      if (currentIndex < this.steps.length - 1) {
+        currentIndex++
+        this.steps[currentIndex].active = true
+      }
+    },
+    goToPrev() {
+      let currentIndex = this.steps.findIndex((item) => item.active)
+      this.steps[currentIndex].active = false
+      if (currentIndex > 0) {
+        currentIndex--
+        this.steps[currentIndex].active = true
+      }
+    }
+  }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.steps-content {
+  flex: 9;
+}
+.steps-pagination {
+  flex: 0;
+}
+</style>
