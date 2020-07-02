@@ -2,7 +2,7 @@
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-alert type="error" v-show="showRequiredError">
-        Для продолжения заполните поля
+        {{ $t('fillFields') }}
       </v-alert>
       <v-form ref="form" v-model="valid">
         <v-card outlined ref="form">
@@ -13,8 +13,8 @@
               :items="placeItems"
               :rules="rules.letType"
               required
-              label="Для начала сузим выбор"
-              placeholder="Выберите 1 вариант"
+              :label="$t('firstNarrow')"
+              :placeholder="$t('selectOne')"
               @change="(val) => changeData('letType', val)"
             ></v-select>
           </v-card-text>
@@ -26,8 +26,8 @@
                 :disabled="!letType"
                 :rules="rules.typeOfHousing"
                 required
-                label="Теперь выберите тип жилья"
-                placeholder="Выберите тип жилья"
+                :label="$t('chooseProperty')"
+                :placeholder="$t('propertyType')"
                 @change="(val) => changeData('typeOfHousing', val)"
               ></v-select>
               <p v-if="typeOfHousing">{{ descriptionHouse.description }}</p>

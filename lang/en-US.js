@@ -114,5 +114,12 @@ export default {
   whereToGoOptional: 'Where to go (optional)',
   whereToGoOptionalTitle:
     'Tell us about the public transport available in your area, how best to get there by car or walk.',
-  smaller: 'Smaller'
+  smaller: 'Smaller',
+  bedroom: 'Bedroom',
+  fillFields: 'Fill in the fields to continue.',
+  firstNarrow: 'First, let’s narrow things down',
+  selectOne: 'Select one',
+  chooseProperty: 'Now choose a property type',
+  propertyType: 'Select property type',
+  guestsHave: 'What will guests have?'
 }
