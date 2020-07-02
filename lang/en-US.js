@@ -129,6 +129,21 @@ export default {
   chooseProperty: 'Now choose a property type',
   propertyType: 'Select property type',
   guestsHave: 'What will guests have?',
+  entirePlace: 'Entire place',
+  wholePlace:
+    'Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen.',
+  privateRoom: 'Private room',
+  privateRoomSub:
+    'Guests have their own private room for sleeping. Other areas could be shared.',
+  sharedRoom: 'Shared room',
+  guestsSleep:
+    'Guests sleep in a bedroom or a common area that could be shared with others.',
+  onlyForGuests: 'Is this set up as a dedicated guest space?',
+  primarilyGuests: 'Yes, it’s primarily set up for guests',
+  keepBelongings: 'No, I keep my personal belongings here',
+  listingCompany: 'Are you listing on Airbnb as part of a company?',
+  hostingRegisteredBusiness: 'I’m hosting as a registered business',
+  hostingIndividualOwner: 'I’m hosting as an individual or sole owner',
   required: 'Required',
   max50Characters: 'Maximum 50 characters',
   max150Characters: 'Maximum 150 characters',
