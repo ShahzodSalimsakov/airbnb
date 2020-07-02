@@ -25,10 +25,9 @@ export default {
   upTo: 'up to',
   search: 'Search',
   receptionGuest: 'The reception of guests',
-  receptionGuestparagraph:
+  receptionGuestparagraphar:
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
-  receptionGuest: 'The reception of guests',
   receptionGuestTitle:
     'Get help updating your calendar, chatting with guests, and more.',
   bookingTravel: 'Booking and travel',
@@ -53,5 +52,22 @@ export default {
   adviceOwnersTitle: "Here's how to support guests with disabilities",
   trustSecurity: 'Trust and security',
   trustSecurityTitle: 'Your safety comes first',
-  latestNews: 'Latest news'
+  latestNews: 'Latest news',
+  WhatAmenitiesDoYouOffer: 'What amenities do you offer?',
+  WhatAmenitiesDoYouOfferBody1:
+    'Guests generally expect these amenities, but others can be added after publication.',
+  safetyEquipment: 'Safety equipment',
+  HowManyBathrooms: 'How many bathrooms?',
+  HowManyBathroomTitle:
+    'A bathroom without a shower or bath is considered a toilet.',
+  AmountOfBathrooms: 'Amount of bathrooms',
+  HowManyGuests: 'How many guests can your place accommodate?',
+  CheckBeds:
+    'Check that you have enough beds to accommodate all your guests' +
+    'comfortably.',
+  guests: 'Guests',
+  bedroomsUse: 'How many bedrooms can guests use?',
+  sleepingArrangements: 'Sleeping arrangements',
+  sharingBeds:
+    'Sharing the types of beds in each room can help people understand the sleeping arrangements.'
 }

@@ -5,16 +5,15 @@
         <v-card ref="form">
           <v-card-text>
             <div class="title" align="center">
-              How many guests can your place accommodate?
+              {{ $t('HowManyGuests') }}
             </div>
             <div class="subtitle-1 font-italic" align="center">
-              Check that you have enough beds to accommodate all your guests
-              comfortably.
+              {{ $t('CheckBeds') }}
             </div>
             <v-form
               ><div>
                 <v-row>
-                  <v-col>Guests</v-col>
+                  <v-col>{{ $t('guests') }}</v-col>
                   <v-col>
                     <v-text-field
                       :value="0"
@@ -32,16 +31,17 @@
                   <v-select
                     :value="bedsCount"
                     :items="bedItems"
-                    label="How many bedrooms can guests use?"
+                    :label="$t('bedroomsUse')"
                     dense
                     @change="(val) => changeData('bedsCount', val)"
                   ></v-select>
                 </v-col>
               </div>
-              <div class="title" align="center">Sleeping arrangements</div>
+              <div class="title" align="center">
+                {{ $('sleepingArrangements') }}
+              </div>
               <div class="subtitle-1 font-italic align=center">
-                Sharing the types of beds in each room can help people
-                understand the sleeping arrangements.
+                {{ $t('sharingBeds') }}
               </div>
               <div>
                 <template>

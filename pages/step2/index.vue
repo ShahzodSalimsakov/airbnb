@@ -103,7 +103,7 @@
               Continue
             </v-btn>
 
-            <v-btn text @click="e1 = 5">Назад</v-btn>
+            <v-btn text @click="e1 = 6">Назад</v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="7">
