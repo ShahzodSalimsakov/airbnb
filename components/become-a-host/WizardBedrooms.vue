@@ -39,7 +39,7 @@
                 </v-col>
               </div>
               <div class="title" align="center">
-                {{ $('sleepingArrangements') }}
+                {{ $t('sleepingArrangements') }}
               </div>
               <div class="subtitle-1 font-italic align=center">
                 {{ $t('sharingBeds') }}
