@@ -126,6 +126,13 @@ export default {
   whereToGoOptionalTitle:
     'Расскажите о том, какой общественный транспорт ходит в вашем районе, как лучше проехать на машине или дойти пешком.',
   smaller: 'Меньше',
+  bedroom: 'Спальня',
+  fillFields: 'Для продолжения заполните поля.',
+  firstNarrow: 'Для начала сузим выбор',
+  selectOne: 'Выберите 1 вариант',
+  chooseProperty: 'Теперь выберите тип жиль',
+  propertyType: 'Выберите тип жилья',
+  guestsHave: 'Что будет в распоряжении гостей?',
   required: 'Обязательный',
   max50Characters: 'Максимум 50 символов',
   useFacebookPhotos: 'Использовать фото из Facebook',

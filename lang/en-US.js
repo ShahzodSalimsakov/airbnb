@@ -120,6 +120,13 @@ export default {
   whereToGoOptionalTitle:
     'Tell us about the public transport available in your area, how best to get there by car or walk.',
   smaller: 'Smaller',
+  bedroom: 'Bedroom',
+  fillFields: 'Fill in the fields to continue.',
+  firstNarrow: 'First, let’s narrow things down',
+  selectOne: 'Select one',
+  chooseProperty: 'Now choose a property type',
+  propertyType: 'Select property type',
+  guestsHave: 'What will guests have?',
   required: 'Required',
   max50Characters: 'Maximum 50 characters',
   useFacebookPhotos: 'Use Facebook photos',

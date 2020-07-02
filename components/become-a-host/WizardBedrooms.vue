@@ -54,7 +54,8 @@
                         :key="i"
                       >
                         <v-expansion-panel-header
-                          >Bedroom {{ i + 1 }}</v-expansion-panel-header
+                          >{{ $t('bedroom') }}
+                          {{ i + 1 }}</v-expansion-panel-header
                         >
                         <v-expansion-panel-content>
                           <v-row>
