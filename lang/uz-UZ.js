@@ -60,6 +60,21 @@ export default {
   trustSecurity: 'Ишонч ва хавфсизлик',
   trustSecurityTitle: 'Хавфсизлигингиз биринчи ўринда туради',
   latestNews: 'Сўнги янгиликлар',
+  WhatAmenitiesDoYouOffer: 'Сиз қандай қулайликларни таклиф қиласиз?',
+  WhatAmenitiesDoYouOfferBody1:
+    'Одатда меҳмонлар ушбу қулайликларни кутишади, аммо нашр этилганидан кейин бошқаларини қўшиш мумкин.',
+  safetyEquipment: 'Хавфсизлик ускуналари',
+  HowManyBathrooms: 'Ҳаммомлар сони?',
+  HowManyBathroomTitle: 'Душ ёки ваннасиз ҳаммом, ҳожатхона ҳисобланади.',
+  AmountOfBathrooms: 'Ҳаммомлар сони',
+  HowManyGuests: 'Нечта меҳмон қабул қила оласиз?',
+  CheckBeds:
+    'Барча меҳмонларингизни қулай жойлаштириш учун этарлича тўшак борлигини текширинг.',
+  guests: 'Меҳмонлар',
+  bedroomsUse: 'Меҳмонлар нечта ётоқхонадан фойдаланишлари мумкин?',
+  sleepingArrangements: 'Тўшаклар сони',
+  sharingBeds:
+    'Ҳар бир хонадаги тўшак турларини баҳам кўриш одамларга ухлаш тартибини тушунишга ёрдам беради.',
   all: 'Хаммаси',
   coronavirusResources: 'Коронавирус ҳақида манбалари',
   coronavirusResourcesTitle:

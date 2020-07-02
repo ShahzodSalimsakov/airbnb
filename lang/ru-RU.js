@@ -59,6 +59,22 @@ export default {
   trustSecurity: 'Доверие и безопасность',
   trustSecurityTitle: 'Ваша безопасность превыше всего',
   latestNews: 'Последние новости',
+  WhatAmenitiesDoYouOffer: 'Какие удобства вы предлагаете?',
+  WhatAmenitiesDoYouOfferBody1:
+    'Гости обычно рассчитывают на эти удобства, но после публикации можно добавить другие.',
+  safetyEquipment: 'Оборудование для безопасности',
+  HowManyBathrooms: 'Сколько ванных?',
+  HowManyBathroomTitle:
+    'Ванная комната без душа или ванной считается туалетом.',
+  AmountOfBathrooms: 'Количество ванных',
+  HowManyGuests: 'Сколько гостей вмещает ваше жилье?',
+  CheckBeds:
+    'Убедитесь, что у вас достаточно кроватей для комфортного размещения всех ваших гостей.',
+  guests: 'Гости',
+  bedroomsUse: 'Сколько спален могут использовать гости?',
+  sleepingArrangements: 'Спальные места',
+  sharingBeds:
+    'Совместное использование типов кроватей в каждой комнате может помочь людям понять порядок сна.',
   all: 'Все',
   coronavirusResources: 'Ресурсы о коронавирусе',
   coronavirusResourcesTitle:

@@ -1,4 +1,119 @@
 <template>
+  <div>
+    <template>
+      <v-stepper v-model="e1">
+        <v-stepper-header>
+          <v-stepper-step :complete="e1 > 1" step="1">
+            Добавьте фото в объявление
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 2" step="2">
+            Расскажите гостям о жилье
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 3" step="3">
+            Создать название объявления
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 4" step="4">
+            Добавьте фото профиля
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 5" step="5">
+            Какие удобства вы предлагаете?
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 6" step="6">
+            Ознакомиться с требованиями Airbnb к гостям
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step :complete="e1 > 7" step="7">
+            Определите для гостей правила дома
+          </v-stepper-step>
+
+          <v-divider></v-divider>
+        </v-stepper-header>
+
+        <v-stepper-items>
+          <v-stepper-content step="1">
+            <WizardPhotos />
+
+            <v-btn color="primary" @click="e1 = 2">
+              Continue
+            </v-btn>
+
+            <v-btn text>Назад</v-btn>
+          </v-stepper-content>
+          <v-stepper-content step="2">
+            <WizardDescription />
+
+            <v-btn color="primary" @click="e1 = 3">
+              Continue
+            </v-btn>
+
+            <v-btn text @click="e1 = 1">Назад</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="3">
+            <WizardTitle />
+
+            <v-btn color="primary" @click="e1 = 4">
+              Continue
+            </v-btn>
+
+            <v-btn text @click="e1 = 2">Назад</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="4">
+            <WizardProfilePhoto />
+
+            <v-btn color="primary" @click="e1 = 5">
+              Continue
+            </v-btn>
+
+            <v-btn text @click="e1 = 3">Назад</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="5">
+            <WizardVerifyPhone />
+
+            <v-btn color="primary" @click="e1 = 6">
+              Continue
+            </v-btn>
+
+            <v-btn text @click="e1 = 4">Назад</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="6">
+            <WizardQuestRequirements />
+
+            <v-btn color="primary" @click="e1 = 7">
+              Continue
+            </v-btn>
+
+            <v-btn text @click="e1 = 6">Назад</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-content step="7">
+            <WizardQuestHouseRules />
+
+            <v-btn text @click="e1 = 6">Назад</v-btn>
+          </v-stepper-content>
+        </v-stepper-items>
+      </v-stepper>
+    </template>
   <div class="flex flex-col h-screen overflow-hidden">
     <div class="wizard-title">
       <span class="block pl-10 py-2 text-4xl"

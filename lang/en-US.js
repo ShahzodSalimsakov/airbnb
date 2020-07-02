@@ -25,6 +25,7 @@ export default {
   babies: 'Babies',
   upTo: 'up to',
   search: 'Search',
+  receptionGuest: 'The reception of guests',
   receptionGuestparagraph:
     'Management of announcements and payments, communication with guests and' +
     ' other issues.',
@@ -53,6 +54,23 @@ export default {
   trustSecurity: 'Trust and security',
   trustSecurityTitle: 'Your safety comes first',
   latestNews: 'Latest news',
+  WhatAmenitiesDoYouOffer: 'What amenities do you offer?',
+  WhatAmenitiesDoYouOfferBody1:
+    'Guests generally expect these amenities, but others can be added after publication.',
+  safetyEquipment: 'Safety equipment',
+  HowManyBathrooms: 'How many bathrooms?',
+  HowManyBathroomTitle:
+    'A bathroom without a shower or bath is considered a toilet.',
+  AmountOfBathrooms: 'Amount of bathrooms',
+  HowManyGuests: 'How many guests can your place accommodate?',
+  CheckBeds:
+    'Check that you have enough beds to accommodate all your guests' +
+    'comfortably.',
+  guests: 'Guests',
+  bedroomsUse: 'How many bedrooms can guests use?',
+  sleepingArrangements: 'Sleeping arrangements',
+  sharingBeds:
+    'Sharing the types of beds in each room can help people understand the sleeping arrangements.',
   all: 'All',
   coronavirusResources: 'Coronavirus resources',
   coronavirusResourcesTitle: 'Find out what help hosts and travelers get.',
