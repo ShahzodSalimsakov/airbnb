@@ -56,27 +56,27 @@
             <v-icon left color="success" style="height: 100%;"
               >mdi-check</v-icon
             >
-            Подтвердить время приезда, если он планируется в ближайшие 2 дня
+            {{ $t('confirmArrivalTime') }}
           </div>
         </v-card-text>
         <v-card-text>
-          <v-btn class="ma-2" depressed @click="addOtherReq = !addOtherReq"
-            >Добавить другие требования</v-btn
-          >
+          <v-btn class="ma-2" depressed @click="addOtherReq = !addOtherReq">
+            {{ $t('addOtherRequirements') }}
+          </v-btn>
         </v-card-text>
         <div v-if="addOtherReq === true">
           <v-card-text>
             <v-checkbox
-              label="Официальное удостоверение личности, отправленное в Airbnb"
-              value="Официальное удостоверение личности, отправленное в Airbnb"
+              :label="$t('officialID')"
+              :value="$t('officialID')"
             ></v-checkbox>
             <v-checkbox
-              label="Рекомендовано другими хозяевами, нет плохих отзывов"
-              value="Рекомендовано другими хозяевами, нет плохих отзывов"
+              :label="$t('noBadReviews')"
+              :value="$t('noBadReviews')"
             ></v-checkbox>
 
             <div class="caption">
-              Больше требований — меньше бронирований.
+              {{ $t('moreRequirementsLessBookings') }}
             </div>
           </v-card-text>
         </div>

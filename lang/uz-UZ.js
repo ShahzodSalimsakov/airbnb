@@ -111,6 +111,8 @@ export default {
   viewAirbnbGuestRequirementsTitle:
     'Меҳмонлар Airbnb-да жойларни брон қилиш учун маълум талабларга жавоб беришлари керак.',
   defineHouseRulesForGuests: 'Меҳмонлар учун уй қоидаларини аниқланг',
+  defineHouseRulesForGuestsTitle:
+    'Гости принимают правила дома до отправки запроса на бронирование.',
   choosePhoto: 'Фотосуратни танлаш',
   addDetailsOptional: 'Батафсил маълумот қушиш (ихтиёрий)',
   yourHomeOptional: 'Сизнинг уйингиз (ихтиёрий)',
@@ -135,6 +137,7 @@ export default {
   guestsHave: 'Меҳмонлар нималарга эга бўлишади?',
   required: 'Мажбурий',
   max50Characters: 'Максимал 50 белги',
+  max150Characters: 'Максимал 150 белги',
   useFacebookPhotos: 'Facebook расмларидан фойдаланиш',
   uploadPhoto: 'Фотосуратни юклаш',
   addMobileNumber: 'Уяли телефон рақамингизни қўшинг',
@@ -150,5 +153,36 @@ export default {
     'Турар жойни брон қилишдан олдин, меҳмонлар қилишлари шарт',
   takeYourRulesAtHome: 'Уйингиз қоидаларини қабул қилишлиги',
   sendYouAMessageAboutYourTrip: 'Сафарлиги ҳақида сизга хабар беришлиги',
-  warnAboutTheNumberOfVisitors: 'Ташриф буюрувчилар сони ҳақида огоҳлантиришлиги'
+  warnAboutTheNumberOfVisitors:
+    'Ташриф буюрувчилар сони ҳақида огоҳлантиришлиги',
+  confirmArrivalTime:
+    'Агар яқин 2 кун ичида келишни режалаштиришган бўлишса, келиш вақтини тасдиқлашлиги',
+  addOtherRequirements: 'Бошқа талабларни қўшиш',
+  officialID: 'Airbnb-га юборилган расмий гувоҳнома',
+  moreRequirementsLessBookings: 'Кўпроқ талаблар - камроқ буюртма.',
+  noBadReviews: 'Бошқа эгалар томонидан тавсия этилган, ёмон шарҳлар йўқ',
+  suitableForChildren: 'Болалар учун (2-12 ёш)',
+  explainWhy: 'Сабабини тушунтиринг',
+  notSuitableForChildren:
+    'Нега сизнинг турар жойингиз болалар учун мос эмаслигини тушунтиринг.',
+  notSuitableForChildrenTitle:
+    'Уйингизнинг қайси қисмларига зарар этказиш осон ёки улар болалар учун хавфлими?',
+  suitableForChildrenExample:
+    'Масалан: иккинчи қаватга чиқадиган зинапояларда зина панжаралари йўқ.',
+  suitableForBabies: 'Кичкинтойлар учун (2 ёшгача)',
+  possibleWithAnimals: 'Ҳайвонлар билан мумкин',
+  canSmoke: 'Чекиш мумкин',
+  partiesAllowed: 'Зиёфатларга рухсат берилган',
+  additionalRules: 'Қўшимча қоидалар',
+  add: 'Қўшиш',
+  whatGuestsShouldKnowAboutYourHome:
+    'Сизнинг уйингиз ҳақида меҳмонлар нималарни билишлари керак',
+  needToClimbStairs: 'Зинадан кўтарилиш керак',
+  mayBeNoisy: 'Шовқинли бўлиши мумкин',
+  petsLiveHouse: 'Уй ҳайвонлари уйда яшайди',
+  noParking: 'Шахсий автомобил тўхташ жойи йўқ',
+  someAreasAreShared: 'Баъзи жойлар умумий',
+  convenienceLimitations: 'Қулайлик чекловлари',
+  homeMonitoringRecordingDevices: 'Уй мониторинги ёки рўйхатга олиш асбоблари',
+  dangerousAnimalsOnThePremises: 'Турар жой ҳудудида хавфли ҳайвонлар'
 }
