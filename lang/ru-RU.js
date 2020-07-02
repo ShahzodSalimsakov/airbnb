@@ -102,9 +102,14 @@ export default {
   tellGuestsAboutLodgingTitle:
     'Расскажите, чем интересен ваш район, и укажите особенности жилья, например быстрый Wi-Fi или парковку.',
   createAdName: 'Создать название объявления',
+  createAdNameTitle: 'Гостей привлечет название, отражающее уникальность жилья',
   addProfilePhoto: 'Добавьте фото профиля',
+  addProfilePhotoTitle:
+    'Позаботьтесь, чтобы на фото было хорошо видно ваше лицо.',
   whatAmenitiesDoYouOffer: 'Какие удобства вы предлагаете?',
   viewAirbnbGuestRequirements: 'Ознакомиться с требованиями Airbnb к гостям',
+  viewAirbnbGuestRequirementsTitle:
+    'Для бронирования жилья на Airbnb гости должны соответствовать определенным требованиям.',
   defineHouseRulesForGuests: 'Определите для гостей правила дома',
   choosePhoto: 'Выбрать фотографию',
   addDetailsOptional: 'Добавить подробности (по желанию)',
@@ -120,5 +125,23 @@ export default {
   whereToGoOptional: 'Куда пойти (по желанию)',
   whereToGoOptionalTitle:
     'Расскажите о том, какой общественный транспорт ходит в вашем районе, как лучше проехать на машине или дойти пешком.',
-  smaller: 'Меньше'
+  smaller: 'Меньше',
+  required: 'Обязательный',
+  max50Characters: 'Максимум 50 символов',
+  useFacebookPhotos: 'Использовать фото из Facebook',
+  uploadPhoto: 'Загрузить фото',
+  addMobileNumber: 'Добавьте номер мобильного телефона',
+  addMobileNumberTitle:
+    'Мы будем отправлять вам запросы на бронирование, напоминания и другие уведомления. У вас должна быть возможность принимать SMS или звонки на этот номер.',
+  submit: 'Отправить',
+  allAirbnbGuestsMustSubmitTheFollowing:
+    'Все гости Airbnb должны предоставить следующее',
+  emailAddress: 'E-mail адрес',
+  phoneNumberVerified: 'Номер телефона подтвержден',
+  billingInformation: 'Платежная информация',
+  beforeBookingYourAccommodationGuestsMust:
+    'Перед бронированием вашего жилья гости должны',
+  takeYourRulesAtHome: 'Принять ваши правила дома',
+  sendYouAMessageAboutYourTrip: 'Отправить вам сообщение о своей поездке',
+  warnAboutTheNumberOfVisitors: 'Предупредить о количестве приезжающих'
 }
