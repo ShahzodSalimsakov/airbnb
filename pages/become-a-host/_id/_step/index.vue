@@ -17,6 +17,7 @@ import SecondStepWizard from '~/components/step-2/index'
 import ThirdStepWizard from '~/components/step-3/index'
 export default {
   layout: 'wizard',
+  middleware: ['auth'],
   components: { ThirdStepWizard, SecondStepWizard }
 }
 </script>
