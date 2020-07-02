@@ -101,9 +101,15 @@ export default {
   tellGuestsAboutLodgingTitle:
     'Сизнинг ҳудудингиз нега қизиқарли эканлиги ҳақида айтинг, масалан тезкор Wi-Fi ёки тўхташ жойи каби турар жой хусусиятларини кўрсатинг.',
   createAdName: 'Эълон номини яратинг',
+  createAdNameTitle:
+    'Меҳмонларни уй-жойнинг ўзига хослигини акс эттирувчи исм жалб қилади',
   addProfilePhoto: 'Профил расмини қўшиш',
+  addProfilePhotoTitle:
+    'Фотосуратда юзингиз аниқ кўриниб туришига ишонч ҳосил қилинг.',
   whatAmenitiesDoYouOffer: 'Сиз қандай қулайликларни таклиф қиласиз?',
   viewAirbnbGuestRequirements: 'Airbnb меҳмонларга болган талабларини кўринг',
+  viewAirbnbGuestRequirementsTitle:
+    'Меҳмонлар Airbnb-да жойларни брон қилиш учун маълум талабларга жавоб беришлари керак.',
   defineHouseRulesForGuests: 'Меҳмонлар учун уй қоидаларини аниқланг',
   choosePhoto: 'Фотосуратни танлаш',
   addDetailsOptional: 'Батафсил маълумот қушиш (ихтиёрий)',
@@ -139,5 +145,23 @@ export default {
   keepBelongings: 'Йўқ, мен шахсий нарсаларимни шу эрда сақлайман',
   listingCompany: 'Компания номидан Аирбнб-да эълон жойлаштирасизми?',
   hostingRegisteredBusiness: 'Ҳа, мен бошқараман ёки компанияда ишлайман',
-  hostingIndividualOwner: 'Йўқ, бу менга тегишли эмас.'
+  hostingIndividualOwner: 'Йўқ, бу менга тегишли эмас.',
+  required: 'Мажбурий',
+  max50Characters: 'Максимал 50 белги',
+  useFacebookPhotos: 'Facebook расмларидан фойдаланиш',
+  uploadPhoto: 'Фотосуратни юклаш',
+  addMobileNumber: 'Уяли телефон рақамингизни қўшинг',
+  addMobileNumberTitle:
+    'Биз сизга буюртма сўровлари, эслатмалар ва бошқа билдиришномаларни юборамиз. Сиз ушбу рақамга SMS ёки қўнғироқларни қабул қилишингиз мумкин.',
+  submit: 'Юбориш',
+  allAirbnbGuestsMustSubmitTheFollowing:
+    'Airbnb-ни барча меҳмонлари қуйидагиларни тақдим этишлари шарт',
+  emailAddress: 'E-mail манзили',
+  phoneNumberVerified: 'Телефон рақами тасдиқланди',
+  billingInformation: 'Тўлов маълумотлари',
+  beforeBookingYourAccommodationGuestsMust:
+    'Турар жойни брон қилишдан олдин, меҳмонлар қилишлари шарт',
+  takeYourRulesAtHome: 'Уйингиз қоидаларини қабул қилишлиги',
+  sendYouAMessageAboutYourTrip: 'Сафарлиги ҳақида сизга хабар беришлиги',
+  warnAboutTheNumberOfVisitors: 'Ташриф буюрувчилар сони ҳақида огоҳлантиришлиги'
 }
