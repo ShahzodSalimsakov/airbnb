@@ -150,5 +150,6 @@ export default {
     'Турар жойни брон қилишдан олдин, меҳмонлар қилишлари шарт',
   takeYourRulesAtHome: 'Уйингиз қоидаларини қабул қилишлиги',
   sendYouAMessageAboutYourTrip: 'Сафарлиги ҳақида сизга хабар беришлиги',
-  warnAboutTheNumberOfVisitors: 'Ташриф буюрувчилар сони ҳақида огоҳлантиришлиги'
+  warnAboutTheNumberOfVisitors:
+    'Ташриф буюрувчилар сони ҳақида огоҳлантиришлиги'
 }

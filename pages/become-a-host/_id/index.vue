@@ -8,6 +8,7 @@
 import FirstStepWizard from '~/components/become-a-host/index'
 export default {
   layout: 'wizard',
+  middleware: ['auth'],
   components: { FirstStepWizard }
 }
 </script>
