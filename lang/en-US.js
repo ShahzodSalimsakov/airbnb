@@ -105,6 +105,8 @@ export default {
   viewAirbnbGuestRequirementsTitle:
     'Guests must meet certain requirements to book accommodations on Airbnb.',
   defineHouseRulesForGuests: 'Define house rules for guests',
+  defineHouseRulesForGuestsTitle:
+    'Гости принимают правила дома до отправки запроса на бронирование.',
   choosePhoto: 'Choose a photo',
   addDetailsOptional: 'Add details (optional)',
   yourHomeOptional: 'Your home (optional)',
@@ -144,6 +146,7 @@ export default {
   hostingIndividualOwner: 'I’m hosting as an individual or sole owner',
   required: 'Required',
   max50Characters: 'Maximum 50 characters',
+  max150Characters: 'Maximum 150 characters',
   useFacebookPhotos: 'Use Facebook photos',
   uploadPhoto: 'Upload a photo',
   addMobileNumber: 'Add mobile number',
@@ -187,5 +190,90 @@ export default {
   EmailIsRequired: 'Email is required',
   invalidEmailAddress: 'Invalid email address',
   passwordMustBeLongerThan6Characters:
-    'Password must be longer than 6 characters'
+    'Password must be longer than 6 characters',
+  confirmArrivalTime:
+    'Confirm arrival time if it is planned in the next 2 days',
+  addOtherRequirements: 'Add other requirements',
+  officialID: 'Official ID sent to Airbnb',
+  moreRequirementsLessBookings: 'More requirements - less bookings.',
+  noBadReviews: 'Recommended by other owners, no bad reviews',
+  suitableForChildren: 'Suitable for children (2–12 years old)',
+  explainWhy: 'Explain why',
+  notSuitableForChildren:
+    'Explain why your accommodation is not suitable for children.',
+  notSuitableForChildrenTitle:
+    'What parts of your home are easy to damage or are they dangerous for children?',
+  suitableForChildrenExample:
+    'Example: there are no railings on the stairs to the second floor.',
+  suitableForBabies: 'Suitable for babies (under 2 years old)',
+  possibleWithAnimals: 'It is possible with animals',
+  canSmoke: 'Can smoke',
+  partiesAllowed: 'Parties allowed',
+  additionalRules: 'Additional Rules',
+  add: 'Add',
+  whatGuestsShouldKnowAboutYourHome: 'What guests should know about your home',
+  needToClimbStairs: 'Need to climb stairs',
+  mayBeNoisy: 'May be noisy',
+  petsLiveHouse: 'Pets live in the house',
+  noParking: 'There is no parking',
+  someAreasAreShared: 'Some areas are shared',
+  convenienceLimitations: 'Convenience limitations',
+  homeMonitoringRecordingDevices: 'Home monitoring or recording devices',
+  dangerousAnimalsOnThePremises: 'Dangerous animals on the premises',
+  thisIsHowGuestsWillBookWithYou: 'This is how guests will book with you',
+  successfulReceptionBeginsWithReliableCalendar:
+    'Successful reception begins with a reliable calendar',
+  successfulReceptionBeginsWithReliableCalendarTitle:
+    'Guests will instantly book available days. To receive reservations only when you can receive guests, constantly update the calendar and accessibility settings. Cancellations violate guest plans. If you cancel your reservation due to a calendar error, we will fine you and block the relevant dates.',
+  answerTwoQuestionsBeforeMovingSettings:
+    'Answer two questions before moving on to settings',
+  howEarlyShouldGuestsBookYourAccommodation:
+    'How early should guests book your accommodation?',
+  howEarlyCanGuestsBook: 'How early can guests book?',
+  howLongCanGuestsStayYourAccommodation:
+    'How long can guests stay in your accommodation?',
+  updateYourCalendar: 'Update your calendar',
+  setPriceHousing: 'Set a price for housing',
+  somethingSpecialFirstGuests: 'Something special for first guests',
+  somethingSpecialFirstGuestsSale:
+    'Offer first guests a 20% discount. RECOMMENDED!',
+  somethingSpecialFirstGuestsSaleTitle:
+    'The first guests (3) who book your accommodation will receive a 20% discount per night. The special offer will attract guests and you will receive the necessary number of reviews (3) to assign a rating.',
+  somethingSpecialFirstGuestsNotSale: 'Do not add a special offer',
+  somethingSpecialFirstGuestsNotSaleTitle:
+    'After the announcement is published, you cannot add an offer.',
+  pricesBasedLengthStay: 'Prices based on the length of stay',
+  localLawsTaxes: 'Local laws and taxes',
+  guestsMatchingYourRequirementsFindYourAd:
+    'Guests matching your requirements find your ad',
+  guestsMatchingYourRequirementsFindYourAdTitle:
+    'To book, guests must confirm their contact details, provide billing information and tell about their trip',
+  youDefineCircleGuests: 'You define the circle of guests',
+  youDefineCircleGuestsTitle:
+    'To book accommodation at affordable dates without an additional request, guests will have to comply with all established requirements and agree to the rules.',
+  weWillNotifyYouWhenGuestMakesReservation:
+    'We will notify you when a guest makes a reservation',
+  weWillNotifyYouWhenGuestMakesReservationTitle:
+    'We will immediately send you a confirmation indicating his purpose of the trip, time of arrival and his companions.',
+  gotItIWillRegularlyUpdateCalendar:
+    'Got it! I will regularly update the calendar.',
+  haveYouEverRentedHouse: 'Have you ever rented a house?',
+  howOftenDoYouWantReceiveGuests: 'How often do you want to receive guests?',
+  chooseOneOption: 'Choose 1 option',
+  advice: 'Advice.',
+  howEarlyShouldGuestsBookYourAccommodationAdvice:
+    'If the reservation is planned at least 2 days before arrival, then you can better prepare for the arrival of the guest, but you can miss the bookings made at the last moment.',
+  whenCanGuestsArriveAtTheirAccommodation:
+    'When can guests arrive at their accommodation?',
+  howEarlyCanGuestsBookAdvice:
+    'To avoid canceling or rejecting guest requests, unblock only the dates on which you are ready to accept them.',
+  arrivalWith: 'Arrival with',
+  arrivalBefore: 'Arrival before',
+  chooseTime: 'Choose a time',
+  datesNotAvailableTitle:
+    'The calendar will be locked by default. To receive guests, you will have to manually unlock the dates.',
+  nightsMinimum: 'Nights minimum',
+  nightsMaximum: 'Maximum nights',
+  price: 'Price',
+  sum: 'sum'
 }

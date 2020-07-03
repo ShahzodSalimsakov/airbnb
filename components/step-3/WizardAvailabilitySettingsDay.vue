@@ -4,21 +4,19 @@
       <v-card>
         <v-card-text>
           <div class="headline">
-            Насколько заранее гости должны бронировать ваше жилье?
+            {{ $t('howEarlyShouldGuestsBookYourAccommodation') }}
           </div>
         </v-card-text>
         <v-card-text>
           <v-select
             :value="ReserveHouse"
             :items="arrReserveHouse"
-            placeholder="Выберите 1 вариант"
+            :placeholder="this.$t('chooseOneOption')"
             @change="(val) => changeData('ReserveHouse', val)"
           ></v-select>
           <div class="subtitle-2">
-            <div style="color: dodgerblue;">Совет.</div>
-            Если бронирование планируется не менее чем за 2 дня до прибытия, то
-            вы сможете лучше подготовиться к прибытию гостя, но можете упустить
-            бронирования, сделанные в последний момент.
+            <div style="color: dodgerblue;">{{ $t('advice') }}</div>
+            {{ $t('howEarlyShouldGuestsBookYourAccommodationAdvice') }}
           </div>
         </v-card-text>
 
@@ -26,25 +24,27 @@
           <hr />
         </v-card-text>
         <v-card-text>
-          <h2>Когда гости могут прибыть в жилье?</h2>
+          <h2 class="font-bold">
+            {{ $t('whenCanGuestsArriveAtTheirAccommodation') }}
+          </h2>
         </v-card-text>
         <v-card-text>
           <v-row>
             <v-col md="6">
-              Прибытие с
+              {{ $t('arrivalWith') }}
               <v-select
                 :value="reserveHouseHourFrom"
                 :items="arrHour"
-                placeholder="Выберите время"
+                :placeholder="this.$t('chooseTime')"
                 @change="(val) => changeData('reserveHouseHourFrom', val)"
               ></v-select>
             </v-col>
             <v-col md="6">
-              Прибытие до
+              {{ $t('arrivalBefore') }}
               <v-select
                 :value="reserveHouseHourUntil"
                 :items="arrHour"
-                placeholder="Выберите время"
+                :placeholder="this.$t('chooseTime')"
                 @change="(val) => changeData('reserveHouseHourUntil', val)"
               ></v-select>
             </v-col>

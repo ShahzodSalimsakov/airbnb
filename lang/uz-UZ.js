@@ -36,7 +36,7 @@ export default {
     'Эълонлар ва тўловларни бошқариш, меҳмонлар билан алоқа қилиш ва ' +
     'бошқа масалалар.',
   receptionGuestTitle:
-    'Тақвимни янгилаш, меҳмонлар билан суҳбатлашиш ва бошқа нарсалар ҳақида маълумот олинг.',
+    'Календарни янгилаш, меҳмонлар билан суҳбатлашиш ва бошқа нарсалар ҳақида маълумот олинг.',
   bookingTravel: 'Буюртма ва саёхат',
   bookingTravelTitle:
     'Буюртмани ўзгартириш, эгаси билан алоқа қилиш ва бошқа нарсалар тўғрисида ёрдам олинг.',
@@ -111,6 +111,8 @@ export default {
   viewAirbnbGuestRequirementsTitle:
     'Меҳмонлар Airbnb-да жойларни брон қилиш учун маълум талабларга жавоб беришлари керак.',
   defineHouseRulesForGuests: 'Меҳмонлар учун уй қоидаларини аниқланг',
+  defineHouseRulesForGuestsTitle:
+    'Гости принимают правила дома до отправки запроса на бронирование.',
   choosePhoto: 'Фотосуратни танлаш',
   addDetailsOptional: 'Батафсил маълумот қушиш (ихтиёрий)',
   yourHomeOptional: 'Сизнинг уйингиз (ихтиёрий)',
@@ -149,6 +151,7 @@ export default {
   hostingIndividualOwner: 'Йўқ, бу менга тегишли эмас.',
   required: 'Мажбурий',
   max50Characters: 'Максимал 50 белги',
+  max150Characters: 'Максимал 150 белги',
   useFacebookPhotos: 'Facebook расмларидан фойдаланиш',
   uploadPhoto: 'Фотосуратни юклаш',
   addMobileNumber: 'Уяли телефон рақамингизни қўшинг',
@@ -194,5 +197,92 @@ export default {
   atLeastCharacters: 'Камида 6 та белги',
   EmailIsRequired: 'Электрон почта манзили киритилиши шарт',
   invalidEmailAddress: 'Электрон почта манзили нотўғри',
-  passwordMustBeLongerThan6Characters: 'Парол 6 белгидан кам бўлмаслиги керак'
+  passwordMustBeLongerThan6Characters: 'Парол 6 белгидан кам бўлмаслиги керак',
+  confirmArrivalTime:
+    'Агар яқин 2 кун ичида келишни режалаштиришган бўлишса, келиш вақтини тасдиқлашлиги',
+  addOtherRequirements: 'Бошқа талабларни қўшиш',
+  officialID: 'Airbnb-га юборилган расмий гувоҳнома',
+  moreRequirementsLessBookings: 'Кўпроқ талаблар - камроқ буюртма.',
+  noBadReviews: 'Бошқа эгалар томонидан тавсия этилган, ёмон шарҳлар йўқ',
+  suitableForChildren: 'Болалар учун (2-12 ёш)',
+  explainWhy: 'Сабабини тушунтиринг',
+  notSuitableForChildren:
+    'Нега сизнинг турар жойингиз болалар учун мос эмаслигини тушунтиринг.',
+  notSuitableForChildrenTitle:
+    'Уйингизнинг қайси қисмларига зарар этказиш осон ёки улар болалар учун хавфлими?',
+  suitableForChildrenExample:
+    'Масалан: иккинчи қаватга чиқадиган зинапояларда зина панжаралари йўқ.',
+  suitableForBabies: 'Кичкинтойлар учун (2 ёшгача)',
+  possibleWithAnimals: 'Ҳайвонлар билан мумкин',
+  canSmoke: 'Чекиш мумкин',
+  partiesAllowed: 'Зиёфатларга рухсат берилган',
+  additionalRules: 'Қўшимча қоидалар',
+  add: 'Қўшиш',
+  whatGuestsShouldKnowAboutYourHome:
+    'Сизнинг уйингиз ҳақида меҳмонлар нималарни билишлари керак',
+  needToClimbStairs: 'Зинадан кўтарилиш керак',
+  mayBeNoisy: 'Шовқинли бўлиши мумкин',
+  petsLiveHouse: 'Уй ҳайвонлари уйда яшайди',
+  noParking: 'Шахсий автомобил тўхташ жойи йўқ',
+  someAreasAreShared: 'Баъзи жойлар умумий',
+  convenienceLimitations: 'Қулайлик чекловлари',
+  homeMonitoringRecordingDevices: 'Уй мониторинги ёки рўйхатга олиш асбоблари',
+  dangerousAnimalsOnThePremises: 'Турар жой ҳудудида хавфли ҳайвонлар',
+  thisIsHowGuestsWillBookWithYou: 'Меҳмонлар сизга шундай буюртма қилишади',
+  successfulReceptionBeginsWithReliableCalendar:
+    'Муваффақиятли қабул ишончли календар билан бошланади',
+  successfulReceptionBeginsWithReliableCalendarTitle:
+    'Меҳмонлар дарҳол мавжуд кунларни банд қилишади. Фақат сиз меҳмонларни қабул қилсангиз, эълон олиш учун календар ва кириш созламаларини доимий равишда янгилаб туринг. Бекор қилиш меҳмон режаларини бузади. Агар календар хатоси туфайли сиз бандни бекор қилсангиз, биз сизни жаримага тортамиз ва тегишли саналарни беркитамиз.',
+  answerTwoQuestionsBeforeMovingSettings:
+    'Созламаларга ўтишдан олдин иккита саволга жавоб беринг',
+  howEarlyShouldGuestsBookYourAccommodation:
+    'Меҳмонлар сизнинг квартирангизга қанча вақт олдинроқ буюртма беришлари керак?',
+  howEarlyCanGuestsBook: 'Меҳмонлар қачонгача буюртма беришлари мумкин?',
+  howLongCanGuestsStayYourAccommodation:
+    'Меҳмонлар сизнинг турар жойингизда қанча вақт туришлари мумкин?',
+  updateYourCalendar: 'Календарни янгиланг',
+  setPriceHousing: 'Уй-жой нархини белгиланг',
+  somethingSpecialFirstGuests: 'Биринчи меҳмонлар учун ноёб нарса',
+  somethingSpecialFirstGuestsSale:
+    'Биринчи меҳмонларга 20% чегирма таклиф этинг. Тавсия этамиз!',
+  somethingSpecialFirstGuestsSaleTitle:
+    'Сизнинг турар жойингизни банд қилган биринчи (3) меҳмонлар кечаси учун 20% чегирмага эга бўладилар. Махсус таклиф меҳмонларни жалб қилади ва сиз (3) фикрга эга бўласиз.',
+  somethingSpecialFirstGuestsNotSale: 'Махсус таклиф қўшилмасин',
+  somethingSpecialFirstGuestsNotSaleTitle:
+    'Эълон нашир қилингандан сўнг, сиз таклиф қўша олмайсиз.',
+  pricesBasedLengthStay: 'Яшаш муддатига қараб нархлар',
+  localLawsTaxes: 'Маҳаллий қонунлар ва солиқлар',
+  guestsMatchingYourRequirementsFindYourAd:
+    'Сизнинг талабингизга мос келадиган меҳмонлар сизнинг рекламангизни топадилар',
+  guestsMatchingYourRequirementsFindYourAdTitle:
+    'Буюртма қилиш учун, меҳмонлар алоқа маълумотларини тасдиқлашлари, ҳисоб-китоб маълумотларини тақдим этишлари ва саёҳатлари ҳақида айтиб беришлари керак.',
+  youDefineCircleGuests: 'Сиз меҳмонлар доирасини аниқлайсиз',
+  youDefineCircleGuestsTitle:
+    'Қўшимча талаб қилмасдан арзон нархларда уй-жойни банд қилиш учун меҳмонлар барча белгиланган талабларга риоя қилишлари ва қоидаларга рози бўлишлари керак.',
+  weWillNotifyYouWhenGuestMakesReservation:
+    'Меҳмонни банд қилганида сизга хабар берамиз',
+  weWillNotifyYouWhenGuestMakesReservationTitle:
+    'Биз дарҳол сизга сафарнинг мақсади, ташриф вақти ва унинг ҳамроҳларини кўрсатадиган тасдиқни юборамиз.',
+  gotItIWillRegularlyUpdateCalendar:
+    'Тушундим! Мен календарни мунтазам равишда янгилаб тураман.',
+  haveYouEverRentedHouse: 'Қачондур уйни ижарага берганмисиз?',
+  howOftenDoYouWantReceiveGuests:
+    'Сиз қанчалик тез-тез меҳмонларни қабул қилишни хоҳлайсиз?',
+  chooseOneOption: '1 вариантни танланг',
+  advice: 'Маслаҳат',
+  howEarlyShouldGuestsBookYourAccommodationAdvice:
+    'Агар буюртма қилиш келишдан камида 2 кун олдин режалаштирилган бўлса, унда сиз меҳмоннинг келишига яхшилаб тайёргарлик кўришингиз мумкин, аммо охирги пайтда қилинган буюртмаларни қўлдан бой беришингиз мумкин.',
+  whenCanGuestsArriveAtTheirAccommodation:
+    'Меҳмонлар турар жойларига қачон келишлари мумкин?',
+  howEarlyCanGuestsBookAdvice:
+    'Меҳмон сўровларини бекор қилиш ёки рад этишнинг олдини олиш учун, уларни қабул қилишга тайёр бўлган кунларни блокировкадан чиқариб қўйинг.',
+  arrivalWith: 'Дан',
+  arrivalBefore: 'Гача',
+  chooseTime: 'Вақтни танланг',
+  datesNotAvailableTitle:
+    'Календар одатда бандланган бўлади. Меҳмонларни қабул қилиш учун сиз календардиги саналарни қўлда очишингиз керак бўлади.',
+  nightsMinimum: 'Минимал кечалар',
+  nightsMaximum: 'Максимал кечалар',
+  price: 'Нарх',
+  sum: 'сум'
 }

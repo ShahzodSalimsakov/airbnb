@@ -125,7 +125,14 @@ export default {
           }
         }
       }
-    }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
+    plugins: ['@/plugins/auth-lang-redirect.js']
   },
   /*
    ** vuetify module configuration

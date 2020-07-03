@@ -3,15 +3,15 @@
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
         <v-card-text>
-          <div class="headline">Назначьте цену за жилье</div>
+          <div class="headline">{{ $t('setPriceHousing') }}</div>
         </v-card-text>
 
         <v-card-text>
           <v-text-field
             :value="price"
             v-mask="mask"
-            label="Цена"
-            suffix="сум"
+            :label="this.$t('price')"
+            :suffix="this.$t('sum')"
             outlined
             return-masked-value
             @change="(val) => changeData('price', val)"
