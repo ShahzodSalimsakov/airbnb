@@ -85,9 +85,7 @@
                     value="7"
                   ></v-radio>
                   <div>
-                    Это даст вам доступ к подходящим функциям Airbnb — гости
-                    этого не увидят, и выбор никак не повлияет на позиции вашего
-                    жилья в поиске.
+                    {{ $t('thisHelpsYou') }}
                   </div>
                 </v-radio-group>
               </v-card-text>
@@ -223,10 +221,10 @@ export default {
     valid: false,
     showRequiredError: false,
     rules: {
-      letType: [(v) => !!v || 'Поле обязательно для заполнения'],
-      typeOfHousing: [(v) => !!v || 'Поле обязательно для заполнения'],
-      disposalOfGuests: [(v) => !!v || 'Поле обязательно для заполнения'],
-      forGuest: [(v) => !!v || 'Поле обязательно для заполнения']
+      letType: [(v) => !!v || this.$t('requiredField')],
+      typeOfHousing: [(v) => !!v || this.$t('requiredField')],
+      disposalOfGuests: [(v) => !!v || this.$t('requiredField')],
+      forGuest: [(v) => !!v || this.$t('requiredField')]
     }
   }),
   computed: {

@@ -33,7 +33,7 @@
           <nuxt-link
             to="profile"
             class="block px-4 py-2 black--text text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-            >Профиль
+            >{{ $t('profile') }}
           </nuxt-link>
         </div>
         <div class="border-t border-gray-100"></div>
@@ -43,7 +43,7 @@
             @click.prevent="logout"
             class="block px-4 py-2 black--text text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
             role="menuitem"
-            >Выйти
+            >{{ $t('exit') }}
           </a>
         </div>
       </div>

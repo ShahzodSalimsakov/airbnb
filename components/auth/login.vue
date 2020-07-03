@@ -42,7 +42,7 @@
               :label="$t('password')"
               placeholder="******"
               outlined
-              hint="Не менее 6 символов"
+              :hint="$t('atLeastCharacters')"
               counter
               @click:append="show = !show"
             ></v-text-field>
@@ -75,11 +75,13 @@ export default {
       show: false,
       rules: {
         email: [
-          (v) => !!v || 'E-mail обязательно для заполнения',
-          (v) => /.+@.+\..+/.test(v) || 'E-mail указан неверный'
+          (v) => !!v || this.$t('EmailIsRequired'),
+          (v) => /.+@.+\..+/.test(v) || this.$t('invalidEmailAddress')
         ],
         password: [
-          (v) => (v && v.length >= 6) || 'Пароль должен быть длинее 6 символов'
+          (v) =>
+            (v && v.length >= 6) ||
+            this.$t('passwordMustBeLongerThan6Characters')
         ]
       },
       form: {

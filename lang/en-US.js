@@ -163,6 +163,34 @@ export default {
   takeYourRulesAtHome: 'Take your rules at home',
   sendYouAMessageAboutYourTrip: 'Send you a message about your trip',
   warnAboutTheNumberOfVisitors: 'Warn about the number of visitors',
+  thisHelpsYou:
+    'This helps you get the right features for how you host – it won’t show up to guests or affect how you show up in search.',
+  requiredField: 'Required field!',
+  whatSpacesGuestsUse: 'What spaces can guests use?',
+  includeCommonAreas:
+    'Include common areas, but don’t add spaces that aren’t on your property.',
+  localLawsTax: 'Your local laws and taxes',
+  localLawsTaxText:
+    'Make sure you familiarise yourself with your local laws as well as Airbnb’s Nondiscrimination Policy. Take a moment to review the local laws that apply to your listing. We want to make sure you have everything you need to get off to a great start. Most cities have rules covering home sharing, and the specific codes and ordinances can appear in many places (such as zoning, building, licensing or tax codes). In most places, you must register, get a permit, or obtain a licence before you list your property or accept guests. You may also be responsible for collecting and remitting certain taxes. In some places, short-term rentals could be prohibited altogether. Since you are responsible for your own decision to list, you should get comfortable with the applicable rules before listing on Airbnb. To get you started, we offer some helpful resources under "Your City Laws".',
+  lengthOfStayPrices: 'Length-of-stay prices',
+  encourageTravellersToBookLongerStaysByOfferingADiscount:
+    'Encourage travellers to book longer stays by offering a discount.',
+  weeklyDiscount: 'Weekly discount',
+  percentDiscount: '% discount',
+  tip21: 'Tip: 21 %',
+  travellersOftenSearchByPrice:
+    'Travellers often search by price. To help increase your chances of getting weekly stays, try setting a discount.',
+  monthlyDiscount: 'Monthly discount',
+  tip49: 'Tip: 49 %',
+  mostTravellersStayingLonger:
+    'Most travellers staying longer than one month book listings with discounts greater than 25%.',
+  exit: 'Exit',
+  profile: 'Profile',
+  atLeastCharacters: 'At least 6 characters',
+  EmailIsRequired: 'Email is required',
+  invalidEmailAddress: 'Invalid email address',
+  passwordMustBeLongerThan6Characters:
+    'Password must be longer than 6 characters',
   confirmArrivalTime:
     'Confirm arrival time if it is planned in the next 2 days',
   addOtherRequirements: 'Add other requirements',
