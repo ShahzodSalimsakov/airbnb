@@ -55,21 +55,22 @@
 </template>
 
 <script>
-import moment from 'moment'
-moment.locale('ru')
+import { formatWithOptions } from 'date-fns/fp'
+import { ru } from 'date-fns/locale'
+const dateToString = formatWithOptions({ locale: ru }, 'do MMM yyyy')
 export default {
   name: 'Index',
   data: () => ({
     imgArr: [],
     items: [
       {
-        date: moment().format('Do MMM YYYY'),
+        date: dateToString(new Date()),
         title:
           'Фонд помощи суперхозяевам завершил работу. Мы выплатили 16,8 млн долларов США.',
         link: ''
       },
       {
-        date: moment().format('Do MMM YYYY'),
+        date: dateToString(new Date()),
         title:
           'В обращении к хозяевам и организаторам генеральный директор Airbnb Брайан Чески рассказал о будущем индустрии путешествий и ответил на вопросы',
         link: ''

@@ -52,7 +52,22 @@ export const state = () => ({
   discontMonth: '',
   adres: '',
   appartment: '',
-  indeks: ''
+  indeks: '',
+  calendarChosenDates: [],
+  calendarMonths: [
+    {
+      month: new Date().getMonth(),
+      year: new Date().getFullYear()
+    },
+    {
+      month: new Date().getMonth() + 1,
+      year: new Date().getFullYear()
+    },
+    {
+      month: new Date().getMonth() + 2,
+      year: new Date().getFullYear()
+    }
+  ]
 })
 
 export const getters = {
@@ -98,7 +113,9 @@ export const getters = {
   discontMonth: (state) => state.discontMonth,
   adres: (state) => state.adres,
   appartment: (state) => state.appartment,
-  indeks: (state) => state.indeks
+  indeks: (state) => state.indeks,
+  calendarChosenDates: (state) => state.calendarChosenDates,
+  calendarMonths: (state) => state.calendarMonths
 }
 
 export const mutations = {
@@ -107,6 +124,21 @@ export const mutations = {
   },
   SET_BEDS_PER_ROOM(state, { index, key, val }) {
     state.bedsPerRoom[index][key] = +val
+  },
+  TOGGLE_CALENDAR_DATE(state, { date }) {
+    if (state.calendarChosenDates.includes(date)) {
+      state.calendarChosenDates = state.calendarChosenDates.filter(
+        (item) => item !== date
+      )
+    } else {
+      state.calendarChosenDates.push(date)
+    }
+  },
+  ADD_NEW_CALENDAR_MONTH(state, { month, year }) {
+    state.calendarMonths.push({
+      month,
+      year
+    })
   }
 }
 
@@ -116,5 +148,11 @@ export const actions = {
   },
   setBedsPerRoom({ commit }, { index, key, val }) {
     commit('SET_BEDS_PER_ROOM', { index, key, val })
+  },
+  toggleChoosingDate({ commit }, { date }) {
+    commit('TOGGLE_CALENDAR_DATE', { date })
+  },
+  addNewCalendarMonth({ commit }, { month, year }) {
+    commit('ADD_NEW_CALENDAR_MONTH', { month, year })
   }
 }

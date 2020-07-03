@@ -92,9 +92,9 @@
 </template>
 
 <script>
-import moment from 'moment'
+import { formatWithOptions, parseISO } from 'date-fns/fp'
+import { ru } from 'date-fns/locale'
 import DecrementIncrement from '~/components/DecrementIncrement'
-moment.locale('ru')
 export default {
   name: 'Housing',
   components: { DecrementIncrement },
@@ -115,10 +115,13 @@ export default {
   computed: {
     computedDateFormattedMoment() {
       const arrival = this.arrivalAndDepartureDate
+      // const dateToString = formatWithOptions({ locale: ru }, 'D MMM')
       return Array.isArray(arrival)
         ? arrival
             .sort()
-            .map((item) => moment(item, '').format('D MMM'))
+            .map((item) => {
+              return formatWithOptions({ locale: ru }, 'd MMM', parseISO(item))
+            })
             .join(' - ')
         : ''
     }
