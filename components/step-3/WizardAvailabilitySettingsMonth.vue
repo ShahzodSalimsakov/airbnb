@@ -4,26 +4,24 @@
       <v-card>
         <v-card-text>
           <div class="headline">
-            Насколько заранее гости должны бронировать ваше жилье?
+            {{ $t('howEarlyCanGuestsBook') }}
           </div>
         </v-card-text>
         <v-card-text>
           <v-select
             :value="reserveHouseMonth"
             :items="arrReserveHouse"
-            placeholder="Выберите 1 вариант"
+            :placeholder="this.$t('chooseOneOption')"
             @change="(val) => changeData('reserveHouseMonth', val)"
           ></v-select>
           <div v-if="reserveHouseMonth === 'Даты недоступны по умолчанию'">
-            Календарь будет заблокирован по умолчанию. Чтобы принимать гостей,
-            вам придется разблокировать даты вручную.
+            {{ $t('datesNotAvailableTitle') }}
           </div>
         </v-card-text>
         <v-card-text>
           <div class="subtitle-2">
-            <div style="color: dodgerblue;">Совет.</div>
-            Во избежание отмены или отклонения заявок гостей, разблокируйте
-            только те даты, в которые вы готовы их принять.
+            <div style="color: dodgerblue;">{{ $t('advice') }}</div>
+            {{ $t('howEarlyCanGuestsBookAdvice') }}
           </div>
         </v-card-text>
       </v-card>

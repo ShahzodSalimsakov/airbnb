@@ -47,11 +47,15 @@
     <div
       class="border-t-2 elevation-10 flex justify-evenly py-3 steps-pagination"
     >
-      <v-btn color="primary" :disabled="activeStepIndex === 0" @click="goToPrev"
-        >Prev</v-btn
+      <v-btn
+        color="primary"
+        :disabled="activeStepIndex === 0"
+        @click="goToPrev"
       >
+        {{ $t('preview') }}
+      </v-btn>
       <v-btn color="primary" :loading="isStepLoading" @click="goToNext">
-        Continue
+        {{ $t('continue') }}
       </v-btn>
     </div>
   </div>
@@ -88,47 +92,47 @@ export default {
     return {
       steps: [
         {
-          label: 'Вот как гости будут у вас бронировать',
+          label: this.$t('thisIsHowGuestsWillBookWithYou'),
           active: true
         },
         {
-          label: 'Успешный прием гостей начинается с надежного календаря',
+          label: this.$t('successfulReceptionBeginsWithReliableCalendar'),
           active: false
         },
         {
-          label: 'Ответьте на два вопроса, прежде чем перейти к настройкам',
+          label: this.$t('answerTwoQuestionsBeforeMovingSettings'),
           active: false
         },
         {
-          label: 'Насколько заранее гости должны бронировать ваше жилье?',
+          label: this.$t('howEarlyShouldGuestsBookYourAccommodation'),
           active: false
         },
         {
-          label: 'Насколько заранее гости могут бронировать?',
+          label: this.$t('howEarlyCanGuestsBook'),
           active: false
         },
         {
-          label: 'Насколько долго гости могут жить в вашем жилье?',
+          label: this.$t('howLongCanGuestsStayYourAccommodation'),
           active: false
         },
         {
-          label: 'Обновите свой календарь',
+          label: this.$t('updateYourCalendar'),
           active: false
         },
         {
-          label: 'Назначьте цену за жилье',
+          label: this.$t('setPriceHousing'),
           active: false
         },
         {
-          label: 'Кое-что особенное для первых гостей',
+          label: this.$t('somethingSpecialFirstGuests'),
           active: false
         },
         {
-          label: 'Цены с учетом срока проживания',
+          label: this.$t('pricesBasedLengthStay'),
           active: false
         },
         {
-          label: 'Local laws',
+          label: this.$t('localLawsTaxes'),
           active: false
         }
       ],
