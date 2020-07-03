@@ -1,15 +1,16 @@
 <template>
   <div class="d-flex">
+    <div class="text-base pr-5" style="line-height: 4em;">{{ label }}:</div>
     <div class="d-inline">
       <v-btn :disabled="disabledButton" rounded fab depressed @click="decrement"
         >-</v-btn
       >
       <div class="d-inline-block">
         <v-text-field
-          style="width: 30px;"
+          style="width: 25px;"
           v-model="val"
           type="number"
-          min="0"
+          min="1"
           :placeholder="placeholder"
           @input="checkDisable"
         />
@@ -21,9 +22,9 @@
 <script>
 export default {
   name: 'IncrementDecrement',
-  props: ['placeholder'],
+  props: ['placeholder', 'label'],
   data: () => ({
-    val: '',
+    val: '1',
     disabledButton: null
   }),
   methods: {

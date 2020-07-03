@@ -4,10 +4,10 @@
       <v-card ref="form">
         <v-card-text>
           <div class="headline">
-            Насколько долго гости могут жить в вашем жилье?
+            {{ $t('howLongCanGuestsStayYourAccommodation') }}
           </div>
-          <IncrementDecrement placeholder="Ночей минимум" />
-          <IncrementDecrement placeholder="Ночей максимум" />
+          <IncrementDecrement :label="$t('nightsMinimum')" />
+          <IncrementDecrement :label="$t('nightsMaximum')" />
         </v-card-text>
       </v-card>
     </v-col>

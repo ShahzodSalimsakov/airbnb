@@ -3,7 +3,7 @@
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card ref="form">
         <v-card-text>
-          <div class="headline">Кое-что особенное для первых гостей</div>
+          <div class="headline">{{ $t('somethingSpecialFirstGuests') }}</div>
         </v-card-text>
         <v-card-text>
           <v-radio-group
@@ -12,19 +12,25 @@
             @change="(val) => changeData('specOffer', val)"
           >
             <v-row>
-              <v-col md="10" class="subtitle-2">
-                Предложите первым гостям скидку 20% РЕКОМЕНДУЕМ Первые гости
-                (3), которые забронируют ваше жилье, получат скидку 20% за ночь.
-                Специальное предложение привлечет гостей, и вы получите
-                необходимое число отзывов (3) для присвоения рейтинга.
+              <v-col md="10">
+                <div class="text-lg">
+                  {{ $t('somethingSpecialFirstGuestsSale') }}
+                </div>
+                <div class="text-sm">
+                  {{ $t('somethingSpecialFirstGuestsSaleTitle') }}
+                </div>
               </v-col>
               <v-col md="2">
                 <v-radio label="" value="true"></v-radio>
               </v-col>
 
-              <v-col md="10" class="subtitle-2">
-                Не добавлять специальное предложение После публикации объявления
-                добавить предложение нельзя.
+              <v-col md="10">
+                <div class="text-lg">
+                  {{ $t('somethingSpecialFirstGuestsNotSale') }}
+                </div>
+                <div class="text-sm">
+                  {{ $t('somethingSpecialFirstGuestsNotSaleTitle') }}
+                </div>
               </v-col>
               <v-col md="2">
                 <v-radio label="" value="false"></v-radio>
