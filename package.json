@@ -17,7 +17,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@riophae/vue-treeselect": "^0.4.0",
-    "moment": "^2.26.0",
+    "date-fns": "^2.14.0",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.12.2",
     "vue-currency-input": "^1.18.4",
