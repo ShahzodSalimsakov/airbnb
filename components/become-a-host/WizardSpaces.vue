@@ -4,11 +4,10 @@
       <v-card ref="form">
         <v-card-text>
           <div class="headline">
-            Какими помещениями гости могут пользоваться?
+            {{ $t('whatSpacesGuestsUse') }}
           </div>
           <div class="body-2">
-            Укажите общие зоны, но не добавляйте места, которые вам не
-            принадлежат.
+            {{ $t('includeCommonAreas') }}
           </div>
         </v-card-text>
         <v-card-text>
