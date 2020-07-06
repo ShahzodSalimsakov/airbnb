@@ -122,15 +122,17 @@ export default {
       dialog: false,
       rules: {
         email: [
-          (v) => !!v || 'E-mail обязательно для заполнения',
-          (v) => /.+@.+\..+/.test(v) || 'E-mail указан неверный'
+          (v) => !!v || this.$t('EmailIsRequired'),
+          (v) => /.+@.+\..+/.test(v) || this.$t('invalidEmailAddress')
         ],
-        first_name: [(v) => !!v || 'Имя обязательно для заполнения'],
-        last_name: [(v) => !!v || 'Фамилия обязательна для заполнения'],
+        first_name: [(v) => !!v || this.$t('NameIsRequired')],
+        last_name: [(v) => !!v || this.$t('LastNameIsRequired')],
         password: [
-          (v) => (v && v.length >= 6) || 'Пароль должен быть длинее 6 символов'
+          (v) =>
+            (v && v.length >= 6) ||
+            this.$t('passwordMustBeLongerThan6Characters')
         ],
-        city: [(v) => !!v || 'Город обязателен для заполнения']
+        city: [(v) => !!v || this.$t('CityIsRequired')]
       },
       form: {
         password: '',

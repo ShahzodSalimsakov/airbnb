@@ -27,8 +27,7 @@ export default {
   search: 'Search',
   receptionGuest: 'The reception of guests',
   receptionGuestparagraph:
-    'Management of announcements and payments, communication with guests and' +
-    ' other issues.',
+    'Management of announcements and payments, communication with guests and other issues.',
   receptionGuestTitle:
     'Get help updating your calendar, chatting with guests, and more.',
   bookingTravel: 'Booking and travel',
@@ -64,8 +63,7 @@ export default {
   AmountOfBathrooms: 'Amount of bathrooms',
   HowManyGuests: 'How many guests can your place accommodate?',
   CheckBeds:
-    'Check that you have enough beds to accommodate all your guests' +
-    'comfortably.',
+    'Check that you have enough beds to accommodate all your guests comfortably.',
   guests: 'Guests',
   bedroomsUse: 'How many bedrooms can guests use?',
   sleepingArrangements: 'Sleeping arrangements',
@@ -187,6 +185,8 @@ export default {
   exit: 'Exit',
   profile: 'Profile',
   atLeastCharacters: 'At least 6 characters',
+  NameIsRequired: 'Name is required',
+  LastNameIsRequired: 'Last name is required',
   EmailIsRequired: 'Email is required',
   invalidEmailAddress: 'Invalid email address',
   passwordMustBeLongerThan6Characters:
@@ -275,5 +275,23 @@ export default {
   nightsMinimum: 'Nights minimum',
   nightsMaximum: 'Maximum nights',
   price: 'Price',
-  sum: 'sum'
+  sum: 'sum',
+  indicatePointTheMap: 'Indicate a point on the map',
+  address: 'Address',
+  addressExample: 'Example, st. Lenin, house 12',
+  apartmentOptional: 'Apartment (optional)',
+  apartmentOptionalExample: 'Example, square. Number 7',
+  index: 'Index',
+  CityIsRequired: 'City is required',
+  quietHourStreetShoesAreNotPlaceHome:
+    'Quiet hour? Street shoes are not a place at home?',
+  SettingFreeDate: 'Setting free date',
+  SettingFreeDateTitle:
+    'To lock or unlock a date, select it. You can make changes after the announcement is published.',
+  ShowOtherDates: 'Show other dates',
+  Availability: 'Availability',
+  HelpCenter: 'Help center',
+  News: 'News',
+  ResourceCenter: 'Resource center',
+  CommunicationCenter: 'Communication center'
 }

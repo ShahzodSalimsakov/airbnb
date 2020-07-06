@@ -203,7 +203,7 @@
           <v-row>
             <v-col md="8">
               <v-text-field
-                placeholder="Тихий час? Уличной обуви не место дома?"
+                :placeholder="$t('quietHourStreetShoesAreNotPlaceHome')"
               ></v-text-field>
             </v-col>
             <v-col md="4">
