@@ -91,6 +91,8 @@ export default {
   becomeAHostStep2: 'Сколько гостей вмещает ваше жилье?',
   becomeAHostStep3: 'Сколько ванных?',
   becomeAHostStep4: 'Где находится ваше жилье?',
+  becomeAHostStep4Title:
+    'Гости увидят точный адрес жилья только после оформления бронирования.',
   becomeAHostStep5: 'Какие удобства вы предлагаете?',
   becomeAHostStep6: 'Какими помещениями гости могут пользоваться?',
   preview: 'Предыдущий',
@@ -192,6 +194,8 @@ export default {
   exit: 'Выйти',
   profile: 'Профиль',
   atLeastCharacters: 'Не менее 6 символов',
+  NameIsRequired: 'Имя обязательно для заполнения',
+  LastNameIsRequired: 'Фамилия обязательно для заполнения',
   EmailIsRequired: 'E-mail обязательно для заполнения',
   invalidEmailAddress: 'E-mail указан неверный',
   passwordMustBeLongerThan6Characters: 'Пароль должен быть длинее 6 символов',
@@ -277,5 +281,23 @@ export default {
   nightsMinimum: 'Ночей минимум',
   nightsMaximum: 'Ночей максимум',
   price: 'Цена',
-  sum: 'сум'
+  sum: 'сум',
+  indicatePointTheMap: 'Укажите точку на карте',
+  address: 'Адрес',
+  addressExample: 'например, ул. Ленина, д. 12',
+  apartmentOptional: 'Квартира (необязательно)',
+  apartmentOptionalExample: 'например, кв. №7',
+  index: 'Индекс',
+  CityIsRequired: 'Город обязателен для заполнения',
+  quietHourStreetShoesAreNotPlaceHome:
+    'Тихий час? Уличной обуви не место дома?',
+  SettingFreeDate: 'Настройка свободных дат',
+  SettingFreeDateTitle:
+    'Чтобы заблокировать или разблокировать дату, выберите ее. Можно внести изменения после публикации объявления.',
+  ShowOtherDates: 'Показать другие даты',
+  Availability: 'Доступность',
+  HelpCenter: 'Центр помощи',
+  News: 'Новости',
+  ResourceCenter: 'Центр ресурсов',
+  CommunicationCenter: 'Центр общения'
 }

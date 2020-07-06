@@ -105,20 +105,23 @@ export default {
         {
           name: this.$t('about'),
           items: [
-            { link: '/accessibility', title: 'Доступность' },
-            { link: '/trust', title: 'Доверие и безопасность' },
-            { link: '/help', title: 'Центр помощи' },
+            { link: '/accessibility', title: this.$t('Availability') },
+            { link: '/trust', title: this.$t('trustSecurity') },
+            { link: '/help', title: this.$t('HelpCenter') },
             { link: '/', title: 'Airbnb Citizen' },
-            { link: '/news', title: 'Новости' }
+            { link: '/news', title: this.$t('News') }
           ]
         },
         {
           name: this.$t('proprietor'),
           items: [
-            { link: '/welcome-guests', title: 'Принимайте гостей' },
+            {
+              link: '/welcome-guests',
+              title: this.$t('unAuthorizedNewHostLink')
+            },
             // { link: '/', title: 'Airbnb для бизнеса' },
-            { link: '/resources', title: 'Центр ресурсов' },
-            { link: '/', title: 'Центр общения' }
+            { link: '/resources', title: this.$t('ResourceCenter') },
+            { link: '/', title: this.$t('CommunicationCenter') }
           ]
         }
       ]

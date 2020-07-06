@@ -1,20 +1,23 @@
 <template>
   <v-row justify="center">
-    <v-col cols="12" sm="10" md="8" lg="6"
-      ><v-alert type="error" v-show="showRequiredError">
-        Для продолжения заполните поля
+    <v-col cols="12" sm="10" md="8" lg="6">
+      <v-alert type="error" v-show="showRequiredError">
+        {{ $t('fillFields') }}
       </v-alert>
       <v-form ref="form" v-model="valid">
         <v-card ref="form">
           <v-card-text>
-            <div class="headline">Где находится ваше жилье?</div>
+            <div class="headline">
+              {{ $t('becomeAHostStep4') }}
+            </div>
             <div class="body-2">
-              Гости увидят точный адрес жилья только после оформления
-              бронирования.
+              {{ $t('becomeAHostStep4Title') }}
             </div>
           </v-card-text>
 
-          <div class="px-4 text-lg">Укажите точку на карте</div>
+          <div class="px-4 text-lg">
+            {{ $t('indicatePointTheMap') }}
+          </div>
           <v-card-text>
             <yandex-map
               :coords="coords"
@@ -30,8 +33,8 @@
               :value="adres"
               :rules="rules.address"
               type="text"
-              label="Адрес"
-              placeholder="например, ул. Ленина, д. 12"
+              :label="$t('address')"
+              :placeholder="$t('addressExample')"
               readonly
               required
               @change="(val) => changeData('adres', val)"
@@ -41,9 +44,8 @@
             <v-text-field
               :value="appartment"
               type="text"
-              label="Квартира
-            (необязательно)"
-              placeholder="например, кв. №7"
+              :label="$t('apartmentOptional')"
+              :placeholder="$t('apartmentOptionalExample')"
               @change="(val) => changeData('appartment', val)"
             ></v-text-field>
           </v-card-text>
@@ -51,7 +53,7 @@
             <v-text-field
               :value="indeks"
               type="text"
-              label="Индекс"
+              :label="$t('index')"
               placeholder="100100"
               @change="(val) => changeData('indeks', val)"
             ></v-text-field>
@@ -100,7 +102,7 @@ export default {
       ],
       indeks: '',
       rules: {
-        address: [(v) => !!v || 'Укажите точку на карте']
+        address: [(v) => !!v || this.$t('indicatePointTheMap')]
       }
     }
   },

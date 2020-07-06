@@ -4,11 +4,10 @@
       <v-card ref="form">
         <v-card-text>
           <div class="headline">
-            Настройка свободных дат
+            {{ $t('SettingFreeDate') }}
           </div>
           <div class="subtitle">
-            Чтобы заблокировать или разблокировать дату, выберите ее. Можно
-            внести изменения после публикации объявления.
+            {{ $t('SettingFreeDateTitle') }}
           </div>
         </v-card-text>
         <v-card-text>
@@ -54,9 +53,9 @@
                 </tbody>
               </table>
             </div>
-            <v-btn rounded outlined color="primary" @click="addNewMonths"
-              >Показать другие даты</v-btn
-            >
+            <v-btn rounded outlined color="primary" @click="addNewMonths">
+              {{ $t('ShowOtherDates') }}
+            </v-btn>
           </div>
         </v-card-text>
       </v-card>
