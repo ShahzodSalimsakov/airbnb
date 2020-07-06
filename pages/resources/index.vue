@@ -9,7 +9,7 @@
       {{ $t('coronavirusResourcesTitle') }}
     </div>
     <v-row>
-      <v-col class="flex">
+      <div class="flex">
         <v-col md="8">
           <v-tabs background-color="white" color="primary">
             <v-tab>Хозяевам</v-tab>
@@ -18,13 +18,25 @@
               <v-container fluid>
                 <span class="text-3xl">Самое популярное</span>
                 <v-row>
-                  <v-col v-for="(img, i) in imgArr" :key="i" cols="12" md="4">
-                    <v-img
-                      :src="img.source"
-                      :lazy-src="img.placeholder"
-                      aspect-ratio="1"
-                      class="rounded-lg"
-                    ></v-img>
+                  <v-col v-for="(item, i) in news" :key="i" cols="12" md="6">
+                    <nuxt-link :to="item.link">
+                      <v-img
+                        :src="item.img"
+                        aspect-ratio="1"
+                        class="rounded-lg h-56"
+                        alt="image"
+                      ></v-img>
+
+                      <div class="black--text font-semibold pt-3">
+                        {{ item.title }}
+                      </div>
+                      <div class="text-gray-600 mt-4">
+                        {{ item.description }}
+                      </div>
+                      <div class="text-gray-600 mt-4">
+                        Обновлено {{ item.date }}
+                      </div>
+                    </nuxt-link>
                   </v-col>
                 </v-row>
               </v-container>
@@ -36,9 +48,11 @@
             <span class="text-3xl">
               {{ $t('news') }}
             </span>
-            <div v-for="(item, index) in items.slice(0, 5)" :key="index">
-              <div v-if="item.date" :key="item.date">{{ item.date }}</div>
-              <v-divider></v-divider>
+            <div v-for="(item, index) in news.slice(0, 5)" :key="index">
+              <v-divider v-if="index !== 0"></v-divider>
+              <div v-if="item.date" :key="item.date" class="mt-2 text-sm">
+                {{ item.date }}
+              </div>
               <v-list-item-content>
                 <nuxt-link
                   :to="item.link"
@@ -47,8 +61,64 @@
                 >
               </v-list-item-content>
             </div>
+            <nuxt-link to="/news" class="black--text underline"
+              >Показать все</nuxt-link
+            ><v-icon>mdi-chevron-right</v-icon>
           </v-container>
         </v-col>
+      </div>
+    </v-row>
+    <div class="flex justify-between">
+      <span class="text-3xl">Последнее</span>
+      <div>
+        <nuxt-link to="/news" class="black--text underline"
+          >Показать все</nuxt-link
+        ><v-icon>mdi-chevron-right</v-icon>
+      </div>
+    </div>
+    <v-row>
+      <v-col v-for="(item, i) in news" :key="i" cols="12" md="4">
+        <nuxt-link :to="item.link">
+          <v-img
+            :src="item.img"
+            aspect-ratio="1"
+            class="rounded-lg h-56"
+            alt="image"
+          ></v-img>
+
+          <div class="black--text font-semibold pt-3">
+            {{ item.title }}
+          </div>
+          <div class="text-gray-600 mt-4">
+            {{ item.description }}
+          </div>
+          <div class="text-gray-600 mt-4">Обновлено {{ item.date }}</div>
+        </nuxt-link>
+      </v-col>
+    </v-row>
+    <div class="flex justify-between">
+      <span class="text-3xl">Руководства по приему гостей</span>
+    </div>
+    <v-row>
+      <v-col v-for="(item, i) in news" :key="i" cols="12" md="3">
+        <nuxt-link :to="item.link">
+          <v-img
+            :src="item.img"
+            aspect-ratio="1"
+            class="rounded-lg h-56"
+            alt="image"
+            height="384px"
+          >
+            <div class="p-5">
+              <div class="black--text font-semibold text-sm">
+                <v-icon>mdi-book-open-variant</v-icon> Руководство
+              </div>
+              <div class="black--text font-semibold">
+                {{ item.title }}
+              </div>
+            </div>
+          </v-img>
+        </nuxt-link>
       </v-col>
     </v-row>
   </div>
@@ -61,30 +131,40 @@ const dateToString = formatWithOptions({ locale: ru }, 'do MMM yyyy')
 export default {
   name: 'Index',
   data: () => ({
-    imgArr: [],
-    items: [
+    news: [
       {
+        img: require('assets/images/img1.jpg'),
+        date: dateToString(new Date()),
+        title: 'Начните работу с протоколом уборки Airbnb',
+        description:
+          'Что в него входит и почему сейчас крайне важно соблюдать чистоту.',
+        link: '/resources'
+      },
+      {
+        img: require('assets/images/img2.jpg'),
+        date: dateToString(new Date()),
+        title: 'Как сделать объявление актуальным после кризиса',
+        description: 'Превратите жилье в отличное место для отдыха.',
+        link: '/resources'
+      },
+      {
+        img: require('assets/images/img1.jpg'),
         date: dateToString(new Date()),
         title:
           'Фонд помощи суперхозяевам завершил работу. Мы выплатили 16,8 млн долларов США.',
-        link: ''
+        description: 'Превратите жилье в отличное место для отдыха.',
+        link: '/resources'
       },
       {
+        img: require('assets/images/img2.jpg'),
         date: dateToString(new Date()),
         title:
           'В обращении к хозяевам и организаторам генеральный директор Airbnb Брайан Чески рассказал о будущем индустрии путешествий и ответил на вопросы',
-        link: ''
+        description: 'Превратите жилье в отличное место для отдыха.',
+        link: '/resources'
       }
     ]
-  }),
-  created() {
-    for (let i = 0; i < 6; i++) {
-      this.imgArr.push({
-        placeholder: `https://picsum.photos/10/6?image=${i * i * 5 + 10}`,
-        source: `https://picsum.photos/500/300?image=${i * i * 5 + 10}`
-      })
-    }
-  }
+  })
 }
 </script>
 
