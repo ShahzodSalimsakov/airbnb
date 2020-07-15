@@ -224,7 +224,7 @@ export default {
   successfulReceptionBeginsWithReliableCalendar:
     'Successful reception begins with a reliable calendar',
   successfulReceptionBeginsWithReliableCalendarTitle:
-    'Guests will instantly book available days. To receive reservations only when you can receive guests, constantly update the calendar and accessibility settings. Cancellations violate guest plans. If you cancel your reservation due to a calendar error, we will fine you and block the relevant dates.',
+    'Guests will instantly book available days. To receive reservations only when you can receive guests, constantly update the calendar and accessibility settings. Cancellations violate guest plans.',
   answerTwoQuestionsBeforeMovingSettings:
     'Answer two questions before moving on to settings',
   howEarlyShouldGuestsBookYourAccommodation:
