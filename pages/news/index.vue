@@ -16,26 +16,31 @@
           class="sm:w-1/2"
         >
           <div class="mb-10 px-4 text-left">
-            <nuxt-link to="/">
+            <nuxt-link :to="'/news/' + newsElement.id">
               <div class="rounded-lg h-auto overflow-hidden">
                 <img
                   :alt="newsElement.name"
                   class="object-cover object-center h-full w-full"
-                  :src="newsElement.src"
+                  :src="`${apiDomain}/${newsElement.preview_photo}`"
                   style="max-height: 400px;"
                 />
               </div>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link :to="'/news/' + newsElement.id">
               <h2 class="title-font text-2xl font-bold text-gray-900 mt-6 mb-3">
                 {{ newsElement.name }}
               </h2>
             </nuxt-link>
             <p class="leading-relaxed text-base">
-              {{ newsElement.title }}
+              {{ newsElement.preview_text }}
             </p>
             <p class="font-bold text-left">
-              {{ newsElement.date.toDateString() }}
+              {{
+                $dateFns.format(
+                  new Date(+newsElement.created_date),
+                  'dd.MM.yyyy'
+                )
+              }}
             </p>
           </div>
         </div>
@@ -65,17 +70,17 @@
           class="flex sm:w-1/2 float-left"
         >
           <div class="mb-10 px-4">
-            <nuxt-link to="/">
+            <nuxt-link :to="'/news/' + newsElement.id">
               <div class="rounded-lg h-auto overflow-hidden">
                 <img
                   :alt="newsElement.name"
                   class="object-cover object-center h-full w-full"
-                  :src="newsElement.src"
+                  :src="`${apiDomain}/${newsElement.preview_photo}`"
                   style="max-height: 400px;"
                 />
               </div>
             </nuxt-link>
-            <nuxt-link to="/">
+            <nuxt-link :to="'/news/' + newsElement.id">
               <h2
                 class="title-font text-2xl font-bold text-left text-gray-900 mt-6 mb-3"
               >
@@ -83,10 +88,15 @@
               </h2>
             </nuxt-link>
             <p class="text-left leading-relaxed text-base">
-              {{ newsElement.title }}
+              {{ newsElement.preview_text }}
             </p>
             <p class="font-bold text-left">
-              {{ newsElement.date.toDateString() }}
+              {{
+                $dateFns.format(
+                  new Date(+newsElement.created_date),
+                  'dd.MM.yyyy'
+                )
+              }}
             </p>
           </div>
         </div>
@@ -98,11 +108,14 @@
 
 <script>
 import NewsCarousel from '~/components/slider-carousel/news-carousel'
+require('dotenv').config()
 export default {
   name: 'index',
   components: { NewsCarousel },
   data() {
     return {
+      apiDomain: process.env.apiDomain,
+      url: 'news',
       tab: null,
       catFilter: '',
       more: 4,
@@ -113,81 +126,24 @@ export default {
         { name: 'Month', code: 'month' }
       ],
       newsHeight: 500,
-      news: [
-        {
-          id: 0,
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          category: '',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-30'),
-          src: 'https://dummyimage.com/875x650/0000/fff',
-          slider: true,
-          link: '/'
-        },
-        {
-          id: 1,
-          category: '',
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.' +
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-15'),
-          src: 'https://dummyimage.com/875x650/636363/0000',
-          slider: true,
-          link: '/'
-        },
-        {
-          id: 2,
-          category: 'day',
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-20'),
-          src: 'https://dummyimage.com/875x875/ff0000/0000',
-          slider: false,
-          link: '/'
-        },
-        {
-          id: 3,
-          category: 'week',
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-28'),
-          src: 'https://dummyimage.com/875x875/1100ff/fff',
-          slider: false,
-          link: '/'
-        },
-        {
-          id: 4,
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          category: '',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-30'),
-          src: 'https://dummyimage.com/875x650/0000/fff',
-          slider: true,
-          link: '/'
-        },
-        {
-          id: 5,
-          category: '',
-          name: 'Measuring Discrimination on the Airbnb Platform',
-          title:
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.' +
-            'In partnership with Color Of Change, Airbnb is launching a groundbreaking project to measure and fight bias and discrimination on the platform.',
-          date: new Date('2020-08-15'),
-          src: 'https://dummyimage.com/875x650/636363/0000',
-          slider: true,
-          link: '/'
-        }
-      ]
+      news: []
     }
+  },
+  methods: {
+    async getAllTemplates() {
+      const { data } = await this.$axios.get(
+        `/api/${this.url}?filter[0][key]=_id&filter[0][value]=${this.$route.params.id}`
+      )
+      this.news = data.data
+      console.log(this.news)
+    }
+  },
+  async mounted() {
+    await this.getAllTemplates()
   },
   computed: {
     filteredNews() {
-      const news = this.news
+      const news = [...this.news]
       if (this.catFilter) {
         return news.filter((item) => item.category === this.catFilter)
       } else {
@@ -198,7 +154,7 @@ export default {
       }
     },
     sortLatestNews() {
-      const news = this.news
+      const news = [...this.news]
       return news
         .sort((a, b) => a.date - b.date)
         .reverse()
