@@ -96,31 +96,31 @@
         </nuxt-link>
       </v-col>
     </v-row>
-    <div class="flex justify-between">
-      <span class="text-3xl">Руководства по приему гостей</span>
-    </div>
-    <v-row>
-      <v-col v-for="(item, i) in news" :key="i" cols="12" md="3">
-        <nuxt-link :to="item.link">
-          <v-img
-            :src="item.img"
-            aspect-ratio="1"
-            class="rounded-lg h-56"
-            alt="image"
-            height="384px"
-          >
-            <div class="p-5">
-              <div class="black--text font-semibold text-sm">
-                <v-icon>mdi-book-open-variant</v-icon> Руководство
-              </div>
-              <div class="black--text font-semibold">
-                {{ item.title }}
-              </div>
-            </div>
-          </v-img>
-        </nuxt-link>
-      </v-col>
-    </v-row>
+    <!--    <div class="flex justify-between">-->
+    <!--      <span class="text-3xl">Руководства по приему гостей</span>-->
+    <!--    </div>-->
+    <!--    <v-row>-->
+    <!--      <v-col v-for="(item, i) in news" :key="i" cols="12" md="3">-->
+    <!--        <nuxt-link :to="item.link">-->
+    <!--          <v-img-->
+    <!--            :src="item.img"-->
+    <!--            aspect-ratio="1"-->
+    <!--            class="rounded-lg h-56"-->
+    <!--            alt="image"-->
+    <!--            height="384px"-->
+    <!--          >-->
+    <!--            <div class="p-5">-->
+    <!--              <div class="black&#45;&#45;text font-semibold text-sm">-->
+    <!--                <v-icon>mdi-book-open-variant</v-icon> Руководство-->
+    <!--              </div>-->
+    <!--              <div class="black&#45;&#45;text font-semibold">-->
+    <!--                {{ item.title }}-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </v-img>-->
+    <!--        </nuxt-link>-->
+    <!--      </v-col>-->
+    <!--    </v-row>-->
   </div>
 </template>
 
