@@ -135,7 +135,6 @@ export default {
         `/api/${this.url}?filter[0][key]=_id&filter[0][value]=${this.$route.params.id}`
       )
       this.news = data.data
-      console.log(this.news)
     }
   },
   async mounted() {
