@@ -82,15 +82,13 @@
     </section>
 
     <section class="text-gray-700 body-font pt-12">
-      {{ TipsGuests }}
       <div
         v-for="guests in TipsGuests"
         :key="guests.id"
         class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
       >
-        {{ guests }}
         <div
-          v-if="guests.positionLeft === true"
+          v-if="guests.positionLeft === 'true'"
           class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
@@ -99,25 +97,27 @@
             {{ guests.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ guests.text }}
+            {{ guests.preview_text }}
           </p>
         </div>
         <div class="lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <img
             class="object-cover object-center rounded"
             alt="hero"
-            :src="guests.preview_photo"
+            :src="`${apiDomain}/${guests.preview_photo}`"
           />
         </div>
         <div
-          v-if="guests.positionLeft === false"
+          v-if="guests.positionLeft === 'false'"
           class="lg:flex-grow md:w-1/2 lg:pl-24 sm:order-none order-first md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
             class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
-          ></h1>
+          >
+            {{ guests.name }}
+          </h1>
           <p class="mb-8 leading-relaxed">
-            {{ guests.title }}
+            {{ guests.preview_text }}
           </p>
         </div>
       </div>
@@ -152,12 +152,12 @@
 
     <section class="text-gray-700 body-font pt-12">
       <div
-        v-for="owners in tipsOwners"
+        v-for="owners in AdviceOwners"
         :key="owners.id"
         class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
       >
         <div
-          v-if="owners.positionLeft === true"
+          v-if="owners.positionLeft === 'true'"
           class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
@@ -166,18 +166,18 @@
             {{ owners.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ owners.title }}
+            {{ owners.preview_text }}
           </p>
         </div>
         <div class="lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <img
             class="object-cover object-center rounded"
             alt="hero"
-            :src="owners.src"
+            :src="`${apiDomain}/${owners.preview_photo}`"
           />
         </div>
         <div
-          v-if="owners.positionLeft === false"
+          v-if="owners.positionLeft === 'false'"
           class="lg:flex-grow md:w-1/2 lg:pl-24 sm:order-none order-first md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
         >
           <h1
@@ -186,7 +186,7 @@
             {{ owners.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ owners.title }}
+            {{ owners.preview_text }}
           </p>
         </div>
       </div>
@@ -203,8 +203,10 @@ export default {
       apiDomain: process.env.apiDomain,
       WhatWeAimUrl: 'accessibility/what_we_aim',
       TipsGuestsUrl: 'accessibility/tips_guests',
+      AdviceOwnersUrl: 'accessibility/advice_owners',
       WhatWeAim: [],
       TipsGuests: [],
+      AdviceOwners: [],
       tipsOwners: [
         {
           id: 0,
@@ -240,17 +242,20 @@ export default {
     async getWhatWeAimTemplates() {
       const { data } = await this.$axios.get(`/api/${this.WhatWeAimUrl}`)
       this.WhatWeAim = data.data
-      console.log(this.WhatWeAim)
     },
     async getTipsGuestsTemplates() {
       const { data } = await this.$axios.get(`/api/${this.TipsGuestsUrl}`)
-      this.TipsGuest = data.data
-      console.log(this.TipsGuest)
+      this.TipsGuests = data.data
+    },
+    async getAdviceOwnersTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.AdviceOwnersUrl}`)
+      this.AdviceOwners = data.data
     }
   },
   async mounted() {
     await this.getWhatWeAimTemplates()
     await this.getTipsGuestsTemplates()
+    await this.getAdviceOwnersTemplates()
   }
 }
 </script>
