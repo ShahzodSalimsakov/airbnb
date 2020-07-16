@@ -40,13 +40,10 @@
           </p>
         </div>
       </div>
-    </section>
-    <!-- Section One -->
-    <section class="text-gray-700 body-font">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           <div
-            v-for="secOne in sectionOne"
+            v-for="secOne in WhatWeAim"
             :key="secOne.id"
             class="p-4 md:w-1/2 md:mb-0 mb-6 flex"
           >
@@ -55,7 +52,7 @@
                 {{ secOne.name }}
               </h2>
               <p class="leading-relaxed text-base">
-                {{ secOne.title }}
+                {{ secOne.text }}
               </p>
             </div>
           </div>
@@ -85,11 +82,13 @@
     </section>
 
     <section class="text-gray-700 body-font pt-12">
+      {{ TipsGuests }}
       <div
-        v-for="guests in tipsGuests"
+        v-for="guests in TipsGuests"
         :key="guests.id"
         class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
       >
+        {{ guests }}
         <div
           v-if="guests.positionLeft === true"
           class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-left"
@@ -100,14 +99,14 @@
             {{ guests.name }}
           </h1>
           <p class="mb-8 leading-relaxed">
-            {{ guests.title }}
+            {{ guests.text }}
           </p>
         </div>
         <div class="lg:max-w-md lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <img
             class="object-cover object-center rounded"
             alt="hero"
-            :src="guests.src"
+            :src="guests.preview_photo"
           />
         </div>
         <div
@@ -116,9 +115,7 @@
         >
           <h1
             class="title-font sm:text-2xl text-xl mb-4 font-medium text-gray-900"
-          >
-            {{ guests.name }}
-          </h1>
+          ></h1>
           <p class="mb-8 leading-relaxed">
             {{ guests.title }}
           </p>
@@ -198,67 +195,16 @@
 </template>
 
 <script>
+require('dotenv').config()
 export default {
   name: 'index',
   data() {
     return {
-      sectionOne: [
-        {
-          id: 0,
-          name: 'Улучшенная точность',
-          title:
-            'Гости с ограниченной мобильностью определяют по фото, подходит ли им объявление. Поэтому мы требуем, чтобы хозяева публиковали фото всех удобств для гостей с особыми потребностями, и в объявлениях есть специальный раздел с такими фото.'
-        },
-        {
-          id: 1,
-          name:
-            'Стандарты цифровой доступности для людей с особыми потребностями',
-          title:
-            'Мы работаем над стандартами цифровой доступности, изложенными в Руководстве по доступности веб-контента. Мы также вкладываем средства в автоматизированные инструменты тестирования, чтобы выявлять больше проблем.'
-        },
-        {
-          id: 2,
-          name:
-            'Другие объявления с удобствами для гостей с особыми потребностями',
-          title:
-            'Мы прилагаем все усилия, чтобы на Airbnb было больше объявлений с удобствами для гостей с особыми потребностями. Мы также упрощаем их поиск, добавляем удобные фильтры и фото таких удобств, которые отображаются на странице с результатами поиска.'
-        },
-        {
-          id: 3,
-          name: 'Впечатления, доступные для людей с особыми потребностями',
-          title:
-            'Более доступные Впечатления на Airbnb — уникальные мероприятия, которые проводят местные эксперты, — уже скоро появятся на платформе.'
-        }
-      ],
-      tipsGuests: [
-        {
-          id: 0,
-          name: 'Найдите нужное место',
-          title:
-            'Используйте фильтры поиска, чтобы просматривать только те места или Впечатления, которые соответствуют вашим потребностям в доступности. Просматривая понравившиеся объявления, заглядывайте в раздел «Удобства для гостей с особыми потребностями», где будут фото и описания важных для вас вещей.',
-          src:
-            'https://a0.muscache.com/pictures/ab07bef1-86f8-429d-8fd7-2e1d14b66983.jpg',
-          positionLeft: true
-        },
-        {
-          id: 1,
-          name: 'Поговорите с потенциальными хозяевами',
-          title:
-            'Если у вас есть особые потребности, обязательно напишите хозяину, прежде чем бронировать жилье. Вы можете написать потенциальным хозяевам по ссылке «Связаться с хозяином» на странице объявления или Впечатления.',
-          src:
-            'https://a0.muscache.com/pictures/88c6ef5c-3f51-4f61-8312-660f0f357b1c.jpg',
-          positionLeft: false
-        },
-        {
-          id: 2,
-          name: 'Помогите другим гостям',
-          title:
-            'Что бы вы хотели узнать перед бронированием? Напишите подробный отзыв, чтобы гости с ограниченной мобильностью знали, чего ожидать.',
-          src:
-            'https://a0.muscache.com/pictures/485486e9-2cd6-465f-a68e-513a916d934a.jpg',
-          positionLeft: true
-        }
-      ],
+      apiDomain: process.env.apiDomain,
+      WhatWeAimUrl: 'accessibility/what_we_aim',
+      TipsGuestsUrl: 'accessibility/tips_guests',
+      WhatWeAim: [],
+      TipsGuests: [],
       tipsOwners: [
         {
           id: 0,
@@ -289,6 +235,22 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    async getWhatWeAimTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.WhatWeAimUrl}`)
+      this.WhatWeAim = data.data
+      console.log(this.WhatWeAim)
+    },
+    async getTipsGuestsTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.TipsGuestsUrl}`)
+      this.TipsGuest = data.data
+      console.log(this.TipsGuest)
+    }
+  },
+  async mounted() {
+    await this.getWhatWeAimTemplates()
+    await this.getTipsGuestsTemplates()
   }
 }
 </script>

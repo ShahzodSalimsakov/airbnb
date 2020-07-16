@@ -22,12 +22,11 @@ export default {
   },
   methods: {
     async getAllTemplates() {
-      const { data } = await this.$axios.get(
-        `/api/${this.url}?filter[0][key]=id&filter[0][value]=${this.$route.params.id}`,
-        console.log(
-          `/api/${this.url}?filter[0][key]=id&filter[0][value]=${this.$route.params.id}`
-        )
-      )
+      const { data } = await this.$axios.get(`/api/${this.url}`, {
+        params: {
+          id: this.$route.params.id
+        }
+      })
       this.items = data.data
       console.log(this.items)
       console.log(this.$route.params.id)
