@@ -99,10 +99,9 @@
 
 <script>
 import Second from '~/components/news-list/Second'
-import NewsCarousel from '~/components/slider-carousel/news-carousel'
 export default {
   name: 'index',
-  components: { NewsCarousel, Second },
+  components: { Second },
   data() {
     return {
       height: 600,

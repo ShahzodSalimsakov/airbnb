@@ -28,8 +28,6 @@ export default {
         }
       })
       this.items = data.data
-      console.log(this.items)
-      console.log(this.$route.params.id)
     }
   },
   async mounted() {
