@@ -3,32 +3,23 @@
     <div v-for="item in items" :key="item.id">
       <v-carousel-item>
         <v-row class="fill-height ml-0" align="center" justify="center">
-          <nuxt-link :to="'/news/' + item.id">
-            <div
-              class="lg:max-w-2xl lg:w-full md:w-2/3 w-5/6 mb-10 pl-3 md:mb-0"
-            >
-              <img
-                :alt="item.name"
-                class="object-cover object-center rounded"
-                :src="`${apiDomain}/${item.preview_photo}`"
-              />
-            </div>
-          </nuxt-link>
+          <div class="lg:max-w-2xl lg:w-full md:w-2/3 w-5/6 mb-10 pl-3 md:mb-0">
+            <img
+              :alt="item.name"
+              class="object-cover object-center rounded"
+              :src="`${apiDomain}/${item.photo}`"
+            />
+          </div>
           <div
             class="lg:flex-grow md:w-1/3 sm:px-5 lg:pl-12 md:pl-16 flex flex-col md:items-start md:text-left items-center text-left"
           >
-            <nuxt-link :to="'/news/' + item.id">
-              <h1
-                class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900"
-              >
-                {{ item.name }}
-              </h1>
-            </nuxt-link>
+            <h1
+              class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900"
+            >
+              {{ item.name }}
+            </h1>
             <p class="mb-8 leading-relaxed">
-              {{ item.preview_text }}
-            </p>
-            <p class="font-bold">
-              {{ $dateFns.format(new Date(+item.created_date), 'dd.MM.yyyy') }}
+              {{ item.text }}
             </p>
           </div>
         </v-row>
