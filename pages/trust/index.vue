@@ -6,7 +6,6 @@
     <div class="ml-12 pt-5 pb-16 text-5xl font-bold text-gray-800">
       {{ $t('trustSecurityTitle') }}
     </div>
-
     <TrustTabs />
   </div>
 </template>
