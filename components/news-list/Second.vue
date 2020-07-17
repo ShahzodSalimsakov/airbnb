@@ -7,8 +7,8 @@
           :key="list.id"
           class="p-4 md:w-1/3 sm:mb-0 mb-6 mt-10"
         >
-          <span v-if="list.ico">
-            <v-icon>mdi-check-circle-outline</v-icon>
+          <span v-if="list.icon">
+            <v-icon>mdi-{{ list.icon }}</v-icon>
           </span>
           <div v-if="list.photo" class="rounded-lg h-40 overflow-hidden">
             <img

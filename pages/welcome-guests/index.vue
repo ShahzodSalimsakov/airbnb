@@ -45,7 +45,7 @@
         </h1>
       </div>
 
-      <Second :news-list="newsList" />
+      <Second :news-list="three_steps" />
 
       <div class="flex mt-6 justify-center mb-8">
         <div class="w-20 h-px rounded-full bg-black inline-flex"></div>
@@ -58,10 +58,10 @@
         </h1>
       </div>
 
-      <Second :news-list="newsList2" class="pb-12" />
+      <Second :news-list="simple_payments" class="pb-12" />
 
-      <news-carousel
-        :items="news"
+      <reviews-carousel
+        :items="reviews_slider"
         :height="height"
         class="mb-16"
         hide-delimiters
@@ -80,7 +80,7 @@
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           <div
-            v-for="list in newsList3"
+            v-for="list in about"
             :key="list.id"
             class="p-4 md:w-1/2 sm:mb-0 mb-6 mt-10"
           >
@@ -88,7 +88,7 @@
               {{ list.name }}
             </h2>
             <p class="text-base leading-relaxed mt-2">
-              {{ list.title }}
+              {{ list.text }}
             </p>
           </div>
         </div>
@@ -99,11 +99,22 @@
 
 <script>
 import Second from '~/components/news-list/Second'
+import ReviewsCarousel from '~/components/slider-carousel/reviews-carousel'
+require('dotenv').config()
 export default {
   name: 'index',
-  components: { Second },
+  components: { Second, ReviewsCarousel },
   data() {
     return {
+      apiDomain: process.env.apiDomain,
+      three_steps_url: 'welcome_guests/three_steps',
+      simple_payments_url: 'welcome_guests/simple_payments',
+      about_url: 'welcome_guests/about',
+      reviews_slider_url: 'welcome_guests/reviews_slider',
+      three_steps: [],
+      simple_payments: [],
+      about: [],
+      reviews_slider: [],
       height: 600,
       news: [
         {
@@ -112,7 +123,7 @@ export default {
             'Прием гостей помог мне оплатить новую кухню и другие новшества.',
           title:
             'Тесса принимает гостей в Лондоне, чтобы иметь дополнительный заработок',
-          src:
+          preview_photo:
             'https://a0.muscache.com/pictures/4e8524b4-205e-4fdf-9f0a-f1f36905c8f6.jpg',
           slider: true
         }
@@ -147,19 +158,19 @@ export default {
         {
           id: 0,
           name: 'Устанавливайте свои цены',
-          title:
+          text:
             'Вы всегда сами устанавливаете свои цены. А если нужен совет, наши инструменты помогут стать привлекательнее в условиях спроса в вашем городе.'
         },
         {
           id: 1,
           name: 'Низкие сборы',
-          title:
+          text:
             'Мы не берем сборы за регистрацию. Airbnb вычитает с хозяев 3% за каждое бронирование. Это намного ниже, чем в среднем по отрасли.'
         },
         {
           id: 2,
           name: 'Быстрые выплаты',
-          title:
+          text:
             'Когда гость приедет, мы отправим вам выплату на Paypal, банковский счет или другим доступным способом.'
         }
       ],
@@ -181,6 +192,23 @@ export default {
   },
 
   methods: {
+    async getThreeStepsTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.three_steps_url}`)
+      this.three_steps = data.data
+    },
+    async getSimplePaymentsTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.simple_payments_url}`)
+      this.simple_payments = data.data
+    },
+    async getAboutTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.about_url}`)
+      this.about = data.data
+    },
+    async getReviewsSliderTemplates() {
+      const { data } = await this.$axios.get(`/api/${this.reviews_slider_url}`)
+      this.reviews_slider = data.data
+      console.log(data.data)
+    },
     validate() {
       this.$refs.form.validate()
     },
@@ -190,6 +218,12 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation()
     }
+  },
+  async mounted() {
+    await this.getThreeStepsTemplates()
+    await this.getSimplePaymentsTemplates()
+    await this.getAboutTemplates()
+    await this.getReviewsSliderTemplates()
   }
 }
 </script>
