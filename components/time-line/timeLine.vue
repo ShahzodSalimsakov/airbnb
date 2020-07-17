@@ -1,21 +1,22 @@
 <template>
   <v-timeline id="my_timeLine" dense class="pt-0">
     <v-timeline-item
-      v-for="item in props"
+      v-for="(item, index) in props"
       :key="item.id"
       :color="color"
       fill-dot
     >
-      <template v-slot:icon>
-        <span class="text-white text-4xl">{{ item.id + 1 }}</span>
+      <template v-if="item.active" v-slot:icon>
+        <span class="text-white text-4xl">{{ index + 1 }}</span>
       </template>
-
-      <v-card-title class="headline font-bold">
-        {{ item.name }}
-      </v-card-title>
-      <v-card-text>
-        {{ item.title }}
-      </v-card-text>
+      <div v-if="item.active">
+        <v-card-title class="headline font-bold">
+          {{ item.name }}
+        </v-card-title>
+        <v-card-text>
+          {{ item.text }}
+        </v-card-text>
+      </div>
     </v-timeline-item>
   </v-timeline>
 </template>
