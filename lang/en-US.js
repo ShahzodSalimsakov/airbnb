@@ -293,5 +293,7 @@ export default {
   HelpCenter: 'Help center',
   News: 'News',
   ResourceCenter: 'Resource center',
-  CommunicationCenter: 'Communication center'
+  CommunicationCenter: 'Communication center',
+  Confidentiality: 'Confidentiality',
+  Terms: 'Terms'
 }

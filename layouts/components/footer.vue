@@ -29,9 +29,24 @@
               <p class="mt-2 text-sm text-gray-500">
                 Air plant banjo lyft occupy retro adaptogen indego
               </p>
+              <div class="py-4">
+                <nuxt-link
+                  v-for="icon in icons"
+                  :key="icon.id"
+                  :to="localePath(icon.links)"
+                  class="mx-4"
+                  icon
+                  target="_blank"
+                >
+                  <v-icon size="24px" class="text-black">{{
+                    icon.value
+                  }}</v-icon>
+                </nuxt-link>
+              </div>
+              © {{ new Date().getFullYear() }} — Vuetify
             </div>
             <v-col
-              md="4"
+              md="3"
               v-for="menu in footerMenu"
               :key="menu.name"
               class="leading-9"
@@ -55,37 +70,6 @@
           </v-row>
         </v-card-text>
         <v-divider light></v-divider>
-
-        <v-card-text class="black--text">
-          <v-row>
-            <v-col md="8">
-              <div class="float-left">
-                © {{ new Date().getFullYear() }} — Vuetify
-                <nuxt-link to="/" class="text-black">
-                  Конфиденциальность
-                </nuxt-link>
-                <nuxt-link to="/" class="text-black">Условия</nuxt-link>
-                <nuxt-link to="/" class="text-black">Карта сайта</nuxt-link>
-              </div>
-            </v-col>
-            <v-col md="4">
-              <div class="float-right">
-                <a
-                  v-for="icon in icons"
-                  :key="icon.id"
-                  :href="icon.links"
-                  class="mx-4"
-                  icon
-                  target="_blank"
-                >
-                  <v-icon size="24px" class="text-black">{{
-                    icon.value
-                  }}</v-icon>
-                </a>
-              </div>
-            </v-col>
-          </v-row>
-        </v-card-text>
       </v-card>
     </v-footer>
   </div>
@@ -122,6 +106,17 @@ export default {
             // { link: '/', title: 'Airbnb для бизнеса' },
             { link: '/resources', title: this.$t('ResourceCenter') },
             { link: '/', title: this.$t('CommunicationCenter') }
+          ]
+        },
+        {
+          name: this.$t('proprietor'),
+          items: [
+            {
+              link: '/confidentiality',
+              title: this.$t('Confidentiality')
+            },
+            // { link: '/', title: 'Airbnb для бизнеса' },
+            { link: '/terms', title: this.$t('Terms') }
           ]
         }
       ]

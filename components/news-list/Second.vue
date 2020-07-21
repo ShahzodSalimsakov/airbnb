@@ -14,7 +14,7 @@
             <img
               alt="content"
               class="object-cover object-center w-1/4 sm:w-1/4 md:w-2/4 lg:w-2/5"
-              :src="list.photo"
+              :src="`${apiDomain}/${list.photo}`"
             />
           </div>
           <h2 class="text-2xl font-black title-font text-gray-900 mt-5 mb-7">
@@ -30,11 +30,14 @@
 </template>
 
 <script>
+require('dotenv').config()
 export default {
   name: 'first',
   props: ['newsList'],
   data() {
-    return {}
+    return {
+      apiDomain: process.env.apiDomain
+    }
   }
 }
 </script>
