@@ -294,6 +294,8 @@ export default {
   News: 'News',
   ResourceCenter: 'Resource center',
   CommunicationCenter: 'Communication center',
+  Confidentiality: 'Confidentiality',
+  Terms: 'Terms',
   privacyPolicy: 'Privacy Policy',
   introduction: 'Introduction',
   introductionParag1:

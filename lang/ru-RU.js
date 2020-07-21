@@ -299,5 +299,7 @@ export default {
   HelpCenter: 'Центр помощи',
   News: 'Новости',
   ResourceCenter: 'Центр ресурсов',
-  CommunicationCenter: 'Центр общения'
+  CommunicationCenter: 'Центр общения',
+  Confidentiality: 'Конфиденциальность',
+  Terms: 'Условия'
 }

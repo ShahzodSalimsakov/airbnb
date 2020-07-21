@@ -299,5 +299,7 @@ export default {
   HelpCenter: 'Ёрдам маркази',
   News: 'Янгиликлар',
   ResourceCenter: 'Ресурс маркази',
-  CommunicationCenter: 'Алоқа маркази'
+  CommunicationCenter: 'Алоқа маркази',
+  Confidentiality: 'Махфийлик',
+  Terms: 'Шартлар'
 }

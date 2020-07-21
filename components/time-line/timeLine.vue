@@ -6,10 +6,10 @@
       :color="color"
       fill-dot
     >
-      <template v-if="item.active" v-slot:icon>
+      <template v-slot:icon>
         <span class="text-white text-4xl">{{ index + 1 }}</span>
       </template>
-      <div v-if="item.active">
+      <div>
         <v-card-title class="headline font-bold">
           {{ item.name }}
         </v-card-title>

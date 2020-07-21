@@ -30,6 +30,7 @@
 </template>
 
 <script>
+require('dotenv').config()
 export default {
   name: 'first',
   props: ['newsList'],
