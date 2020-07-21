@@ -293,5 +293,28 @@ export default {
   HelpCenter: 'Help center',
   News: 'News',
   ResourceCenter: 'Resource center',
-  CommunicationCenter: 'Communication center'
+  CommunicationCenter: 'Communication center',
+  privacyPolicy: 'Privacy Policy',
+  introduction: 'Introduction',
+  introductionParag1:
+    'Thank you for using! Your trust is important to us and we’re committed to protecting the privacy and security of your personal information. The information that’s shared with us helps us to provide a great experience with Airbnb.',
+  informationWeCollect: 'Information We Collect',
+  informationYouGiveToUs: 'Information You Give to Us.',
+  informationThatIsNecessaryForTheUse:
+    'Information that is necessary for the use.',
+  informationThatIsNecessaryForTheUseParag1:
+    'We ask for and collect the following personal information about you when you use the Airbnb Platform. This information is necessary for the adequate performance of the contract between you and us and to allow us to comply with our legal obligations. Without it, we may not be able to provide you with all the requested services.',
+  listAccountInformation:
+    'Account Information. When you sign up for an Airbnb Account, we require certain information such as your first name, last name, email address, and date of birth.',
+  listProfileAndListingInformation:
+    'Profile and Listing Information. To use certain features of the Airbnb Platform (such as booking or creating a Listing), we may ask you to provide additional information, which may include your address, phone number, and a profile picture.',
+  listIdentityVerificationInformation:
+    'Identity Verification Information. To help create and maintain a trusted environment, we may collect identity verification information (such as images of your government issued ID, passport, national ID card, or driving license, as permitted by applicable laws) or other authentication information. To learn more, see our Help Center article about providing identification on Airbnb.',
+  listPaymentInformation:
+    'Payment Information. To use certain features of the Airbnb Platform (such as booking or creating a Listing), we may require you to provide certain financial information (like your bank account or credit card information) in order to facilitate the processing of payments (via Airbnb Payments).',
+  informationYouChooseToGiveUs: 'Information you choose to give us.',
+  informationYouChooseToGiveUsParag:
+    'You may choose to provide us with additional personal information in order to obtain a better user experience when using Airbnb Platform. This additional information will be processed based on our legitimate interest or when applicable, your consent.',
+  listAdditionalProfileInformation:
+    'Additional Profile Information. You may choose to provide additional information as part of your Airbnb profile (such as gender, preferred language(s), city, and a personal description). Some of this information as indicated in your Account settings is part of your public profile page, and will be publicly visible to others.'
 }
