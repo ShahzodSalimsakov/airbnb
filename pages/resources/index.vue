@@ -15,11 +15,11 @@
             <v-tab>Хозяевам</v-tab>
             <v-tab>Путешественникам</v-tab>
             <v-tab-item v-for="n in 3" :key="n">
+              <span class="text-3xl">Самое популярное</span>
               <v-container fluid>
-                <span class="text-3xl">Самое популярное</span>
                 <v-row>
                   <v-col v-for="(item, i) in news" :key="i" cols="12" md="6">
-                    <nuxt-link :to="item.link">
+                    <nuxt-link :to="localePath(item.link)">
                       <v-img
                         :src="item.img"
                         aspect-ratio="1"
@@ -55,13 +55,13 @@
               </div>
               <v-list-item-content>
                 <nuxt-link
-                  :to="item.link"
+                  :to="localePath(item.link)"
                   class="black--text font-semibold hover:underline nuxt-link-active nuxt-link-exact-active"
                   >{{ item.title }}</nuxt-link
                 >
               </v-list-item-content>
             </div>
-            <nuxt-link to="/news" class="black--text underline"
+            <nuxt-link :to="localePath('news')" class="black--text underline"
               >Показать все</nuxt-link
             ><v-icon>mdi-chevron-right</v-icon>
           </v-container>
@@ -96,6 +96,126 @@
         </nuxt-link>
       </v-col>
     </v-row>
+    <div class="mt-20">
+      <div class="font-bold pb-4 text-2xl">Дополнительные ресурсы</div>
+      <nuxt-link :to="localePath('help')" class="black--text">
+        <div class="border p-8 rounded-md w-1/2">
+          <div class="font-bold mb-1 text-2xl">Нужна помощь?</div>
+          <div class="w-3/4 mb-7">
+            Найдите полезные статьи и ответы на часто задаваемые вопросы.
+          </div>
+          <div class="flex">
+            <div class="font-bold text-lg">В Центр помощи</div>
+            <v-icon>mdi-arrow-right</v-icon>
+          </div>
+        </div>
+      </nuxt-link>
+    </div>
+    <div>
+      <div class="font-bold pb-4 mt-16 text-2xl">Больше тем</div>
+      <div class="flex col-12">
+        <ul class="col-3">
+          <li>
+            <nuxt-link :to="localePath('#')" class="font-bold"
+              >Объявление онлайн</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Детали объявления и фото</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Настройки календаря и бронирований
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Стратегии ценообразования
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Маркетинг и продвижение
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Инструменты для объявлений
+            </nuxt-link>
+          </li>
+        </ul>
+        <ul class="col-3">
+          <li>
+            <nuxt-link :to="localePath('#')" class="font-bold"
+              >Ваше жилье</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Обстановка и удобства</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Дизайн и декор</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Доступность</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Чистота</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Airbnb Plus</nuxt-link>
+          </li>
+        </ul>
+        <ul class="col-3">
+          <li>
+            <nuxt-link :to="localePath('#')" class="font-bold"
+              >Гости и гостеприимство</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Радуйте гостей</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Общение и прибытие</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Рейтинг и отзывы</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Возможные проблемы</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">
+              Борьба с дискриминацией
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Суперхозяин</nuxt-link>
+          </li>
+        </ul>
+        <ul class="col-3">
+          <li>
+            <nuxt-link :to="localePath('#')" class="font-bold"
+              >Профессиональный прием гостей</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Истории успеха</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Инструменты и функции</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Развитие бизнеса</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="localePath('#')">Новости</nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!--    <div class="flex justify-between">-->
     <!--      <span class="text-3xl">Руководства по приему гостей</span>-->
     <!--    </div>-->
@@ -167,5 +287,11 @@ export default {
   })
 }
 </script>
-
-<style scoped></style>
+<style scoped>
+li {
+  margin-top: 8px;
+}
+li > a {
+  color: black;
+}
+</style>
