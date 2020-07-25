@@ -14,29 +14,33 @@
         <WizardRoom ref="wizardRoom" />
       </template>
       <template v-else-if="activeStepIndex === 1">
-        <WizardBedrooms />
+        <WizardBedrooms ref="wizardBedRoom" />
       </template>
       <template v-else-if="activeStepIndex === 2">
-        <WizardBathrooms />
+        <WizardBathrooms ref="wizardBathRoom" />
       </template>
       <template v-else-if="activeStepIndex === 3">
         <WizardLocation ref="location" />
       </template>
       <template v-else-if="activeStepIndex === 4">
-        <WizardAmenities />
+        <WizardAmenities ref="wizardAmenities" />
       </template>
       <template v-else-if="activeStepIndex === 5">
-        <WizardSpaces />
+        <WizardSpaces ref="wizardSpaces" />
       </template>
     </div>
     <div
       class="border-t-2 elevation-10 flex justify-evenly py-3 steps-pagination"
     >
-      <v-btn color="primary" :disabled="activeStepIndex === 0" @click="goToPrev"
-        >Prev</v-btn
+      <v-btn
+        color="primary"
+        :disabled="activeStepIndex === 0"
+        @click="goToPrev"
+      >
+        {{ $t('preview') }}</v-btn
       >
       <v-btn color="primary" :loading="isStepLoading" @click="goToNext">
-        Continue
+        {{ $t('continue') }}
       </v-btn>
     </div>
   </div>
@@ -71,11 +75,17 @@ export default {
         },
         {
           label: 'Сколько гостей вмещает ваше жилье?',
-          active: false
+          active: false,
+          nextHandler: async () => {
+            return await this.$refs.wizardBedRoom.submit()
+          }
         },
         {
           label: 'Сколько ванных?',
-          active: false
+          active: false,
+          nextHandler: async () => {
+            return await this.$refs.wizardBathRoom.submit()
+          }
         },
         {
           label: 'Где находится ваше жилье?',
@@ -86,11 +96,17 @@ export default {
         },
         {
           label: 'Какие удобства вы предлагаете?',
-          active: false
+          active: false,
+          nextHandler: async () => {
+            return await this.$refs.wizardAmenities.submit()
+          }
         },
         {
           label: 'Какими помещениями гости могут пользоваться?',
-          active: false
+          active: false,
+          nextHandler: async () => {
+            return await this.$refs.wizardSpaces.submit()
+          }
         }
       ],
       e1: 1,
@@ -109,6 +125,13 @@ export default {
       return parseInt(((currentIndex + 1) / this.steps.length) * 100, 0)
     }
   },
+  mounted() {
+    const id = this.$route.params.id === 'new' ? '' : this.$route.params.id
+    this.$store.dispatch('newLet/setState', {
+      key: 'itemId',
+      val: id
+    })
+  },
   methods: {
     async goToNext() {
       // console.log(this.localePath())
@@ -119,16 +142,17 @@ export default {
         result = await this.steps[currentIndex].nextHandler()
       }
       this.isStepLoading = false
+
+      if (this.steps.length - 1 === currentIndex) {
+        const hostId = this.$route.params.id || 0
+        await this.$router.push(this.localePath(`/become-a-host/${hostId}/2`))
+        return
+      }
       if (result) {
         this.steps[currentIndex].active = false
         if (currentIndex < this.steps.length - 1) {
           currentIndex++
           this.steps[currentIndex].active = true
-        }
-
-        if (this.steps.length - 1 === currentIndex) {
-          const hostId = this.$route.params.id || 0
-          await this.$router.push(this.localePath(`/become-a-host/${hostId}/2`))
         }
       }
     },

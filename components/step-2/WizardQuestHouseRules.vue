@@ -14,7 +14,7 @@
               <v-col md="8">
                 {{ $t('suitableForChildren') }}
                 <v-dialog
-                  v-if="!fromTwoYears"
+                  v-if="!childsFromTwoYears"
                   v-model="fromTwoYearsDialog"
                   persistent
                   max-width="700px"
@@ -66,10 +66,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  :value="fromTwoYears"
+                  :value="childsFromTwoYears"
                   inset
                   color="success"
-                  @change="(val) => changeData('fromTwoYears', val)"
+                  @change="(val) => changeData('childsFromTwoYears', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -82,7 +82,7 @@
               <v-col md="8">
                 {{ $t('suitableForBabies') }}
                 <v-dialog
-                  v-if="!beforeTwoYears"
+                  v-if="!childsBeforeTwoYears"
                   v-model="beforeTwoYearsDialog"
                   persistent
                   max-width="700px"
@@ -134,10 +134,10 @@
               </v-col>
               <v-col md="4">
                 <v-switch
-                  :value="beforeTwoYears"
+                  :value="childsBeforeTwoYears"
                   inset
                   color="success"
-                  @change="(val) => changeData('beforeTwoYears', val)"
+                  @change="(val) => changeData('childsBeforeTwoYears', val)"
                 ></v-switch>
               </v-col>
             </v-row>
@@ -314,8 +314,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      fromTwoYears: 'newLet/fromTwoYears',
-      beforeTwoYears: 'newLet/beforeTwoYears',
+      childsFromTwoYears: 'newLet/childsFromTwoYears',
+      childsBeforeTwoYears: 'newLet/childsBeforeTwoYears',
       possibleAnimals: 'newLet/possibleAnimals',
       possibleSmoking: 'newLet/possibleSmoking',
       possibleParty: 'newLet/possibleParty',

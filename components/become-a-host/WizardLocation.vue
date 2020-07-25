@@ -1,11 +1,13 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-alert type="error" v-show="showRequiredError">
-        {{ $t('fillFields') }}
+      <v-alert type="error" v-show="showRequiredError" ref="errorBlock">
+        <span
+          v-html="submitErrorText ? submitErrorText : $t('fillFields')"
+        ></span>
       </v-alert>
       <v-form ref="form" v-model="valid">
-        <v-card ref="form">
+        <v-card>
           <v-card-text>
             <div class="headline">
               {{ $t('becomeAHostStep4') }}
@@ -30,32 +32,32 @@
           </v-card-text>
           <v-card-text>
             <v-text-field
-              :value="adres"
+              :value="address"
               :rules="rules.address"
               type="text"
               :label="$t('address')"
               :placeholder="$t('addressExample')"
               readonly
               required
-              @change="(val) => changeData('adres', val)"
+              @change="(val) => changeData('address', val)"
             ></v-text-field>
           </v-card-text>
           <v-card-text>
             <v-text-field
-              :value="appartment"
+              :value="flat"
               type="text"
               :label="$t('apartmentOptional')"
               :placeholder="$t('apartmentOptionalExample')"
-              @change="(val) => changeData('appartment', val)"
+              @change="(val) => changeData('flat', val)"
             ></v-text-field>
           </v-card-text>
           <v-card-text>
             <v-text-field
-              :value="indeks"
+              :value="postIndex"
               type="text"
               :label="$t('index')"
               placeholder="100100"
-              @change="(val) => changeData('indeks', val)"
+              @change="(val) => changeData('postIndex', val)"
             ></v-text-field>
           </v-card-text>
         </v-card>
@@ -67,14 +69,11 @@
 <script>
 // import the styles
 import { mapGetters } from 'vuex'
+import wizardStepSubmit from '~/mixins/wizardStepSubmit'
 export default {
-  // register the component
+  mixins: [wizardStepSubmit],
   data() {
     return {
-      // define the default value
-      // define options
-      valid: false,
-      showRequiredError: false,
       coords: [],
       options: [
         {
@@ -100,17 +99,18 @@ export default {
           label: 'c'
         }
       ],
-      indeks: '',
       rules: {
         address: [(v) => !!v || this.$t('indicatePointTheMap')]
-      }
+      },
+      step: '1_4'
     }
   },
   computed: {
     ...mapGetters({
       country: 'newLet/country',
-      adres: 'newLet/adres',
-      appartment: 'newLet/appartment',
+      postIndex: 'newLet/postIndex',
+      address: 'newLet/address',
+      flat: 'newLet/flat',
       location: 'newLet/location'
     })
   },
@@ -135,14 +135,17 @@ export default {
         }
       })
       this.$store.dispatch('newLet/setState', {
-        key: 'adres',
+        key: 'address',
         val: geoObjects.get(0).getAddressLine()
       })
     },
-    submit() {
-      this.$refs.form.validate()
-      this.showRequiredError = !this.valid
-      return this.valid
+    getSubmitData() {
+      return {
+        postIndex: this.postIndex,
+        address: this.address,
+        flat: this.flat,
+        location: this.location
+      }
     }
   }
 }

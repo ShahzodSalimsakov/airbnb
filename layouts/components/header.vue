@@ -61,7 +61,7 @@
             {{ $t('help') }}
           </nuxt-link>
           <nuxt-link
-            :to="localePath('/become-a-host/')"
+            :to="localePath('/become-a-host/new/')"
             class="block mt-2 lg:inline-block lg:mt-0 mr-4 text-base black--text"
           >
             {{

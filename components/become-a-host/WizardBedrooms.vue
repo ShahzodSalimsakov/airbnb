@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6">
-        <v-card ref="form">
+        <v-card>
           <v-card-text>
             <div class="title" align="center">
               {{ $t('HowManyGuests') }}
@@ -10,7 +10,12 @@
             <div class="subtitle-1 font-italic" align="center">
               {{ $t('CheckBeds') }}
             </div>
-            <v-form
+            <v-alert type="error" v-show="showRequiredError" ref="errorBlock">
+              <span
+                v-html="submitErrorText ? submitErrorText : $t('fillFields')"
+              ></span>
+            </v-alert>
+            <v-form ref="form" v-model="valid"
               ><div>
                 <v-row>
                   <v-col>{{ $t('guests') }}</v-col>
@@ -107,8 +112,10 @@
 <script>
 import { mapGetters } from 'vuex'
 import IncrementDecrement from '~/components/inputs/IncrementDecrement'
+import wizardStepSubmit from '~/mixins/wizardStepSubmit'
 export default {
   components: { IncrementDecrement },
+  mixins: [wizardStepSubmit],
   data: () => ({
     items: [],
     bedItems: [],
@@ -118,7 +125,8 @@ export default {
       { key: 'floorMatress', label: 'Floor matress' },
       { key: 'sofa', label: 'Sofa' },
       { key: 'sofaBed', label: 'Sofa bed' }
-    ]
+    ],
+    step: '1_2'
   }),
   computed: {
     ...mapGetters({
@@ -161,15 +169,14 @@ export default {
       }
     },
     changeBedPerRoom(index, key, val) {
-      // TODO: complete logic of this function
       this.$store.dispatch('newLet/setBedsPerRoom', { index, key, val })
-      // const beds = this.bedsPerRoom.map((item) => item)
-      // beds[i][key] = val
-      // console.log(beds)
-      // this.$store.dispatch('newLet/setState', {
-      //   key: 'bedsPerRoom',
-      //   val: bedsPerRoom
-      // })
+    },
+    getSubmitData() {
+      return {
+        bedsCount: this.bedsCount,
+        bedsPerRoom: this.bedsPerRoom,
+        guestsCount: this.guestsCount
+      }
     }
   }
 }

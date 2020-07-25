@@ -42,7 +42,9 @@ export default {
     './plugins/axios.js',
     './plugins/mixins/validation.js',
     './plugins/DataProvider.js',
-    { src: './plugins/ymapPlugin.js', mode: 'client' }
+    { src: './plugins/ymapPlugin.js', mode: 'client' },
+    { src: './plugins/vue-file-upload.js', mode: 'client' },
+    { src: './plugins/formatSize.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules

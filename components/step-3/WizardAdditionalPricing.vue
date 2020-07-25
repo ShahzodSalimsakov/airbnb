@@ -14,9 +14,9 @@
           </div>
           <v-text-field
             v-mask="mask"
-            :value="discontWeek"
+            :value="discountWeek"
             :suffix="$t('percentDiscount')"
-            @change="(val) => changeData('discontWeek', val)"
+            @change="(val) => changeData('discountWeek', val)"
           ></v-text-field>
           <v-btn text @click="week = 21">{{ $t('tip21') }}</v-btn>
           <div class="caption">
@@ -29,9 +29,9 @@
           </div>
           <v-text-field
             v-mask="mask"
-            :value="discontMonth"
+            :value="discountMonth"
             :suffix="$t('percentDiscount')"
-            @change="(val) => changeData('discontMonth', val)"
+            @change="(val) => changeData('discountMonth', val)"
           ></v-text-field>
           <v-btn text @click="month = 49">{{ $t('tip49') }}</v-btn>
           <div class="caption">
@@ -58,8 +58,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      discontWeek: 'newLet/discontWeek',
-      discontMonth: 'newLet/discontMonth'
+      discountWeek: 'newLet/discountWeek',
+      discountMonth: 'newLet/discountMonth'
     })
   },
   methods: {

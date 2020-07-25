@@ -11,7 +11,7 @@
         <v-progress-circular indeterminate size="64"></v-progress-circular>
       </v-overlay>
       <template v-if="activeStepIndex === 0">
-        <WizardPhotos />
+        <WizardPhotos ref="wizardPhotos" />
       </template>
       <template v-else-if="activeStepIndex === 1">
         <WizardDescription />
@@ -74,7 +74,10 @@ export default {
       steps: [
         {
           label: this.$t('addPhotoToAd'),
-          active: true
+          active: true,
+          nextHandler: async () => {
+            return await this.$refs.wizardPhotos.submit()
+          }
         },
         {
           label: this.$t('tellGuestsAboutLodging'),
@@ -117,18 +120,34 @@ export default {
       return parseInt(((currentIndex + 1) / this.steps.length) * 100, 0)
     }
   },
+  mounted() {
+    const id = this.$route.params.id === 'new' ? '' : this.$route.params.id
+    this.$store.dispatch('newLet/setState', {
+      key: 'itemId',
+      val: id
+    })
+  },
   methods: {
     async goToNext() {
       let currentIndex = this.steps.findIndex((item) => item.active)
-      this.steps[currentIndex].active = false
-      if (currentIndex < this.steps.length - 1) {
-        currentIndex++
-        this.steps[currentIndex].active = true
+      this.isStepLoading = true
+      let result = true
+      if (this.steps[currentIndex].nextHandler) {
+        result = await this.steps[currentIndex].nextHandler()
       }
+      this.isStepLoading = false
 
       if (this.steps.length - 1 === currentIndex) {
         const hostId = this.$route.params.id || 0
         await this.$router.push(this.localePath(`/become-a-host/${hostId}/3`))
+        return
+      }
+      if (result) {
+        this.steps[currentIndex].active = false
+        if (currentIndex < this.steps.length - 1) {
+          currentIndex++
+          this.steps[currentIndex].active = true
+        }
       }
     },
     goToPrev() {
