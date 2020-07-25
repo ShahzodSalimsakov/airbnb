@@ -60,7 +60,28 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      arrReserveHouse: ['В тот же день', '1 день', '2 дня', '3 дня', '7 дней'],
+      arrReserveHouse: [
+        {
+          text: 'В тот же день',
+          value: 0
+        },
+        {
+          text: '1 день',
+          value: 1
+        },
+        {
+          text: '2 дня',
+          value: 2
+        },
+        {
+          text: '3 дня',
+          value: 3
+        },
+        {
+          text: '7 дней',
+          value: 7
+        }
+      ],
       arrHour: [
         'Гибкое',
         '8:00',

@@ -22,6 +22,7 @@
     "nuxt-i18n": "^6.12.2",
     "vue-currency-input": "^1.18.4",
     "vue-the-mask": "^0.11.1",
+    "vue-upload-component": "^2.8.20",
     "vue-yandex-maps": "^0.10.8",
     "vuexplosive-modal": "^1.2.0",
     "yarn": "^1.22.4"

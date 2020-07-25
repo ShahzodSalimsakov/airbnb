@@ -1,11 +1,13 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-alert type="error" v-show="showRequiredError">
-        {{ $t('fillFields') }}
+      <v-alert type="error" v-show="showRequiredError" ref="errorBlock">
+        <span
+          v-html="submitErrorText ? submitErrorText : $t('fillFields')"
+        ></span>
       </v-alert>
       <v-form ref="form" v-model="valid">
-        <v-card outlined ref="form">
+        <v-card outlined>
           <v-card-text>
             <v-select
               ref="place"
@@ -99,7 +101,9 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import wizardStepSubmit from '~/mixins/wizardStepSubmit'
 export default {
+  mixins: [wizardStepSubmit],
   data: () => ({
     placeItems: [
       {
@@ -218,14 +222,8 @@ export default {
           'Квартиры находятся в многоквартирных домах или комплексах, где живут и другие люди.'
       }
     ],
-    valid: false,
-    showRequiredError: false,
-    rules: {
-      letType: [(v) => !!v || this.$t('requiredField')],
-      typeOfHousing: [(v) => !!v || this.$t('requiredField')],
-      disposalOfGuests: [(v) => !!v || this.$t('requiredField')],
-      forGuest: [(v) => !!v || this.$t('requiredField')]
-    }
+    rules: {},
+    step: '1_1'
   }),
   computed: {
     ...mapGetters({
@@ -233,7 +231,8 @@ export default {
       typeOfHousing: 'newLet/typeOfHousing',
       disposalOfGuests: 'newLet/disposalOfGuests',
       forGuest: 'newLet/forGuest',
-      onBehalfOfTheCompany: 'newLet/onBehalfOfTheCompany'
+      onBehalfOfTheCompany: 'newLet/onBehalfOfTheCompany',
+      submitErrors: 'validation/errors'
     }),
     typeHouses() {
       return [...this.type_of_housing].filter((item) =>
@@ -246,6 +245,14 @@ export default {
       )[0]
     }
   },
+  created() {
+    this.rules = {
+      letType: [(v) => !!v || this.$t('requiredField')],
+      typeOfHousing: [(v) => !!v || this.$t('requiredField')],
+      disposalOfGuests: [(v) => !!v || this.$t('requiredField')],
+      forGuest: [(v) => !!v || this.$t('requiredField')]
+    }
+  },
   methods: {
     changeData(key, val) {
       this.$store.dispatch('newLet/setState', {
@@ -253,10 +260,14 @@ export default {
         val
       })
     },
-    submit() {
-      this.$refs.form.validate()
-      this.showRequiredError = !this.valid
-      return this.valid
+    getSubmitData() {
+      return {
+        letType: this.letType,
+        typeOfHousing: this.typeOfHousing,
+        disposalOfGuests: this.disposalOfGuests,
+        forGuest: this.forGuest,
+        onBehalfOfTheCompany: this.onBehalfOfTheCompany
+      }
     }
   }
 }

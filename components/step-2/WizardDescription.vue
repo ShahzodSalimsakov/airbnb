@@ -10,7 +10,14 @@
         </v-card-text>
 
         <v-card-text>
-          <v-textarea outlined auto-grow rows="4" row-height="30"></v-textarea>
+          <v-textarea
+            :value="aboutLet"
+            outlined
+            auto-grow
+            rows="4"
+            row-height="30"
+            @change="(val) => changeData('aboutLet', val)"
+          ></v-textarea>
           <div v-if="moreButton === false" class="my-2">
             <v-btn text large color="primary" @click="moreButton = true">
               {{ $t('addDetailsOptional') }}
@@ -18,18 +25,20 @@
           </div>
         </v-card-text>
 
-        <div v-if="moreButton === true">
+        <div v-show="moreButton === true">
           <v-card-text>
             <div class="headline">{{ $t('yourHomeOptional') }}</div>
             <div class="body-2">
               {{ $t('yourHomeOptionalTitle') }}
             </div>
             <v-textarea
+              :value="letAtmosphere"
               filled
               auto-grow
               rows="4"
               row-height="30"
               shaped
+              @change="(val) => changeData('letAtmosphere', val)"
             ></v-textarea>
           </v-card-text>
 
@@ -41,11 +50,13 @@
               {{ $t('communicationWithGuestsOptionalTitle') }}
             </div>
             <v-textarea
+              :value="guestsCommunication"
               filled
               auto-grow
               rows="4"
               row-height="30"
               shaped
+              @change="(val) => changeData('guestsCommunication', val)"
             ></v-textarea>
           </v-card-text>
 
@@ -57,11 +68,13 @@
               {{ $t('yourAreaOptionalTitle') }}
             </div>
             <v-textarea
+              :value="aboutDistrict"
               filled
               auto-grow
               rows="4"
               row-height="30"
               shaped
+              @change="(val) => changeData('aboutDistrict', val)"
             ></v-textarea>
           </v-card-text>
 
@@ -73,11 +86,13 @@
               {{ $t('whereToGoOptionalTitle') }}
             </div>
             <v-textarea
+              :value="transportToLet"
               filled
               auto-grow
               rows="4"
               row-height="30"
               shaped
+              @change="(val) => changeData('transportToLet', val)"
             ></v-textarea>
           </v-card-text>
 
@@ -95,10 +110,28 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       moreButton: false
+    }
+  },
+  computed: {
+    ...mapGetters({
+      aboutLet: 'newLet/aboutLet',
+      letAtmosphere: 'newLet/letAtmosphere',
+      guestsCommunication: 'newLet/guestsCommunication',
+      aboutDistrict: 'newLet/aboutDistrict',
+      transportToLet: 'newLet/transportToLet'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

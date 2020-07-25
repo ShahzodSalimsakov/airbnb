@@ -10,9 +10,11 @@
         </v-card-text>
         <v-card-text>
           <v-text-field
+            :value="title"
             :rules="rulesTitle"
             counter="50"
             required
+            @change="(val) => changeData('title', val)"
           ></v-text-field>
         </v-card-text>
       </v-card>
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -28,6 +31,19 @@ export default {
         (value) => !!value || this.$t('required'),
         (value) => (value || '').length <= 50 || this.$t('max50Characters')
       ]
+    }
+  },
+  computed: {
+    ...mapGetters({
+      title: 'newLet/title'
+    })
+  },
+  methods: {
+    changeData(key, val) {
+      this.$store.dispatch('newLet/setState', {
+        key,
+        val
+      })
     }
   }
 }

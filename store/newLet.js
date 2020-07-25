@@ -1,4 +1,6 @@
 export const state = () => ({
+  itemId: '',
+  title: '',
   letType: '',
   typeOfHousing: '',
   disposalOfGuests: '',
@@ -19,14 +21,20 @@ export const state = () => ({
       sofaBed: 0
     }
   ],
+  bathCount: 0,
   country: '',
-  select: '',
-  selectSafety: '',
+  comfortEquipment: '',
+  safetyEquipment: '',
   selectSpaces: '',
+  aboutLet: '',
+  letAtmosphere: '',
+  guestsCommunication: '',
+  aboutDistrict: '',
+  transportToLet: '',
   selectedCode: '',
   phoneNumber: '',
-  fromTwoYears: false,
-  beforeTwoYears: false,
+  childsFromTwoYears: false,
+  childsBeforeTwoYears: false,
   possibleAnimals: false,
   possibleSmoking: false,
   possibleParty: false,
@@ -48,11 +56,11 @@ export const state = () => ({
   reserveHouseMonth: '',
   price: '',
   specOffer: false,
-  discontWeek: '',
-  discontMonth: '',
-  adres: '',
-  appartment: '',
-  indeks: '',
+  discountWeek: '',
+  discountMonth: '',
+  address: '',
+  flat: '',
+  postIndex: '',
   calendarChosenDates: [],
   calendarMonths: [
     {
@@ -67,10 +75,13 @@ export const state = () => ({
       month: new Date().getMonth() + 2,
       year: new Date().getFullYear()
     }
-  ]
+  ],
+  updated_date: ''
 })
 
 export const getters = {
+  itemId: (state) => state.itemId,
+  title: (state) => state.title,
   letType: (state) => state.letType,
   typeOfHousing: (state) => state.typeOfHousing,
   disposalOfGuests: (state) => state.disposalOfGuests,
@@ -80,14 +91,20 @@ export const getters = {
   onBehalfOfTheCompany: (state) => state.onBehalfOfTheCompany,
   bedsCount: (state) => state.bedsCount,
   bedsPerRoom: (state) => state.bedsPerRoom,
+  bathCount: (state) => state.bathCount,
   country: (state) => state.country,
-  select: (state) => state.select,
-  selectSafety: (state) => state.selectSafety,
+  comfortEquipment: (state) => state.comfortEquipment,
+  safetyEquipment: (state) => state.safetyEquipment,
   selectSpaces: (state) => state.selectSpaces,
+  aboutLet: (state) => state.aboutLet,
+  letAtmosphere: (state) => state.letAtmosphere,
+  guestsCommunication: (state) => state.guestsCommunication,
+  aboutDistrict: (state) => state.aboutDistrict,
+  transportToLet: (state) => state.transportToLet,
   selectedCode: (state) => state.selectedCode,
   phoneNumber: (state) => state.phoneNumber,
-  fromTwoYears: (state) => state.fromTwoYears,
-  beforeTwoYears: (state) => state.beforeTwoYears,
+  childsFromTwoYears: (state) => state.childsFromTwoYears,
+  childsBeforeTwoYears: (state) => state.childsBeforeTwoYears,
   possibleAnimals: (state) => state.possibleAnimals,
   possibleSmoking: (state) => state.possibleSmoking,
   possibleParty: (state) => state.possibleParty,
@@ -109,12 +126,13 @@ export const getters = {
   reserveHouseMonth: (state) => state.reserveHouseMonth,
   price: (state) => state.price,
   specOffer: (state) => state.specOffer,
-  discontWeek: (state) => state.discontWeek,
-  discontMonth: (state) => state.discontMonth,
-  adres: (state) => state.adres,
-  appartment: (state) => state.appartment,
-  indeks: (state) => state.indeks,
+  discountWeek: (state) => state.discountWeek,
+  discountMonth: (state) => state.discountMonth,
+  address: (state) => state.address,
+  flat: (state) => state.flat,
+  postIndex: (state) => state.postIndex,
   calendarChosenDates: (state) => state.calendarChosenDates,
+  updated_date: (state) => state.updated_date,
   calendarMonths: (state) => state.calendarMonths
 }
 
