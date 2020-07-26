@@ -112,7 +112,7 @@ export default {
           name: this.$t('proprietor'),
           items: [
             {
-              link: '/confidentiality',
+              link: '/terms/confidentiality',
               title: this.$t('Confidentiality')
             },
             // { link: '/', title: 'Airbnb для бизнеса' },

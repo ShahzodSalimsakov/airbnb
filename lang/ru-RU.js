@@ -301,5 +301,6 @@ export default {
   ResourceCenter: 'Центр ресурсов',
   CommunicationCenter: 'Центр общения',
   Confidentiality: 'Конфиденциальность',
+  ConfidentialityTitle: 'Конфиденциальность при выше всего в нашей компании',
   Terms: 'Условия'
 }

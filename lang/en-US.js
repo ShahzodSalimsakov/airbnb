@@ -295,6 +295,7 @@ export default {
   ResourceCenter: 'Resource center',
   CommunicationCenter: 'Communication center',
   Confidentiality: 'Confidentiality',
+  ConfidentialityTitle: 'Confidentiality is above all in our company',
   Terms: 'Terms',
   privacyPolicy: 'Privacy Policy',
   introduction: 'Introduction',

@@ -301,5 +301,6 @@ export default {
   ResourceCenter: 'Ресурс маркази',
   CommunicationCenter: 'Алоқа маркази',
   Confidentiality: 'Махфийлик',
+  ConfidentialityTitle: 'Махфийлик, бизнинг компаниямизда биринчи ўринда',
   Terms: 'Шартлар'
 }
